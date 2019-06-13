@@ -55,7 +55,13 @@ class OrdersController < ApplicationController
       )
     end
     order.save!
+    receipt(order)
     order
   end
 
+  def receipt(order)
+    @order = order
+    #  logic to send an email out
+    OrderMailer.receipt(current_user, @order).deliver_now
+  end
 end

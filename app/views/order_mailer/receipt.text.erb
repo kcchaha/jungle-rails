@@ -1,0 +1,15 @@
+Thank you for your order, <%= @user.first_name %>!
+===============================================
+ 
+This is the receipt of your purchase, please do not hesitate to contact us if you have any inquiries.
+ 
+The item(items) you purchased:
+<% @item.each do |item| %>
+<%= item.product.name %>, Quantity: <%= item.quantity %>
+<% end %>
+ 
+
+The total price for your purchase:
+$<%= @order.total_cents / 100.0 %>
+
+Thank you and have a great day!
