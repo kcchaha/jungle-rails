@@ -6001,3 +6001,11 @@ Processing by ProductsController#index as HTML
   [1m[35mCategory Load (0.4ms)[0m  SELECT "categories".* FROM "categories"
   Rendered layouts/_top_nav.html.erb (2.8ms)
 Completed 200 OK in 222ms (Views: 220.5ms | ActiveRecord: 0.9ms)
+
+
+Started GET "/register" for 10.0.2.2 at 2019-06-13 14:23:39 +0000
+Processing by UsersController#new as HTML
+  Rendered users/new.html.erb within layouts/application (0.6ms)
+  [1m[36mCategory Load (0.3ms)[0m  [1mSELECT "categories".* FROM "categories"[0m
+  Rendered layouts/_top_nav.html.erb (2.5ms)
+Completed 200 OK in 212ms (Views: 211.6ms | ActiveRecord: 0.3ms)
