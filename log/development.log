@@ -7632,3 +7632,116 @@ Processing by OrdersController#show as HTML
 Completed 200 OK in 266ms (Views: 263.0ms | ActiveRecord: 1.3ms)
   [1m[35mOrder Load (0.5ms)[0m  SELECT  "orders".* FROM "orders" WHERE "orders"."id" = $1 LIMIT 1  [["id", 3]]
   [1m[36mLineItem Load (0.6ms)[0m  [1mSELECT "line_items".* FROM "line_items" WHERE "line_items"."order_id" = $1[0m  [["order_id", 3]]
+
+
+Started GET "/" for 10.0.2.2 at 2019-06-13 18:47:52 +0000
+Processing by ProductsController#index as HTML
+  [1m[36mProduct Load (0.7ms)[0m  [1mSELECT "products".* FROM "products"  ORDER BY "products"."created_at" DESC[0m
+  Rendered products/_product.html.erb (14.3ms)
+  Rendered products/index.html.erb within layouts/application (26.6ms)
+  [1m[35mCategory Load (0.4ms)[0m  SELECT "categories".* FROM "categories"
+  Rendered layouts/_top_nav.html.erb (2.8ms)
+Completed 200 OK in 212ms (Views: 209.8ms | ActiveRecord: 1.1ms)
+
+
+Started POST "/cart/add_item?product_id=11" for 10.0.2.2 at 2019-06-13 18:47:54 +0000
+Processing by CartsController#add_item as HTML
+  Parameters: {"authenticity_token"=>"GFo+Rb246K5TahIE0TWCzBev5m63zTD9beHASZ7jChOJanblFdR7EqHvPaVSdiNwb7A3A1F6SXHjKn9Dp1B8rA==", "product_id"=>"11"}
+Redirected to http://localhost:3000/
+Completed 302 Found in 1ms (ActiveRecord: 0.0ms)
+
+
+Started GET "/" for 10.0.2.2 at 2019-06-13 18:47:54 +0000
+Processing by ProductsController#index as HTML
+  [1m[36mProduct Load (0.5ms)[0m  [1mSELECT "products".* FROM "products"  ORDER BY "products"."created_at" DESC[0m
+  Rendered products/_product.html.erb (13.5ms)
+  Rendered products/index.html.erb within layouts/application (25.9ms)
+  [1m[35mCategory Load (0.4ms)[0m  SELECT "categories".* FROM "categories"
+  Rendered layouts/_top_nav.html.erb (2.5ms)
+Completed 200 OK in 219ms (Views: 217.5ms | ActiveRecord: 0.8ms)
+
+
+Started POST "/cart/add_item?product_id=8" for 10.0.2.2 at 2019-06-13 18:47:59 +0000
+Processing by CartsController#add_item as HTML
+  Parameters: {"authenticity_token"=>"sYZiTQWhrV7W2ooUdCTA0bSBXXvLAs75he9+vrCtzBsgtirtrc0+4iRfpbX3Z2FtzJ6MFi21t3ULJMG0iR66pA==", "product_id"=>"8"}
+Redirected to http://localhost:3000/
+Completed 302 Found in 3ms (ActiveRecord: 0.0ms)
+
+
+Started GET "/" for 10.0.2.2 at 2019-06-13 18:47:59 +0000
+Processing by ProductsController#index as HTML
+  [1m[36mProduct Load (0.5ms)[0m  [1mSELECT "products".* FROM "products"  ORDER BY "products"."created_at" DESC[0m
+  Rendered products/_product.html.erb (14.5ms)
+  Rendered products/index.html.erb within layouts/application (26.8ms)
+  [1m[35mCategory Load (0.4ms)[0m  SELECT "categories".* FROM "categories"
+  Rendered layouts/_top_nav.html.erb (2.7ms)
+Completed 200 OK in 232ms (Views: 230.5ms | ActiveRecord: 0.8ms)
+
+
+Started GET "/cart" for 10.0.2.2 at 2019-06-13 18:48:01 +0000
+Processing by CartsController#show as HTML
+  [1m[36mProduct Load (0.7ms)[0m  [1mSELECT "products".* FROM "products" WHERE "products"."id" IN (11, 8)[0m
+  Rendered carts/_item.html.erb (2.1ms)
+  Rendered carts/_item.html.erb (1.1ms)
+  [1m[35mUser Load (0.5ms)[0m  SELECT  "users".* FROM "users" WHERE "users"."id" = $1 LIMIT 1  [["id", 5]]
+  Rendered carts/show.html.erb within layouts/application (27.9ms)
+  [1m[36mCategory Load (0.5ms)[0m  [1mSELECT "categories".* FROM "categories"[0m
+  Rendered layouts/_top_nav.html.erb (2.8ms)
+Completed 200 OK in 223ms (Views: 220.6ms | ActiveRecord: 1.6ms)
+
+
+Started POST "/cart/add_item?product_id=11" for 10.0.2.2 at 2019-06-13 18:48:05 +0000
+Processing by CartsController#add_item as HTML
+  Parameters: {"authenticity_token"=>"U3Zk8BnA3Wejk998sze6nzROzicWA24hpgW5436VzTnCRixQsaxO21EW8N0wdBsjTFEfSvC0F60ozgbpRya7hg==", "product_id"=>"11"}
+Redirected to http://localhost:3000/cart
+Completed 302 Found in 1ms (ActiveRecord: 0.0ms)
+
+
+Started GET "/cart" for 10.0.2.2 at 2019-06-13 18:48:05 +0000
+Processing by CartsController#show as HTML
+  [1m[35mProduct Load (0.4ms)[0m  SELECT "products".* FROM "products" WHERE "products"."id" IN (11, 8)
+  Rendered carts/_item.html.erb (1.6ms)
+  Rendered carts/_item.html.erb (1.3ms)
+  [1m[36mUser Load (0.2ms)[0m  [1mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 LIMIT 1[0m  [["id", 5]]
+  Rendered carts/show.html.erb within layouts/application (26.1ms)
+  [1m[35mCategory Load (0.3ms)[0m  SELECT "categories".* FROM "categories"
+  Rendered layouts/_top_nav.html.erb (2.8ms)
+Completed 200 OK in 225ms (Views: 223.7ms | ActiveRecord: 1.0ms)
+
+
+Started POST "/orders" for 10.0.2.2 at 2019-06-13 18:49:40 +0000
+Processing by OrdersController#create as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"lryuVnviwtcShY3cmE3jNJm9hkmvIjhyA2cFMlMrMF4HjOb2045Ra+AAon0bDkKI4aJXJEmVQf6NrLo4aphG4Q==", "stripeToken"=>"tok_1EkyFIHMbQOxP53fdUXp9cCt", "stripeTokenType"=>"card", "stripeEmail"=>"kcchaha@gmail.com"}
+  [1m[36mProduct Load (0.8ms)[0m  [1mSELECT "products".* FROM "products" WHERE "products"."id" IN (11, 8)[0m
+  [1m[35m (0.1ms)[0m  BEGIN
+  [1m[36mSQL (0.5ms)[0m  [1mINSERT INTO "orders" ("email", "total_cents", "stripe_charge_id", "created_at", "updated_at") VALUES ($1, $2, $3, $4, $5) RETURNING "id"[0m  [["email", "kcchaha@gmail.com"], ["total_cents", 200130], ["stripe_charge_id", "ch_1EkyFLHMbQOxP53f4GHykFww"], ["created_at", "2019-06-13 18:49:41.769659"], ["updated_at", "2019-06-13 18:49:41.769659"]]
+  [1m[35mSQL (0.7ms)[0m  INSERT INTO "line_items" ("product_id", "quantity", "item_price_cents", "total_price_cents", "order_id", "created_at", "updated_at") VALUES ($1, $2, $3, $4, $5, $6, $7) RETURNING "id"  [["product_id", 8], ["quantity", 1], ["item_price_cents", 2600], ["total_price_cents", 2600], ["order_id", 4], ["created_at", "2019-06-13 18:49:41.773350"], ["updated_at", "2019-06-13 18:49:41.773350"]]
+  [1m[36mSQL (0.4ms)[0m  [1mINSERT INTO "line_items" ("product_id", "quantity", "item_price_cents", "total_price_cents", "order_id", "created_at", "updated_at") VALUES ($1, $2, $3, $4, $5, $6, $7) RETURNING "id"[0m  [["product_id", 11], ["quantity", 2], ["item_price_cents", 98765], ["total_price_cents", 197530], ["order_id", 4], ["created_at", "2019-06-13 18:49:41.777408"], ["updated_at", "2019-06-13 18:49:41.777408"]]
+  [1m[35m (2.6ms)[0m  COMMIT
+Redirected to http://localhost:3000/orders/4
+Completed 302 Found in 1299ms (ActiveRecord: 5.2ms)
+
+
+Started GET "/orders/4" for 10.0.2.2 at 2019-06-13 18:49:41 +0000
+Processing by OrdersController#show as HTML
+  Parameters: {"id"=>"4"}
+  [1m[36mOrder Load (0.2ms)[0m  [1mSELECT  "orders".* FROM "orders" WHERE "orders"."id" = $1 LIMIT 1[0m  [["id", 4]]
+  [1m[35mLineItem Load (0.2ms)[0m  SELECT "line_items".* FROM "line_items" WHERE "line_items"."order_id" = $1  [["order_id", 4]]
+  [1m[36mProduct Load (0.1ms)[0m  [1mSELECT  "products".* FROM "products" WHERE "products"."id" = $1 LIMIT 1[0m  [["id", 8]]
+  Rendered orders/_item.html.erb (0.9ms)
+  [1m[35mProduct Load (0.2ms)[0m  SELECT  "products".* FROM "products" WHERE "products"."id" = $1 LIMIT 1  [["id", 11]]
+  Rendered orders/_item.html.erb (0.9ms)
+  Rendered orders/show.html.erb within layouts/application (28.0ms)
+  [1m[36mCategory Load (0.3ms)[0m  [1mSELECT "categories".* FROM "categories"[0m
+  Rendered layouts/_top_nav.html.erb (2.4ms)
+Completed 200 OK in 246ms (Views: 242.5ms | ActiveRecord: 1.1ms)
+
+
+Started GET "/" for 10.0.2.2 at 2019-06-13 18:49:48 +0000
+Processing by ProductsController#index as HTML
+  [1m[35mProduct Load (0.4ms)[0m  SELECT "products".* FROM "products"  ORDER BY "products"."created_at" DESC
+  Rendered products/_product.html.erb (13.2ms)
+  Rendered products/index.html.erb within layouts/application (25.3ms)
+  [1m[36mCategory Load (0.3ms)[0m  [1mSELECT "categories".* FROM "categories"[0m
+  Rendered layouts/_top_nav.html.erb (2.6ms)
+Completed 200 OK in 219ms (Views: 217.6ms | ActiveRecord: 0.7ms)
