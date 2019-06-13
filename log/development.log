@@ -4907,3 +4907,1097 @@ Did you mean?  find_by
   Rendered /home/vagrant/.rvm/gems/ruby-2.3.5/gems/web-console-2.3.0/lib/web_console/templates/main.js.erb within layouts/javascript (0.3ms)
   Rendered /home/vagrant/.rvm/gems/ruby-2.3.5/gems/web-console-2.3.0/lib/web_console/templates/error_page.js.erb within layouts/javascript (0.7ms)
   Rendered /home/vagrant/.rvm/gems/ruby-2.3.5/gems/web-console-2.3.0/lib/web_console/templates/index.html.erb (430.7ms)
+
+
+Started GET "/login" for 10.0.2.2 at 2019-06-13 03:12:44 +0000
+Processing by SessionsController#new as HTML
+  Rendered sessions/new.html.erb within layouts/application (0.4ms)
+  [1m[36mCategory Load (1.0ms)[0m  [1mSELECT "categories".* FROM "categories"[0m
+  Rendered layouts/_top_nav.html.erb (4.4ms)
+Completed 200 OK in 206ms (Views: 204.7ms | ActiveRecord: 1.0ms)
+
+
+Started POST "/login" for 10.0.2.2 at 2019-06-13 03:12:49 +0000
+Processing by SessionsController#create as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"dlX/5mGqvuS/CZMpvuMXtFaDTjdWiWE/Xq/qFQe4tyauhCiKf6x1py7BIeGRyj2qqfOB8skPtwCKMBBUfqJdyg==", "email"=>"kcchaha@gmail.com", "password"=>"[FILTERED]", "commit"=>"Submit"}
+Completed 500 Internal Server Error in 18ms (ActiveRecord: 0.0ms)
+
+NoMethodError (undefined method `find_by_email' for #<Class:0x0000000004654ab0>
+Did you mean?  find_by
+               find_by_sql):
+  app/controllers/sessions_controller.rb:6:in `create'
+
+
+  Rendered /home/vagrant/.rvm/gems/ruby-2.3.5/gems/actionpack-4.2.6/lib/action_dispatch/middleware/templates/rescues/_source.erb (5.9ms)
+  Rendered /home/vagrant/.rvm/gems/ruby-2.3.5/gems/actionpack-4.2.6/lib/action_dispatch/middleware/templates/rescues/_trace.html.erb (2.3ms)
+  Rendered /home/vagrant/.rvm/gems/ruby-2.3.5/gems/actionpack-4.2.6/lib/action_dispatch/middleware/templates/rescues/_request_and_response.html.erb (0.9ms)
+  Rendered /home/vagrant/.rvm/gems/ruby-2.3.5/gems/actionpack-4.2.6/lib/action_dispatch/middleware/templates/rescues/diagnostics.html.erb within rescues/layout (23.0ms)
+  Rendered /home/vagrant/.rvm/gems/ruby-2.3.5/gems/web-console-2.3.0/lib/web_console/templates/_markup.html.erb (0.3ms)
+  Rendered /home/vagrant/.rvm/gems/ruby-2.3.5/gems/web-console-2.3.0/lib/web_console/templates/_inner_console_markup.html.erb within layouts/inlined_string (0.2ms)
+  Rendered /home/vagrant/.rvm/gems/ruby-2.3.5/gems/web-console-2.3.0/lib/web_console/templates/_prompt_box_markup.html.erb within layouts/inlined_string (0.3ms)
+  Rendered /home/vagrant/.rvm/gems/ruby-2.3.5/gems/web-console-2.3.0/lib/web_console/templates/style.css.erb within layouts/inlined_string (0.5ms)
+  Rendered /home/vagrant/.rvm/gems/ruby-2.3.5/gems/web-console-2.3.0/lib/web_console/templates/console.js.erb within layouts/javascript (16.8ms)
+  Rendered /home/vagrant/.rvm/gems/ruby-2.3.5/gems/web-console-2.3.0/lib/web_console/templates/main.js.erb within layouts/javascript (0.3ms)
+  Rendered /home/vagrant/.rvm/gems/ruby-2.3.5/gems/web-console-2.3.0/lib/web_console/templates/error_page.js.erb within layouts/javascript (0.4ms)
+  Rendered /home/vagrant/.rvm/gems/ruby-2.3.5/gems/web-console-2.3.0/lib/web_console/templates/index.html.erb (32.0ms)
+
+
+Started GET "/login" for 10.0.2.2 at 2019-06-13 03:17:47 +0000
+Processing by SessionsController#new as HTML
+  Rendered sessions/new.html.erb within layouts/application (0.4ms)
+  [1m[35mCategory Load (0.8ms)[0m  SELECT "categories".* FROM "categories"
+  Rendered layouts/_top_nav.html.erb (3.5ms)
+Completed 200 OK in 205ms (Views: 203.6ms | ActiveRecord: 0.8ms)
+
+
+Started GET "/login" for 10.0.2.2 at 2019-06-13 03:17:56 +0000
+  [1m[36mActiveRecord::SchemaMigration Load (0.3ms)[0m  [1mSELECT "schema_migrations".* FROM "schema_migrations"[0m
+Processing by SessionsController#new as HTML
+  Rendered sessions/new.html.erb within layouts/application (4.5ms)
+  [1m[35mCategory Load (0.6ms)[0m  SELECT "categories".* FROM "categories"
+  Rendered layouts/_top_nav.html.erb (40.5ms)
+Completed 200 OK in 1148ms (Views: 1129.2ms | ActiveRecord: 3.2ms)
+
+
+Started POST "/login" for 10.0.2.2 at 2019-06-13 03:18:03 +0000
+Processing by SessionsController#create as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"7UNUhdWIWagv+LoBY59KJUZANzn7tunE/yGhej26j1w1koPpy46S674wCMlMtmA7uTD4/GQwP/srvls7RKBlsA==", "email"=>"kcchaha@gmail.com", "password"=>"[FILTERED]", "commit"=>"Submit"}
+  [1m[36mUser Load (0.6ms)[0m  [1mSELECT email_address FROM users[0m
+Completed 500 Internal Server Error in 26ms (ActiveRecord: 1.5ms)
+
+NoMethodError (undefined method `authenticate' for #<Array:0x000000000487ec00>):
+  app/controllers/sessions_controller.rb:8:in `create'
+
+
+  Rendered /home/vagrant/.rvm/gems/ruby-2.3.5/gems/actionpack-4.2.6/lib/action_dispatch/middleware/templates/rescues/_source.erb (4.7ms)
+  Rendered /home/vagrant/.rvm/gems/ruby-2.3.5/gems/actionpack-4.2.6/lib/action_dispatch/middleware/templates/rescues/_trace.html.erb (2.6ms)
+  Rendered /home/vagrant/.rvm/gems/ruby-2.3.5/gems/actionpack-4.2.6/lib/action_dispatch/middleware/templates/rescues/_request_and_response.html.erb (1.2ms)
+  Rendered /home/vagrant/.rvm/gems/ruby-2.3.5/gems/actionpack-4.2.6/lib/action_dispatch/middleware/templates/rescues/diagnostics.html.erb within rescues/layout (20.9ms)
+  Rendered /home/vagrant/.rvm/gems/ruby-2.3.5/gems/web-console-2.3.0/lib/web_console/templates/_markup.html.erb (0.4ms)
+  Rendered /home/vagrant/.rvm/gems/ruby-2.3.5/gems/web-console-2.3.0/lib/web_console/templates/_inner_console_markup.html.erb within layouts/inlined_string (0.3ms)
+  Rendered /home/vagrant/.rvm/gems/ruby-2.3.5/gems/web-console-2.3.0/lib/web_console/templates/_prompt_box_markup.html.erb within layouts/inlined_string (0.5ms)
+  Rendered /home/vagrant/.rvm/gems/ruby-2.3.5/gems/web-console-2.3.0/lib/web_console/templates/style.css.erb within layouts/inlined_string (0.4ms)
+  Rendered /home/vagrant/.rvm/gems/ruby-2.3.5/gems/web-console-2.3.0/lib/web_console/templates/console.js.erb within layouts/javascript (407.7ms)
+  Rendered /home/vagrant/.rvm/gems/ruby-2.3.5/gems/web-console-2.3.0/lib/web_console/templates/main.js.erb within layouts/javascript (0.3ms)
+  Rendered /home/vagrant/.rvm/gems/ruby-2.3.5/gems/web-console-2.3.0/lib/web_console/templates/error_page.js.erb within layouts/javascript (0.4ms)
+  Rendered /home/vagrant/.rvm/gems/ruby-2.3.5/gems/web-console-2.3.0/lib/web_console/templates/index.html.erb (423.8ms)
+
+
+Started GET "/login" for 10.0.2.2 at 2019-06-13 03:24:16 +0000
+  [1m[36mActiveRecord::SchemaMigration Load (1.0ms)[0m  [1mSELECT "schema_migrations".* FROM "schema_migrations"[0m
+Processing by SessionsController#new as HTML
+  Rendered sessions/new.html.erb within layouts/application (5.7ms)
+  [1m[35mCategory Load (0.9ms)[0m  SELECT "categories".* FROM "categories"
+  Rendered layouts/_top_nav.html.erb (38.2ms)
+Completed 200 OK in 1056ms (Views: 1037.7ms | ActiveRecord: 3.5ms)
+
+
+Started POST "/login" for 10.0.2.2 at 2019-06-13 03:24:22 +0000
+Processing by SessionsController#create as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"jOi5VMEnnB73SGR7Ft1j+ZnyceKWePvNcpKGILiCESpUOW443yFXXWaA1rM59EnnZoK+Jwn+LfKmDXxhwZj7xg==", "email"=>"kcchaha@gmail.com", "password"=>"[FILTERED]", "commit"=>"Submit"}
+  [1m[36mUser Load (0.5ms)[0m  [1mSELECT email_address FROM users[0m
+Completed 500 Internal Server Error in 25ms (ActiveRecord: 1.3ms)
+
+NoMethodError (undefined method `authenticate' for #<Array:0x0000000003ce98b8>):
+  app/controllers/sessions_controller.rb:8:in `create'
+
+
+  Rendered /home/vagrant/.rvm/gems/ruby-2.3.5/gems/actionpack-4.2.6/lib/action_dispatch/middleware/templates/rescues/_source.erb (5.0ms)
+  Rendered /home/vagrant/.rvm/gems/ruby-2.3.5/gems/actionpack-4.2.6/lib/action_dispatch/middleware/templates/rescues/_trace.html.erb (2.7ms)
+  Rendered /home/vagrant/.rvm/gems/ruby-2.3.5/gems/actionpack-4.2.6/lib/action_dispatch/middleware/templates/rescues/_request_and_response.html.erb (1.2ms)
+  Rendered /home/vagrant/.rvm/gems/ruby-2.3.5/gems/actionpack-4.2.6/lib/action_dispatch/middleware/templates/rescues/diagnostics.html.erb within rescues/layout (21.3ms)
+  Rendered /home/vagrant/.rvm/gems/ruby-2.3.5/gems/web-console-2.3.0/lib/web_console/templates/_markup.html.erb (0.3ms)
+  Rendered /home/vagrant/.rvm/gems/ruby-2.3.5/gems/web-console-2.3.0/lib/web_console/templates/_inner_console_markup.html.erb within layouts/inlined_string (0.3ms)
+  Rendered /home/vagrant/.rvm/gems/ruby-2.3.5/gems/web-console-2.3.0/lib/web_console/templates/_prompt_box_markup.html.erb within layouts/inlined_string (0.3ms)
+  Rendered /home/vagrant/.rvm/gems/ruby-2.3.5/gems/web-console-2.3.0/lib/web_console/templates/style.css.erb within layouts/inlined_string (0.8ms)
+  Rendered /home/vagrant/.rvm/gems/ruby-2.3.5/gems/web-console-2.3.0/lib/web_console/templates/console.js.erb within layouts/javascript (402.5ms)
+  Rendered /home/vagrant/.rvm/gems/ruby-2.3.5/gems/web-console-2.3.0/lib/web_console/templates/main.js.erb within layouts/javascript (0.3ms)
+  Rendered /home/vagrant/.rvm/gems/ruby-2.3.5/gems/web-console-2.3.0/lib/web_console/templates/error_page.js.erb within layouts/javascript (0.7ms)
+  Rendered /home/vagrant/.rvm/gems/ruby-2.3.5/gems/web-console-2.3.0/lib/web_console/templates/index.html.erb (418.5ms)
+
+
+Started GET "/login" for 10.0.2.2 at 2019-06-13 03:34:57 +0000
+Processing by SessionsController#new as HTML
+  Rendered sessions/new.html.erb within layouts/application (0.4ms)
+  [1m[35mCategory Load (0.5ms)[0m  SELECT "categories".* FROM "categories"
+  Rendered layouts/_top_nav.html.erb (2.9ms)
+Completed 200 OK in 201ms (Views: 199.6ms | ActiveRecord: 0.5ms)
+
+
+Started POST "/login" for 10.0.2.2 at 2019-06-13 03:35:03 +0000
+Processing by SessionsController#create as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"EP2BFDNdQJGKeusKDT9hZbpHrwKdBO9+qZKyhd9hNU7ILFZ4LVuL0huyWcIiFkt7RTdgxwKCOUF9DUjEpnvfog==", "email"=>"kcchaha@gmail.com", "password"=>"[FILTERED]", "commit"=>"Submit"}
+  [1m[36mUser Load (0.3ms)[0m  [1mSELECT email_address FROM users[0m
+Completed 500 Internal Server Error in 6ms (ActiveRecord: 0.3ms)
+
+NoMethodError (undefined method `authenticate' for #<Array:0x00007f32f591c808>):
+  app/controllers/sessions_controller.rb:8:in `create'
+
+
+  Rendered /home/vagrant/.rvm/gems/ruby-2.3.5/gems/actionpack-4.2.6/lib/action_dispatch/middleware/templates/rescues/_source.erb (4.6ms)
+  Rendered /home/vagrant/.rvm/gems/ruby-2.3.5/gems/actionpack-4.2.6/lib/action_dispatch/middleware/templates/rescues/_trace.html.erb (2.1ms)
+  Rendered /home/vagrant/.rvm/gems/ruby-2.3.5/gems/actionpack-4.2.6/lib/action_dispatch/middleware/templates/rescues/_request_and_response.html.erb (1.0ms)
+  Rendered /home/vagrant/.rvm/gems/ruby-2.3.5/gems/actionpack-4.2.6/lib/action_dispatch/middleware/templates/rescues/diagnostics.html.erb within rescues/layout (20.3ms)
+  Rendered /home/vagrant/.rvm/gems/ruby-2.3.5/gems/web-console-2.3.0/lib/web_console/templates/_markup.html.erb (0.3ms)
+  Rendered /home/vagrant/.rvm/gems/ruby-2.3.5/gems/web-console-2.3.0/lib/web_console/templates/_inner_console_markup.html.erb within layouts/inlined_string (0.4ms)
+  Rendered /home/vagrant/.rvm/gems/ruby-2.3.5/gems/web-console-2.3.0/lib/web_console/templates/_prompt_box_markup.html.erb within layouts/inlined_string (0.2ms)
+  Rendered /home/vagrant/.rvm/gems/ruby-2.3.5/gems/web-console-2.3.0/lib/web_console/templates/style.css.erb within layouts/inlined_string (0.3ms)
+  Rendered /home/vagrant/.rvm/gems/ruby-2.3.5/gems/web-console-2.3.0/lib/web_console/templates/console.js.erb within layouts/javascript (14.5ms)
+  Rendered /home/vagrant/.rvm/gems/ruby-2.3.5/gems/web-console-2.3.0/lib/web_console/templates/main.js.erb within layouts/javascript (0.2ms)
+  Rendered /home/vagrant/.rvm/gems/ruby-2.3.5/gems/web-console-2.3.0/lib/web_console/templates/error_page.js.erb within layouts/javascript (0.6ms)
+  Rendered /home/vagrant/.rvm/gems/ruby-2.3.5/gems/web-console-2.3.0/lib/web_console/templates/index.html.erb (29.1ms)
+  [1m[36mActiveRecord::SchemaMigration Load (0.6ms)[0m  [1mSELECT "schema_migrations".* FROM "schema_migrations"[0m
+  [1m[35mActiveRecord::SchemaMigration Load (0.3ms)[0m  SELECT "schema_migrations".* FROM "schema_migrations"
+Migrating to CreateUsers (20190613013856)
+  [1m[36m (0.2ms)[0m  [1mBEGIN[0m
+  [1m[35m (1.5ms)[0m  DROP TABLE "users"
+  [1m[36mSQL (0.6ms)[0m  [1mDELETE FROM "schema_migrations" WHERE "schema_migrations"."version" = $1[0m  [["version", "20190613013856"]]
+  [1m[35m (3.3ms)[0m  COMMIT
+  [1m[36mActiveRecord::SchemaMigration Load (0.4ms)[0m  [1mSELECT "schema_migrations".* FROM "schema_migrations"[0m
+  [1m[35m (2.6ms)[0m  SELECT t2.oid::regclass::text AS to_table, a1.attname AS column, a2.attname AS primary_key, c.conname AS name, c.confupdtype AS on_update, c.confdeltype AS on_delete
+FROM pg_constraint c
+JOIN pg_class t1 ON c.conrelid = t1.oid
+JOIN pg_class t2 ON c.confrelid = t2.oid
+JOIN pg_attribute a1 ON a1.attnum = c.conkey[1] AND a1.attrelid = t1.oid
+JOIN pg_attribute a2 ON a2.attnum = c.confkey[1] AND a2.attrelid = t2.oid
+JOIN pg_namespace t3 ON c.connamespace = t3.oid
+WHERE c.contype = 'f'
+  AND t1.relname = 'categories'
+  AND t3.nspname = ANY (current_schemas(false))
+ORDER BY c.conname
+
+  [1m[36m (2.1ms)[0m  [1mSELECT t2.oid::regclass::text AS to_table, a1.attname AS column, a2.attname AS primary_key, c.conname AS name, c.confupdtype AS on_update, c.confdeltype AS on_delete
+FROM pg_constraint c
+JOIN pg_class t1 ON c.conrelid = t1.oid
+JOIN pg_class t2 ON c.confrelid = t2.oid
+JOIN pg_attribute a1 ON a1.attnum = c.conkey[1] AND a1.attrelid = t1.oid
+JOIN pg_attribute a2 ON a2.attnum = c.confkey[1] AND a2.attrelid = t2.oid
+JOIN pg_namespace t3 ON c.connamespace = t3.oid
+WHERE c.contype = 'f'
+  AND t1.relname = 'line_items'
+  AND t3.nspname = ANY (current_schemas(false))
+ORDER BY c.conname
+[0m
+  [1m[35m (2.2ms)[0m  SELECT t2.oid::regclass::text AS to_table, a1.attname AS column, a2.attname AS primary_key, c.conname AS name, c.confupdtype AS on_update, c.confdeltype AS on_delete
+FROM pg_constraint c
+JOIN pg_class t1 ON c.conrelid = t1.oid
+JOIN pg_class t2 ON c.confrelid = t2.oid
+JOIN pg_attribute a1 ON a1.attnum = c.conkey[1] AND a1.attrelid = t1.oid
+JOIN pg_attribute a2 ON a2.attnum = c.confkey[1] AND a2.attrelid = t2.oid
+JOIN pg_namespace t3 ON c.connamespace = t3.oid
+WHERE c.contype = 'f'
+  AND t1.relname = 'orders'
+  AND t3.nspname = ANY (current_schemas(false))
+ORDER BY c.conname
+
+  [1m[36m (2.1ms)[0m  [1mSELECT t2.oid::regclass::text AS to_table, a1.attname AS column, a2.attname AS primary_key, c.conname AS name, c.confupdtype AS on_update, c.confdeltype AS on_delete
+FROM pg_constraint c
+JOIN pg_class t1 ON c.conrelid = t1.oid
+JOIN pg_class t2 ON c.confrelid = t2.oid
+JOIN pg_attribute a1 ON a1.attnum = c.conkey[1] AND a1.attrelid = t1.oid
+JOIN pg_attribute a2 ON a2.attnum = c.confkey[1] AND a2.attrelid = t2.oid
+JOIN pg_namespace t3 ON c.connamespace = t3.oid
+WHERE c.contype = 'f'
+  AND t1.relname = 'products'
+  AND t3.nspname = ANY (current_schemas(false))
+ORDER BY c.conname
+[0m
+  [1m[36mActiveRecord::SchemaMigration Load (0.5ms)[0m  [1mSELECT "schema_migrations".* FROM "schema_migrations"[0m
+Migrating to CreateUsers (20190613133159)
+  [1m[35m (0.2ms)[0m  BEGIN
+  [1m[36m (5.5ms)[0m  [1mCREATE TABLE "users" ("id" serial primary key, "first_name" character varying, "last_name" character varying, "email" character varying, "password_digest" character varying, "created_at" timestamp NOT NULL, "updated_at" timestamp NOT NULL) [0m
+  [1m[35mSQL (0.5ms)[0m  INSERT INTO "schema_migrations" ("version") VALUES ($1)  [["version", "20190613133159"]]
+  [1m[36m (1.5ms)[0m  [1mCOMMIT[0m
+  [1m[35mActiveRecord::SchemaMigration Load (0.3ms)[0m  SELECT "schema_migrations".* FROM "schema_migrations"
+  [1m[36m (2.2ms)[0m  [1mSELECT t2.oid::regclass::text AS to_table, a1.attname AS column, a2.attname AS primary_key, c.conname AS name, c.confupdtype AS on_update, c.confdeltype AS on_delete
+FROM pg_constraint c
+JOIN pg_class t1 ON c.conrelid = t1.oid
+JOIN pg_class t2 ON c.confrelid = t2.oid
+JOIN pg_attribute a1 ON a1.attnum = c.conkey[1] AND a1.attrelid = t1.oid
+JOIN pg_attribute a2 ON a2.attnum = c.confkey[1] AND a2.attrelid = t2.oid
+JOIN pg_namespace t3 ON c.connamespace = t3.oid
+WHERE c.contype = 'f'
+  AND t1.relname = 'categories'
+  AND t3.nspname = ANY (current_schemas(false))
+ORDER BY c.conname
+[0m
+  [1m[35m (2.0ms)[0m  SELECT t2.oid::regclass::text AS to_table, a1.attname AS column, a2.attname AS primary_key, c.conname AS name, c.confupdtype AS on_update, c.confdeltype AS on_delete
+FROM pg_constraint c
+JOIN pg_class t1 ON c.conrelid = t1.oid
+JOIN pg_class t2 ON c.confrelid = t2.oid
+JOIN pg_attribute a1 ON a1.attnum = c.conkey[1] AND a1.attrelid = t1.oid
+JOIN pg_attribute a2 ON a2.attnum = c.confkey[1] AND a2.attrelid = t2.oid
+JOIN pg_namespace t3 ON c.connamespace = t3.oid
+WHERE c.contype = 'f'
+  AND t1.relname = 'line_items'
+  AND t3.nspname = ANY (current_schemas(false))
+ORDER BY c.conname
+
+  [1m[36m (2.1ms)[0m  [1mSELECT t2.oid::regclass::text AS to_table, a1.attname AS column, a2.attname AS primary_key, c.conname AS name, c.confupdtype AS on_update, c.confdeltype AS on_delete
+FROM pg_constraint c
+JOIN pg_class t1 ON c.conrelid = t1.oid
+JOIN pg_class t2 ON c.confrelid = t2.oid
+JOIN pg_attribute a1 ON a1.attnum = c.conkey[1] AND a1.attrelid = t1.oid
+JOIN pg_attribute a2 ON a2.attnum = c.confkey[1] AND a2.attrelid = t2.oid
+JOIN pg_namespace t3 ON c.connamespace = t3.oid
+WHERE c.contype = 'f'
+  AND t1.relname = 'orders'
+  AND t3.nspname = ANY (current_schemas(false))
+ORDER BY c.conname
+[0m
+  [1m[35m (2.2ms)[0m  SELECT t2.oid::regclass::text AS to_table, a1.attname AS column, a2.attname AS primary_key, c.conname AS name, c.confupdtype AS on_update, c.confdeltype AS on_delete
+FROM pg_constraint c
+JOIN pg_class t1 ON c.conrelid = t1.oid
+JOIN pg_class t2 ON c.confrelid = t2.oid
+JOIN pg_attribute a1 ON a1.attnum = c.conkey[1] AND a1.attrelid = t1.oid
+JOIN pg_attribute a2 ON a2.attnum = c.confkey[1] AND a2.attrelid = t2.oid
+JOIN pg_namespace t3 ON c.connamespace = t3.oid
+WHERE c.contype = 'f'
+  AND t1.relname = 'products'
+  AND t3.nspname = ANY (current_schemas(false))
+ORDER BY c.conname
+
+  [1m[36m (2.3ms)[0m  [1mSELECT t2.oid::regclass::text AS to_table, a1.attname AS column, a2.attname AS primary_key, c.conname AS name, c.confupdtype AS on_update, c.confdeltype AS on_delete
+FROM pg_constraint c
+JOIN pg_class t1 ON c.conrelid = t1.oid
+JOIN pg_class t2 ON c.confrelid = t2.oid
+JOIN pg_attribute a1 ON a1.attnum = c.conkey[1] AND a1.attrelid = t1.oid
+JOIN pg_attribute a2 ON a2.attnum = c.confkey[1] AND a2.attrelid = t2.oid
+JOIN pg_namespace t3 ON c.connamespace = t3.oid
+WHERE c.contype = 'f'
+  AND t1.relname = 'users'
+  AND t3.nspname = ANY (current_schemas(false))
+ORDER BY c.conname
+[0m
+
+
+Started GET "/" for 10.0.2.2 at 2019-06-13 13:37:53 +0000
+  [1m[36mActiveRecord::SchemaMigration Load (0.5ms)[0m  [1mSELECT "schema_migrations".* FROM "schema_migrations"[0m
+Processing by ProductsController#index as HTML
+  [1m[35mProduct Load (1.1ms)[0m  SELECT "products".* FROM "products"  ORDER BY "products"."created_at" DESC
+  Rendered products/_product.html.erb (395.5ms)
+  Rendered products/index.html.erb within layouts/application (428.2ms)
+  [1m[36mCategory Load (0.7ms)[0m  [1mSELECT "categories".* FROM "categories"[0m
+  Rendered layouts/_top_nav.html.erb (38.0ms)
+Completed 200 OK in 1520ms (Views: 1464.6ms | ActiveRecord: 5.7ms)
+
+
+Started GET "/register" for 10.0.2.2 at 2019-06-13 13:37:58 +0000
+Processing by UsersController#new as HTML
+  Rendered users/new.html.erb within layouts/application (26.4ms)
+  [1m[35mCategory Load (0.3ms)[0m  SELECT "categories".* FROM "categories"
+  Rendered layouts/_top_nav.html.erb (3.1ms)
+Completed 200 OK in 249ms (Views: 247.6ms | ActiveRecord: 0.3ms)
+
+
+Started POST "/users" for 10.0.2.2 at 2019-06-13 13:38:09 +0000
+Processing by UsersController#create as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"e5lsGPppOfXgaoHFBQOr17QQGpQRjhiWj404lx+5E62jSLt05G/ytnGiMw0qKoHJS2DVUY4IzqlbEsLWZqP5QQ==", "user"=>{"first_name"=>"Chenchen", "last_name"=>"Kuang", "email"=>"kcchaha@gmail.com", "password"=>"[FILTERED]"}, "commit"=>"Submit"}
+Unpermitted parameter: email
+  [1m[36m (0.4ms)[0m  [1mBEGIN[0m
+  [1m[35mSQL (0.7ms)[0m  INSERT INTO "users" ("first_name", "last_name", "password_digest", "created_at", "updated_at") VALUES ($1, $2, $3, $4, $5) RETURNING "id"  [["first_name", "Chenchen"], ["last_name", "Kuang"], ["password_digest", "$2a$10$H/9Bj0VkoqGv3AyHUo2QMu2LBDLPTVChVt53oXdVE7spssF1f6RZm"], ["created_at", "2019-06-13 13:38:09.264436"], ["updated_at", "2019-06-13 13:38:09.264436"]]
+  [1m[36m (1.5ms)[0m  [1mCOMMIT[0m
+Redirected to http://localhost:3000/
+Completed 302 Found in 107ms (ActiveRecord: 4.3ms)
+
+
+Started GET "/" for 10.0.2.2 at 2019-06-13 13:38:09 +0000
+Processing by ProductsController#index as HTML
+  [1m[35mProduct Load (0.7ms)[0m  SELECT "products".* FROM "products"  ORDER BY "products"."created_at" DESC
+  Rendered products/_product.html.erb (13.2ms)
+  Rendered products/index.html.erb within layouts/application (26.4ms)
+  [1m[36mCategory Load (0.4ms)[0m  [1mSELECT "categories".* FROM "categories"[0m
+  Rendered layouts/_top_nav.html.erb (3.2ms)
+Completed 200 OK in 232ms (Views: 230.3ms | ActiveRecord: 1.1ms)
+
+
+Started GET "/register" for 10.0.2.2 at 2019-06-13 13:41:13 +0000
+Processing by UsersController#new as HTML
+  Rendered users/new.html.erb within layouts/application (0.6ms)
+  [1m[35mCategory Load (0.5ms)[0m  SELECT "categories".* FROM "categories"
+  Rendered layouts/_top_nav.html.erb (2.9ms)
+Completed 200 OK in 216ms (Views: 214.5ms | ActiveRecord: 0.5ms)
+
+
+Started POST "/users" for 10.0.2.2 at 2019-06-13 13:41:23 +0000
+Processing by UsersController#create as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"EI7hxQI1KUd7t98y838AiEorlEcVGmK3fsDkF4QspVzIXzapHDPiBOp/bfrcViqWtVtbgoqctIiqXx5W/TZPsA==", "user"=>{"first_name"=>"qwe", "last_name"=>"qwe", "email"=>"kcchaha@gmail.com", "password"=>"[FILTERED]"}, "commit"=>"Submit"}
+Unpermitted parameter: email
+  [1m[36m (0.3ms)[0m  [1mBEGIN[0m
+  [1m[35mSQL (0.4ms)[0m  INSERT INTO "users" ("first_name", "last_name", "password_digest", "created_at", "updated_at") VALUES ($1, $2, $3, $4, $5) RETURNING "id"  [["first_name", "qwe"], ["last_name", "qwe"], ["password_digest", "$2a$10$CcLBZ87CcfGA6PcV6N.Gj.NMoAWCp8.UlTldFsBP95ljDIz5ZMGZK"], ["created_at", "2019-06-13 13:41:23.904937"], ["updated_at", "2019-06-13 13:41:23.904937"]]
+  [1m[36m (2.7ms)[0m  [1mCOMMIT[0m
+Redirected to http://localhost:3000/
+Completed 302 Found in 80ms (ActiveRecord: 3.4ms)
+
+
+Started GET "/" for 10.0.2.2 at 2019-06-13 13:41:23 +0000
+Processing by ProductsController#index as HTML
+  [1m[35mProduct Load (0.6ms)[0m  SELECT "products".* FROM "products"  ORDER BY "products"."created_at" DESC
+  Rendered products/_product.html.erb (14.0ms)
+  Rendered products/index.html.erb within layouts/application (28.2ms)
+  [1m[36mCategory Load (0.5ms)[0m  [1mSELECT "categories".* FROM "categories"[0m
+  Rendered layouts/_top_nav.html.erb (3.4ms)
+Completed 200 OK in 239ms (Views: 237.7ms | ActiveRecord: 1.1ms)
+
+
+Started GET "/" for 10.0.2.2 at 2019-06-13 13:42:50 +0000
+Processing by ProductsController#index as HTML
+  [1m[35mProduct Load (0.6ms)[0m  SELECT "products".* FROM "products"  ORDER BY "products"."created_at" DESC
+  Rendered products/_product.html.erb (14.6ms)
+  Rendered products/index.html.erb within layouts/application (36.1ms)
+  [1m[36mCategory Load (0.5ms)[0m  [1mSELECT "categories".* FROM "categories"[0m
+  Rendered layouts/_top_nav.html.erb (24.0ms)
+Completed 200 OK in 307ms (Views: 274.6ms | ActiveRecord: 4.2ms)
+
+
+Started GET "/register" for 10.0.2.2 at 2019-06-13 13:42:53 +0000
+Processing by UsersController#new as HTML
+  Rendered users/new.html.erb within layouts/application (0.7ms)
+  [1m[35mCategory Load (0.3ms)[0m  SELECT "categories".* FROM "categories"
+  Rendered layouts/_top_nav.html.erb (3.5ms)
+Completed 200 OK in 189ms (Views: 188.2ms | ActiveRecord: 0.3ms)
+
+
+Started POST "/users" for 10.0.2.2 at 2019-06-13 13:42:59 +0000
+Processing by UsersController#create as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"X3rLTN3rptmGv9fBZrjWetIMVDH4ATk70zICZwJarXCHqxwgw+1tmhd3ZQlJkfxkLXyb9GeH7wQHrfgme0BHnA==", "user"=>{"first_name"=>"qwe", "last_name"=>"qwe", "email"=>"kcchaha@gmail.com", "password"=>"[FILTERED]"}, "commit"=>"Submit"}
+  [1m[36m (0.5ms)[0m  [1mBEGIN[0m
+  [1m[35mSQL (0.6ms)[0m  INSERT INTO "users" ("first_name", "last_name", "email", "password_digest", "created_at", "updated_at") VALUES ($1, $2, $3, $4, $5, $6) RETURNING "id"  [["first_name", "qwe"], ["last_name", "qwe"], ["email", "kcchaha@gmail.com"], ["password_digest", "$2a$10$4SaeSJjcEKbRULaW2XznIe6k3C37qjnMVgDWT92me1B7MQY.inNLW"], ["created_at", "2019-06-13 13:42:59.733047"], ["updated_at", "2019-06-13 13:42:59.733047"]]
+  [1m[36m (1.7ms)[0m  [1mCOMMIT[0m
+Redirected to http://localhost:3000/
+Completed 302 Found in 98ms (ActiveRecord: 4.4ms)
+
+
+Started GET "/" for 10.0.2.2 at 2019-06-13 13:42:59 +0000
+Processing by ProductsController#index as HTML
+  [1m[35mProduct Load (0.6ms)[0m  SELECT "products".* FROM "products"  ORDER BY "products"."created_at" DESC
+  Rendered products/_product.html.erb (15.3ms)
+  Rendered products/index.html.erb within layouts/application (32.8ms)
+  [1m[36mCategory Load (0.4ms)[0m  [1mSELECT "categories".* FROM "categories"[0m
+  Rendered layouts/_top_nav.html.erb (3.0ms)
+Completed 200 OK in 237ms (Views: 235.3ms | ActiveRecord: 1.0ms)
+
+
+Started GET "/login" for 10.0.2.2 at 2019-06-13 13:43:08 +0000
+Processing by SessionsController#new as HTML
+  Rendered sessions/new.html.erb within layouts/application (0.9ms)
+  [1m[35mCategory Load (0.3ms)[0m  SELECT "categories".* FROM "categories"
+  Rendered layouts/_top_nav.html.erb (2.7ms)
+Completed 200 OK in 177ms (Views: 176.3ms | ActiveRecord: 0.3ms)
+
+
+Started POST "/login" for 10.0.2.2 at 2019-06-13 13:43:12 +0000
+Processing by SessionsController#create as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"rNIij4Nhtmrcambftzx/vtPGi2pe5QcIMhv+DJQ4V1d0A/XjnWd9KU2i1BeYFVWgLLZEr8Fj0TfmhARN7SK9uw==", "email"=>"kcchaha@gmail.com", "password"=>"[FILTERED]", "commit"=>"Submit"}
+  [1m[36mUser Load (0.3ms)[0m  [1mSELECT  "users".* FROM "users" WHERE "users"."email" = $1 LIMIT 1[0m  [["email", "kcchaha@gmail.com"]]
+Redirected to http://localhost:3000/
+Completed 302 Found in 89ms (ActiveRecord: 0.3ms)
+
+
+Started GET "/" for 10.0.2.2 at 2019-06-13 13:43:12 +0000
+Processing by ProductsController#index as HTML
+  [1m[35mProduct Load (0.5ms)[0m  SELECT "products".* FROM "products"  ORDER BY "products"."created_at" DESC
+  Rendered products/_product.html.erb (12.5ms)
+  Rendered products/index.html.erb within layouts/application (24.0ms)
+  [1m[36mCategory Load (0.5ms)[0m  [1mSELECT "categories".* FROM "categories"[0m
+  Rendered layouts/_top_nav.html.erb (3.1ms)
+Completed 200 OK in 221ms (Views: 218.9ms | ActiveRecord: 1.0ms)
+
+
+Started GET "/logout" for 10.0.2.2 at 2019-06-13 13:46:34 +0000
+Processing by SessionsController#destroy as HTML
+Redirected to http://localhost:3000/login
+Completed 302 Found in 1ms (ActiveRecord: 0.0ms)
+
+
+Started GET "/login" for 10.0.2.2 at 2019-06-13 13:46:34 +0000
+Processing by SessionsController#new as HTML
+  Rendered sessions/new.html.erb within layouts/application (0.4ms)
+  [1m[35mCategory Load (0.4ms)[0m  SELECT "categories".* FROM "categories"
+  Rendered layouts/_top_nav.html.erb (2.8ms)
+Completed 200 OK in 216ms (Views: 214.5ms | ActiveRecord: 0.4ms)
+
+
+Started GET "/logout" for 10.0.2.2 at 2019-06-13 13:46:39 +0000
+Processing by SessionsController#destroy as HTML
+Redirected to http://localhost:3000/login
+Completed 302 Found in 1ms (ActiveRecord: 0.0ms)
+
+
+Started GET "/login" for 10.0.2.2 at 2019-06-13 13:46:39 +0000
+Processing by SessionsController#new as HTML
+  Rendered sessions/new.html.erb within layouts/application (0.3ms)
+  [1m[36mCategory Load (0.3ms)[0m  [1mSELECT "categories".* FROM "categories"[0m
+  Rendered layouts/_top_nav.html.erb (2.7ms)
+Completed 200 OK in 194ms (Views: 192.7ms | ActiveRecord: 0.3ms)
+
+
+Started POST "/login" for 10.0.2.2 at 2019-06-13 13:46:51 +0000
+Processing by SessionsController#create as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"N6ZEobgR+ZR7zI8iedwzciLUGtqHtjm8/3BcmzoKhb3vd5PNphcy1+oEPepW9Rls3aTVHxgw74Mr76baQxBvUQ==", "email"=>"kcchaha@gmail.com", "password"=>"[FILTERED]", "commit"=>"Submit"}
+  [1m[35mUser Load (0.5ms)[0m  SELECT  "users".* FROM "users" WHERE "users"."email" = $1 LIMIT 1  [["email", "kcchaha@gmail.com"]]
+Completed 500 Internal Server Error in 95ms (ActiveRecord: 0.5ms)
+
+ActionView::MissingTemplate (Missing template sessions/login, application/login with {:locale=>[:en], :formats=>[:html], :variants=>[], :handlers=>[:erb, :builder, :raw, :ruby, :jbuilder]}. Searched in:
+  * "/vagrant/jungle-rails/app/views"
+):
+  app/controllers/sessions_controller.rb:16:in `create'
+
+
+  Rendered /home/vagrant/.rvm/gems/ruby-2.3.5/gems/actionpack-4.2.6/lib/action_dispatch/middleware/templates/rescues/_source.erb (7.0ms)
+  Rendered /home/vagrant/.rvm/gems/ruby-2.3.5/gems/actionpack-4.2.6/lib/action_dispatch/middleware/templates/rescues/_trace.html.erb (3.5ms)
+  Rendered /home/vagrant/.rvm/gems/ruby-2.3.5/gems/actionpack-4.2.6/lib/action_dispatch/middleware/templates/rescues/_request_and_response.html.erb (2.3ms)
+  Rendered /home/vagrant/.rvm/gems/ruby-2.3.5/gems/actionpack-4.2.6/lib/action_dispatch/middleware/templates/rescues/missing_template.html.erb within rescues/layout (28.5ms)
+  Rendered /home/vagrant/.rvm/gems/ruby-2.3.5/gems/web-console-2.3.0/lib/web_console/templates/_markup.html.erb (0.4ms)
+  Rendered /home/vagrant/.rvm/gems/ruby-2.3.5/gems/web-console-2.3.0/lib/web_console/templates/_inner_console_markup.html.erb within layouts/inlined_string (0.3ms)
+  Rendered /home/vagrant/.rvm/gems/ruby-2.3.5/gems/web-console-2.3.0/lib/web_console/templates/_prompt_box_markup.html.erb within layouts/inlined_string (0.2ms)
+  Rendered /home/vagrant/.rvm/gems/ruby-2.3.5/gems/web-console-2.3.0/lib/web_console/templates/style.css.erb within layouts/inlined_string (0.4ms)
+  Rendered /home/vagrant/.rvm/gems/ruby-2.3.5/gems/web-console-2.3.0/lib/web_console/templates/console.js.erb within layouts/javascript (14.5ms)
+  Rendered /home/vagrant/.rvm/gems/ruby-2.3.5/gems/web-console-2.3.0/lib/web_console/templates/main.js.erb within layouts/javascript (0.2ms)
+  Rendered /home/vagrant/.rvm/gems/ruby-2.3.5/gems/web-console-2.3.0/lib/web_console/templates/error_page.js.erb within layouts/javascript (0.3ms)
+  Rendered /home/vagrant/.rvm/gems/ruby-2.3.5/gems/web-console-2.3.0/lib/web_console/templates/index.html.erb (28.4ms)
+
+
+Started GET "/login" for 10.0.2.2 at 2019-06-13 13:46:59 +0000
+Processing by SessionsController#new as HTML
+  Rendered sessions/new.html.erb within layouts/application (0.4ms)
+  [1m[36mCategory Load (0.3ms)[0m  [1mSELECT "categories".* FROM "categories"[0m
+  Rendered layouts/_top_nav.html.erb (2.8ms)
+Completed 200 OK in 210ms (Views: 209.6ms | ActiveRecord: 0.3ms)
+
+
+Started POST "/login" for 10.0.2.2 at 2019-06-13 13:47:06 +0000
+Processing by SessionsController#create as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"d5/8cnMgNbT3yAYJvSlBqd01qWe64m3gejmIBuXfOP2vTisebSb+92YAtMGSAGu3IkVmoiVku9+upnJHnMXSEQ==", "email"=>"kcchaha@gmail.com", "password"=>"[FILTERED]", "commit"=>"Submit"}
+Can't verify CSRF token authenticity
+Completed 422 Unprocessable Entity in 1ms (ActiveRecord: 0.0ms)
+
+ActionController::InvalidAuthenticityToken (ActionController::InvalidAuthenticityToken):
+  actionpack (4.2.6) lib/action_controller/metal/request_forgery_protection.rb:181:in `handle_unverified_request'
+  actionpack (4.2.6) lib/action_controller/metal/request_forgery_protection.rb:209:in `handle_unverified_request'
+  actionpack (4.2.6) lib/action_controller/metal/request_forgery_protection.rb:204:in `verify_authenticity_token'
+  activesupport (4.2.6) lib/active_support/callbacks.rb:432:in `block in make_lambda'
+  activesupport (4.2.6) lib/active_support/callbacks.rb:164:in `block in halting'
+  activesupport (4.2.6) lib/active_support/callbacks.rb:504:in `block in call'
+  activesupport (4.2.6) lib/active_support/callbacks.rb:504:in `each'
+  activesupport (4.2.6) lib/active_support/callbacks.rb:504:in `call'
+  activesupport (4.2.6) lib/active_support/callbacks.rb:92:in `__run_callbacks__'
+  activesupport (4.2.6) lib/active_support/callbacks.rb:778:in `_run_process_action_callbacks'
+  activesupport (4.2.6) lib/active_support/callbacks.rb:81:in `run_callbacks'
+  actionpack (4.2.6) lib/abstract_controller/callbacks.rb:19:in `process_action'
+  actionpack (4.2.6) lib/action_controller/metal/rescue.rb:29:in `process_action'
+  actionpack (4.2.6) lib/action_controller/metal/instrumentation.rb:32:in `block in process_action'
+  activesupport (4.2.6) lib/active_support/notifications.rb:164:in `block in instrument'
+  activesupport (4.2.6) lib/active_support/notifications/instrumenter.rb:20:in `instrument'
+  activesupport (4.2.6) lib/active_support/notifications.rb:164:in `instrument'
+  actionpack (4.2.6) lib/action_controller/metal/instrumentation.rb:30:in `process_action'
+  actionpack (4.2.6) lib/action_controller/metal/params_wrapper.rb:250:in `process_action'
+  activerecord (4.2.6) lib/active_record/railties/controller_runtime.rb:18:in `process_action'
+  actionpack (4.2.6) lib/abstract_controller/base.rb:137:in `process'
+  actionview (4.2.6) lib/action_view/rendering.rb:30:in `process'
+  actionpack (4.2.6) lib/action_controller/metal.rb:196:in `dispatch'
+  actionpack (4.2.6) lib/action_controller/metal/rack_delegation.rb:13:in `dispatch'
+  actionpack (4.2.6) lib/action_controller/metal.rb:237:in `block in action'
+  actionpack (4.2.6) lib/action_dispatch/routing/route_set.rb:74:in `dispatch'
+  actionpack (4.2.6) lib/action_dispatch/routing/route_set.rb:43:in `serve'
+  actionpack (4.2.6) lib/action_dispatch/journey/router.rb:43:in `block in serve'
+  actionpack (4.2.6) lib/action_dispatch/journey/router.rb:30:in `each'
+  actionpack (4.2.6) lib/action_dispatch/journey/router.rb:30:in `serve'
+  actionpack (4.2.6) lib/action_dispatch/routing/route_set.rb:817:in `call'
+  rack (1.6.4) lib/rack/etag.rb:24:in `call'
+  rack (1.6.4) lib/rack/conditionalget.rb:38:in `call'
+  rack (1.6.4) lib/rack/head.rb:13:in `call'
+  actionpack (4.2.6) lib/action_dispatch/middleware/params_parser.rb:27:in `call'
+  actionpack (4.2.6) lib/action_dispatch/middleware/flash.rb:260:in `call'
+  rack (1.6.4) lib/rack/session/abstract/id.rb:225:in `context'
+  rack (1.6.4) lib/rack/session/abstract/id.rb:220:in `call'
+  actionpack (4.2.6) lib/action_dispatch/middleware/cookies.rb:560:in `call'
+  activerecord (4.2.6) lib/active_record/query_cache.rb:36:in `call'
+  activerecord (4.2.6) lib/active_record/connection_adapters/abstract/connection_pool.rb:653:in `call'
+  activerecord (4.2.6) lib/active_record/migration.rb:377:in `call'
+  actionpack (4.2.6) lib/action_dispatch/middleware/callbacks.rb:29:in `block in call'
+  activesupport (4.2.6) lib/active_support/callbacks.rb:88:in `__run_callbacks__'
+  activesupport (4.2.6) lib/active_support/callbacks.rb:778:in `_run_call_callbacks'
+  activesupport (4.2.6) lib/active_support/callbacks.rb:81:in `run_callbacks'
+  actionpack (4.2.6) lib/action_dispatch/middleware/callbacks.rb:27:in `call'
+  actionpack (4.2.6) lib/action_dispatch/middleware/reloader.rb:73:in `call'
+  actionpack (4.2.6) lib/action_dispatch/middleware/remote_ip.rb:78:in `call'
+  actionpack (4.2.6) lib/action_dispatch/middleware/debug_exceptions.rb:17:in `call'
+  web-console (2.3.0) lib/web_console/middleware.rb:28:in `block in call'
+  web-console (2.3.0) lib/web_console/middleware.rb:18:in `catch'
+  web-console (2.3.0) lib/web_console/middleware.rb:18:in `call'
+  actionpack (4.2.6) lib/action_dispatch/middleware/show_exceptions.rb:30:in `call'
+  railties (4.2.6) lib/rails/rack/logger.rb:38:in `call_app'
+  railties (4.2.6) lib/rails/rack/logger.rb:20:in `block in call'
+  activesupport (4.2.6) lib/active_support/tagged_logging.rb:68:in `block in tagged'
+  activesupport (4.2.6) lib/active_support/tagged_logging.rb:26:in `tagged'
+  activesupport (4.2.6) lib/active_support/tagged_logging.rb:68:in `tagged'
+  railties (4.2.6) lib/rails/rack/logger.rb:20:in `call'
+  quiet_assets (1.0.3) lib/quiet_assets.rb:23:in `call_with_quiet_assets'
+  actionpack (4.2.6) lib/action_dispatch/middleware/request_id.rb:21:in `call'
+  rack (1.6.4) lib/rack/methodoverride.rb:22:in `call'
+  rack (1.6.4) lib/rack/runtime.rb:18:in `call'
+  activesupport (4.2.6) lib/active_support/cache/strategy/local_cache_middleware.rb:28:in `call'
+  rack (1.6.4) lib/rack/lock.rb:17:in `call'
+  actionpack (4.2.6) lib/action_dispatch/middleware/static.rb:120:in `call'
+  rack (1.6.4) lib/rack/sendfile.rb:113:in `call'
+  railties (4.2.6) lib/rails/engine.rb:518:in `call'
+  railties (4.2.6) lib/rails/application.rb:165:in `call'
+  rack (1.6.4) lib/rack/content_length.rb:15:in `call'
+  puma (3.5.2) lib/puma/configuration.rb:225:in `call'
+  puma (3.5.2) lib/puma/server.rb:569:in `handle_request'
+  puma (3.5.2) lib/puma/server.rb:406:in `process_client'
+  puma (3.5.2) lib/puma/server.rb:271:in `block in run'
+  puma (3.5.2) lib/puma/thread_pool.rb:116:in `block in spawn_thread'
+
+
+  Rendered /home/vagrant/.rvm/gems/ruby-2.3.5/gems/actionpack-4.2.6/lib/action_dispatch/middleware/templates/rescues/_source.erb (4.9ms)
+  Rendered /home/vagrant/.rvm/gems/ruby-2.3.5/gems/actionpack-4.2.6/lib/action_dispatch/middleware/templates/rescues/_trace.html.erb (2.0ms)
+  Rendered /home/vagrant/.rvm/gems/ruby-2.3.5/gems/actionpack-4.2.6/lib/action_dispatch/middleware/templates/rescues/_request_and_response.html.erb (1.2ms)
+  Rendered /home/vagrant/.rvm/gems/ruby-2.3.5/gems/actionpack-4.2.6/lib/action_dispatch/middleware/templates/rescues/diagnostics.html.erb within rescues/layout (21.2ms)
+  Rendered /home/vagrant/.rvm/gems/ruby-2.3.5/gems/web-console-2.3.0/lib/web_console/templates/_markup.html.erb (0.3ms)
+  Rendered /home/vagrant/.rvm/gems/ruby-2.3.5/gems/web-console-2.3.0/lib/web_console/templates/_inner_console_markup.html.erb within layouts/inlined_string (0.2ms)
+  Rendered /home/vagrant/.rvm/gems/ruby-2.3.5/gems/web-console-2.3.0/lib/web_console/templates/_prompt_box_markup.html.erb within layouts/inlined_string (0.2ms)
+  Rendered /home/vagrant/.rvm/gems/ruby-2.3.5/gems/web-console-2.3.0/lib/web_console/templates/style.css.erb within layouts/inlined_string (0.4ms)
+  Rendered /home/vagrant/.rvm/gems/ruby-2.3.5/gems/web-console-2.3.0/lib/web_console/templates/console.js.erb within layouts/javascript (15.2ms)
+  Rendered /home/vagrant/.rvm/gems/ruby-2.3.5/gems/web-console-2.3.0/lib/web_console/templates/main.js.erb within layouts/javascript (0.3ms)
+  Rendered /home/vagrant/.rvm/gems/ruby-2.3.5/gems/web-console-2.3.0/lib/web_console/templates/error_page.js.erb within layouts/javascript (0.5ms)
+  Rendered /home/vagrant/.rvm/gems/ruby-2.3.5/gems/web-console-2.3.0/lib/web_console/templates/index.html.erb (30.3ms)
+
+
+Started GET "/login" for 10.0.2.2 at 2019-06-13 13:47:12 +0000
+Processing by SessionsController#new as HTML
+  Rendered sessions/new.html.erb within layouts/application (0.5ms)
+  [1m[35mCategory Load (0.3ms)[0m  SELECT "categories".* FROM "categories"
+  Rendered layouts/_top_nav.html.erb (4.3ms)
+Completed 200 OK in 211ms (Views: 210.5ms | ActiveRecord: 0.3ms)
+
+
+Started GET "/login" for 10.0.2.2 at 2019-06-13 13:47:16 +0000
+Processing by SessionsController#new as HTML
+  Rendered sessions/new.html.erb within layouts/application (0.4ms)
+  [1m[36mCategory Load (0.4ms)[0m  [1mSELECT "categories".* FROM "categories"[0m
+  Rendered layouts/_top_nav.html.erb (2.6ms)
+Completed 200 OK in 206ms (Views: 204.6ms | ActiveRecord: 0.4ms)
+
+
+Started POST "/login" for 10.0.2.2 at 2019-06-13 13:47:24 +0000
+Processing by SessionsController#create as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"ZxLATGVCrRpOTs8tStzt3lnwQm4WDOWhvt9VzS2XgQ1QivTd7z0XoHzy6TbBUTNQYLZsGuTqkRdfzjenbdyv4w==", "email"=>"kcchaha@gmail.com", "password"=>"[FILTERED]", "commit"=>"Submit"}
+Can't verify CSRF token authenticity
+Completed 422 Unprocessable Entity in 1ms (ActiveRecord: 0.0ms)
+
+ActionController::InvalidAuthenticityToken (ActionController::InvalidAuthenticityToken):
+  actionpack (4.2.6) lib/action_controller/metal/request_forgery_protection.rb:181:in `handle_unverified_request'
+  actionpack (4.2.6) lib/action_controller/metal/request_forgery_protection.rb:209:in `handle_unverified_request'
+  actionpack (4.2.6) lib/action_controller/metal/request_forgery_protection.rb:204:in `verify_authenticity_token'
+  activesupport (4.2.6) lib/active_support/callbacks.rb:432:in `block in make_lambda'
+  activesupport (4.2.6) lib/active_support/callbacks.rb:164:in `block in halting'
+  activesupport (4.2.6) lib/active_support/callbacks.rb:504:in `block in call'
+  activesupport (4.2.6) lib/active_support/callbacks.rb:504:in `each'
+  activesupport (4.2.6) lib/active_support/callbacks.rb:504:in `call'
+  activesupport (4.2.6) lib/active_support/callbacks.rb:92:in `__run_callbacks__'
+  activesupport (4.2.6) lib/active_support/callbacks.rb:778:in `_run_process_action_callbacks'
+  activesupport (4.2.6) lib/active_support/callbacks.rb:81:in `run_callbacks'
+  actionpack (4.2.6) lib/abstract_controller/callbacks.rb:19:in `process_action'
+  actionpack (4.2.6) lib/action_controller/metal/rescue.rb:29:in `process_action'
+  actionpack (4.2.6) lib/action_controller/metal/instrumentation.rb:32:in `block in process_action'
+  activesupport (4.2.6) lib/active_support/notifications.rb:164:in `block in instrument'
+  activesupport (4.2.6) lib/active_support/notifications/instrumenter.rb:20:in `instrument'
+  activesupport (4.2.6) lib/active_support/notifications.rb:164:in `instrument'
+  actionpack (4.2.6) lib/action_controller/metal/instrumentation.rb:30:in `process_action'
+  actionpack (4.2.6) lib/action_controller/metal/params_wrapper.rb:250:in `process_action'
+  activerecord (4.2.6) lib/active_record/railties/controller_runtime.rb:18:in `process_action'
+  actionpack (4.2.6) lib/abstract_controller/base.rb:137:in `process'
+  actionview (4.2.6) lib/action_view/rendering.rb:30:in `process'
+  actionpack (4.2.6) lib/action_controller/metal.rb:196:in `dispatch'
+  actionpack (4.2.6) lib/action_controller/metal/rack_delegation.rb:13:in `dispatch'
+  actionpack (4.2.6) lib/action_controller/metal.rb:237:in `block in action'
+  actionpack (4.2.6) lib/action_dispatch/routing/route_set.rb:74:in `dispatch'
+  actionpack (4.2.6) lib/action_dispatch/routing/route_set.rb:43:in `serve'
+  actionpack (4.2.6) lib/action_dispatch/journey/router.rb:43:in `block in serve'
+  actionpack (4.2.6) lib/action_dispatch/journey/router.rb:30:in `each'
+  actionpack (4.2.6) lib/action_dispatch/journey/router.rb:30:in `serve'
+  actionpack (4.2.6) lib/action_dispatch/routing/route_set.rb:817:in `call'
+  rack (1.6.4) lib/rack/etag.rb:24:in `call'
+  rack (1.6.4) lib/rack/conditionalget.rb:38:in `call'
+  rack (1.6.4) lib/rack/head.rb:13:in `call'
+  actionpack (4.2.6) lib/action_dispatch/middleware/params_parser.rb:27:in `call'
+  actionpack (4.2.6) lib/action_dispatch/middleware/flash.rb:260:in `call'
+  rack (1.6.4) lib/rack/session/abstract/id.rb:225:in `context'
+  rack (1.6.4) lib/rack/session/abstract/id.rb:220:in `call'
+  actionpack (4.2.6) lib/action_dispatch/middleware/cookies.rb:560:in `call'
+  activerecord (4.2.6) lib/active_record/query_cache.rb:36:in `call'
+  activerecord (4.2.6) lib/active_record/connection_adapters/abstract/connection_pool.rb:653:in `call'
+  activerecord (4.2.6) lib/active_record/migration.rb:377:in `call'
+  actionpack (4.2.6) lib/action_dispatch/middleware/callbacks.rb:29:in `block in call'
+  activesupport (4.2.6) lib/active_support/callbacks.rb:88:in `__run_callbacks__'
+  activesupport (4.2.6) lib/active_support/callbacks.rb:778:in `_run_call_callbacks'
+  activesupport (4.2.6) lib/active_support/callbacks.rb:81:in `run_callbacks'
+  actionpack (4.2.6) lib/action_dispatch/middleware/callbacks.rb:27:in `call'
+  actionpack (4.2.6) lib/action_dispatch/middleware/reloader.rb:73:in `call'
+  actionpack (4.2.6) lib/action_dispatch/middleware/remote_ip.rb:78:in `call'
+  actionpack (4.2.6) lib/action_dispatch/middleware/debug_exceptions.rb:17:in `call'
+  web-console (2.3.0) lib/web_console/middleware.rb:28:in `block in call'
+  web-console (2.3.0) lib/web_console/middleware.rb:18:in `catch'
+  web-console (2.3.0) lib/web_console/middleware.rb:18:in `call'
+  actionpack (4.2.6) lib/action_dispatch/middleware/show_exceptions.rb:30:in `call'
+  railties (4.2.6) lib/rails/rack/logger.rb:38:in `call_app'
+  railties (4.2.6) lib/rails/rack/logger.rb:20:in `block in call'
+  activesupport (4.2.6) lib/active_support/tagged_logging.rb:68:in `block in tagged'
+  activesupport (4.2.6) lib/active_support/tagged_logging.rb:26:in `tagged'
+  activesupport (4.2.6) lib/active_support/tagged_logging.rb:68:in `tagged'
+  railties (4.2.6) lib/rails/rack/logger.rb:20:in `call'
+  quiet_assets (1.0.3) lib/quiet_assets.rb:23:in `call_with_quiet_assets'
+  actionpack (4.2.6) lib/action_dispatch/middleware/request_id.rb:21:in `call'
+  rack (1.6.4) lib/rack/methodoverride.rb:22:in `call'
+  rack (1.6.4) lib/rack/runtime.rb:18:in `call'
+  activesupport (4.2.6) lib/active_support/cache/strategy/local_cache_middleware.rb:28:in `call'
+  rack (1.6.4) lib/rack/lock.rb:17:in `call'
+  actionpack (4.2.6) lib/action_dispatch/middleware/static.rb:120:in `call'
+  rack (1.6.4) lib/rack/sendfile.rb:113:in `call'
+  railties (4.2.6) lib/rails/engine.rb:518:in `call'
+  railties (4.2.6) lib/rails/application.rb:165:in `call'
+  rack (1.6.4) lib/rack/content_length.rb:15:in `call'
+  puma (3.5.2) lib/puma/configuration.rb:225:in `call'
+  puma (3.5.2) lib/puma/server.rb:569:in `handle_request'
+  puma (3.5.2) lib/puma/server.rb:406:in `process_client'
+  puma (3.5.2) lib/puma/server.rb:271:in `block in run'
+  puma (3.5.2) lib/puma/thread_pool.rb:116:in `block in spawn_thread'
+
+
+  Rendered /home/vagrant/.rvm/gems/ruby-2.3.5/gems/actionpack-4.2.6/lib/action_dispatch/middleware/templates/rescues/_source.erb (5.1ms)
+  Rendered /home/vagrant/.rvm/gems/ruby-2.3.5/gems/actionpack-4.2.6/lib/action_dispatch/middleware/templates/rescues/_trace.html.erb (2.0ms)
+  Rendered /home/vagrant/.rvm/gems/ruby-2.3.5/gems/actionpack-4.2.6/lib/action_dispatch/middleware/templates/rescues/_request_and_response.html.erb (1.1ms)
+  Rendered /home/vagrant/.rvm/gems/ruby-2.3.5/gems/actionpack-4.2.6/lib/action_dispatch/middleware/templates/rescues/diagnostics.html.erb within rescues/layout (21.2ms)
+  Rendered /home/vagrant/.rvm/gems/ruby-2.3.5/gems/web-console-2.3.0/lib/web_console/templates/_markup.html.erb (0.3ms)
+  Rendered /home/vagrant/.rvm/gems/ruby-2.3.5/gems/web-console-2.3.0/lib/web_console/templates/_inner_console_markup.html.erb within layouts/inlined_string (0.2ms)
+  Rendered /home/vagrant/.rvm/gems/ruby-2.3.5/gems/web-console-2.3.0/lib/web_console/templates/_prompt_box_markup.html.erb within layouts/inlined_string (0.2ms)
+  Rendered /home/vagrant/.rvm/gems/ruby-2.3.5/gems/web-console-2.3.0/lib/web_console/templates/style.css.erb within layouts/inlined_string (0.3ms)
+  Rendered /home/vagrant/.rvm/gems/ruby-2.3.5/gems/web-console-2.3.0/lib/web_console/templates/console.js.erb within layouts/javascript (13.7ms)
+  Rendered /home/vagrant/.rvm/gems/ruby-2.3.5/gems/web-console-2.3.0/lib/web_console/templates/main.js.erb within layouts/javascript (0.3ms)
+  Rendered /home/vagrant/.rvm/gems/ruby-2.3.5/gems/web-console-2.3.0/lib/web_console/templates/error_page.js.erb within layouts/javascript (0.4ms)
+  Rendered /home/vagrant/.rvm/gems/ruby-2.3.5/gems/web-console-2.3.0/lib/web_console/templates/index.html.erb (28.1ms)
+
+
+Started GET "/login" for 10.0.2.2 at 2019-06-13 13:47:48 +0000
+Processing by SessionsController#new as HTML
+  Rendered sessions/new.html.erb within layouts/application (0.4ms)
+  [1m[35mCategory Load (0.5ms)[0m  SELECT "categories".* FROM "categories"
+  Rendered layouts/_top_nav.html.erb (2.5ms)
+Completed 200 OK in 207ms (Views: 205.4ms | ActiveRecord: 0.5ms)
+
+
+Started GET "/register" for 10.0.2.2 at 2019-06-13 13:47:51 +0000
+Processing by UsersController#new as HTML
+  Rendered users/new.html.erb within layouts/application (0.6ms)
+  [1m[36mCategory Load (0.3ms)[0m  [1mSELECT "categories".* FROM "categories"[0m
+  Rendered layouts/_top_nav.html.erb (2.9ms)
+Completed 200 OK in 187ms (Views: 186.2ms | ActiveRecord: 0.3ms)
+
+
+Started GET "/login" for 10.0.2.2 at 2019-06-13 13:47:56 +0000
+Processing by SessionsController#new as HTML
+  Rendered sessions/new.html.erb within layouts/application (0.4ms)
+  [1m[35mCategory Load (0.3ms)[0m  SELECT "categories".* FROM "categories"
+  Rendered layouts/_top_nav.html.erb (2.7ms)
+Completed 200 OK in 185ms (Views: 184.4ms | ActiveRecord: 0.3ms)
+
+
+Started POST "/login" for 10.0.2.2 at 2019-06-13 13:47:59 +0000
+Processing by SessionsController#create as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"csghz3wd1kiLFh7Su1pOuqqPjgs0e03nvihirFLo2XqDLYKQiDkuhmrYXeJbiBsLR42hs/t5ucYa3BYzvFLvNw==", "email"=>"kcchaha@gmail.com", "password"=>"[FILTERED]", "commit"=>"Submit"}
+  [1m[36mUser Load (0.5ms)[0m  [1mSELECT  "users".* FROM "users" WHERE "users"."email" = $1 LIMIT 1[0m  [["email", "kcchaha@gmail.com"]]
+Redirected to http://localhost:3000/
+Completed 302 Found in 80ms (ActiveRecord: 0.5ms)
+
+
+Started GET "/" for 10.0.2.2 at 2019-06-13 13:48:00 +0000
+Processing by ProductsController#index as HTML
+  [1m[35mProduct Load (0.5ms)[0m  SELECT "products".* FROM "products"  ORDER BY "products"."created_at" DESC
+  Rendered products/_product.html.erb (12.0ms)
+  Rendered products/index.html.erb within layouts/application (26.1ms)
+  [1m[36mCategory Load (0.4ms)[0m  [1mSELECT "categories".* FROM "categories"[0m
+  Rendered layouts/_top_nav.html.erb (3.0ms)
+Completed 200 OK in 244ms (Views: 242.3ms | ActiveRecord: 1.0ms)
+
+
+Started GET "/logout" for 10.0.2.2 at 2019-06-13 13:49:20 +0000
+Processing by SessionsController#destroy as HTML
+Redirected to http://localhost:3000/login
+Completed 302 Found in 1ms (ActiveRecord: 0.0ms)
+
+
+Started GET "/login" for 10.0.2.2 at 2019-06-13 13:49:20 +0000
+Processing by SessionsController#new as HTML
+  Rendered sessions/new.html.erb within layouts/application (0.4ms)
+  [1m[35mCategory Load (0.4ms)[0m  SELECT "categories".* FROM "categories"
+  Rendered layouts/_top_nav.html.erb (24.0ms)
+Completed 200 OK in 211ms (Views: 209.0ms | ActiveRecord: 1.9ms)
+
+
+Started GET "/login" for 10.0.2.2 at 2019-06-13 13:49:26 +0000
+Processing by SessionsController#new as HTML
+  Rendered sessions/new.html.erb within layouts/application (0.4ms)
+  [1m[36mCategory Load (0.5ms)[0m  [1mSELECT "categories".* FROM "categories"[0m
+  Rendered layouts/_top_nav.html.erb (2.6ms)
+Completed 200 OK in 205ms (Views: 204.2ms | ActiveRecord: 0.5ms)
+
+
+Started POST "/login" for 10.0.2.2 at 2019-06-13 13:49:35 +0000
+Processing by SessionsController#create as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"/sBj0ILw66aFjpVTsdmnhDN42p1Q3HiXW5V0BGOp6Lu8e4xpNVwzfHlzY/8WGRazE1r7VM3Ry0NcC1JDofsZ5Q==", "email"=>"kcchaha@gmail.com", "password"=>"[FILTERED]", "commit"=>"Submit"}
+Can't verify CSRF token authenticity
+Completed 422 Unprocessable Entity in 1ms (ActiveRecord: 0.0ms)
+
+ActionController::InvalidAuthenticityToken (ActionController::InvalidAuthenticityToken):
+  actionpack (4.2.6) lib/action_controller/metal/request_forgery_protection.rb:181:in `handle_unverified_request'
+  actionpack (4.2.6) lib/action_controller/metal/request_forgery_protection.rb:209:in `handle_unverified_request'
+  actionpack (4.2.6) lib/action_controller/metal/request_forgery_protection.rb:204:in `verify_authenticity_token'
+  activesupport (4.2.6) lib/active_support/callbacks.rb:432:in `block in make_lambda'
+  activesupport (4.2.6) lib/active_support/callbacks.rb:164:in `block in halting'
+  activesupport (4.2.6) lib/active_support/callbacks.rb:504:in `block in call'
+  activesupport (4.2.6) lib/active_support/callbacks.rb:504:in `each'
+  activesupport (4.2.6) lib/active_support/callbacks.rb:504:in `call'
+  activesupport (4.2.6) lib/active_support/callbacks.rb:92:in `__run_callbacks__'
+  activesupport (4.2.6) lib/active_support/callbacks.rb:778:in `_run_process_action_callbacks'
+  activesupport (4.2.6) lib/active_support/callbacks.rb:81:in `run_callbacks'
+  actionpack (4.2.6) lib/abstract_controller/callbacks.rb:19:in `process_action'
+  actionpack (4.2.6) lib/action_controller/metal/rescue.rb:29:in `process_action'
+  actionpack (4.2.6) lib/action_controller/metal/instrumentation.rb:32:in `block in process_action'
+  activesupport (4.2.6) lib/active_support/notifications.rb:164:in `block in instrument'
+  activesupport (4.2.6) lib/active_support/notifications/instrumenter.rb:20:in `instrument'
+  activesupport (4.2.6) lib/active_support/notifications.rb:164:in `instrument'
+  actionpack (4.2.6) lib/action_controller/metal/instrumentation.rb:30:in `process_action'
+  actionpack (4.2.6) lib/action_controller/metal/params_wrapper.rb:250:in `process_action'
+  activerecord (4.2.6) lib/active_record/railties/controller_runtime.rb:18:in `process_action'
+  actionpack (4.2.6) lib/abstract_controller/base.rb:137:in `process'
+  actionview (4.2.6) lib/action_view/rendering.rb:30:in `process'
+  actionpack (4.2.6) lib/action_controller/metal.rb:196:in `dispatch'
+  actionpack (4.2.6) lib/action_controller/metal/rack_delegation.rb:13:in `dispatch'
+  actionpack (4.2.6) lib/action_controller/metal.rb:237:in `block in action'
+  actionpack (4.2.6) lib/action_dispatch/routing/route_set.rb:74:in `dispatch'
+  actionpack (4.2.6) lib/action_dispatch/routing/route_set.rb:43:in `serve'
+  actionpack (4.2.6) lib/action_dispatch/journey/router.rb:43:in `block in serve'
+  actionpack (4.2.6) lib/action_dispatch/journey/router.rb:30:in `each'
+  actionpack (4.2.6) lib/action_dispatch/journey/router.rb:30:in `serve'
+  actionpack (4.2.6) lib/action_dispatch/routing/route_set.rb:817:in `call'
+  rack (1.6.4) lib/rack/etag.rb:24:in `call'
+  rack (1.6.4) lib/rack/conditionalget.rb:38:in `call'
+  rack (1.6.4) lib/rack/head.rb:13:in `call'
+  actionpack (4.2.6) lib/action_dispatch/middleware/params_parser.rb:27:in `call'
+  actionpack (4.2.6) lib/action_dispatch/middleware/flash.rb:260:in `call'
+  rack (1.6.4) lib/rack/session/abstract/id.rb:225:in `context'
+  rack (1.6.4) lib/rack/session/abstract/id.rb:220:in `call'
+  actionpack (4.2.6) lib/action_dispatch/middleware/cookies.rb:560:in `call'
+  activerecord (4.2.6) lib/active_record/query_cache.rb:36:in `call'
+  activerecord (4.2.6) lib/active_record/connection_adapters/abstract/connection_pool.rb:653:in `call'
+  activerecord (4.2.6) lib/active_record/migration.rb:377:in `call'
+  actionpack (4.2.6) lib/action_dispatch/middleware/callbacks.rb:29:in `block in call'
+  activesupport (4.2.6) lib/active_support/callbacks.rb:88:in `__run_callbacks__'
+  activesupport (4.2.6) lib/active_support/callbacks.rb:778:in `_run_call_callbacks'
+  activesupport (4.2.6) lib/active_support/callbacks.rb:81:in `run_callbacks'
+  actionpack (4.2.6) lib/action_dispatch/middleware/callbacks.rb:27:in `call'
+  actionpack (4.2.6) lib/action_dispatch/middleware/reloader.rb:73:in `call'
+  actionpack (4.2.6) lib/action_dispatch/middleware/remote_ip.rb:78:in `call'
+  actionpack (4.2.6) lib/action_dispatch/middleware/debug_exceptions.rb:17:in `call'
+  web-console (2.3.0) lib/web_console/middleware.rb:28:in `block in call'
+  web-console (2.3.0) lib/web_console/middleware.rb:18:in `catch'
+  web-console (2.3.0) lib/web_console/middleware.rb:18:in `call'
+  actionpack (4.2.6) lib/action_dispatch/middleware/show_exceptions.rb:30:in `call'
+  railties (4.2.6) lib/rails/rack/logger.rb:38:in `call_app'
+  railties (4.2.6) lib/rails/rack/logger.rb:20:in `block in call'
+  activesupport (4.2.6) lib/active_support/tagged_logging.rb:68:in `block in tagged'
+  activesupport (4.2.6) lib/active_support/tagged_logging.rb:26:in `tagged'
+  activesupport (4.2.6) lib/active_support/tagged_logging.rb:68:in `tagged'
+  railties (4.2.6) lib/rails/rack/logger.rb:20:in `call'
+  quiet_assets (1.0.3) lib/quiet_assets.rb:23:in `call_with_quiet_assets'
+  actionpack (4.2.6) lib/action_dispatch/middleware/request_id.rb:21:in `call'
+  rack (1.6.4) lib/rack/methodoverride.rb:22:in `call'
+  rack (1.6.4) lib/rack/runtime.rb:18:in `call'
+  activesupport (4.2.6) lib/active_support/cache/strategy/local_cache_middleware.rb:28:in `call'
+  rack (1.6.4) lib/rack/lock.rb:17:in `call'
+  actionpack (4.2.6) lib/action_dispatch/middleware/static.rb:120:in `call'
+  rack (1.6.4) lib/rack/sendfile.rb:113:in `call'
+  railties (4.2.6) lib/rails/engine.rb:518:in `call'
+  railties (4.2.6) lib/rails/application.rb:165:in `call'
+  rack (1.6.4) lib/rack/content_length.rb:15:in `call'
+  puma (3.5.2) lib/puma/configuration.rb:225:in `call'
+  puma (3.5.2) lib/puma/server.rb:569:in `handle_request'
+  puma (3.5.2) lib/puma/server.rb:406:in `process_client'
+  puma (3.5.2) lib/puma/server.rb:271:in `block in run'
+  puma (3.5.2) lib/puma/thread_pool.rb:116:in `block in spawn_thread'
+
+
+  Rendered /home/vagrant/.rvm/gems/ruby-2.3.5/gems/actionpack-4.2.6/lib/action_dispatch/middleware/templates/rescues/_source.erb (5.3ms)
+  Rendered /home/vagrant/.rvm/gems/ruby-2.3.5/gems/actionpack-4.2.6/lib/action_dispatch/middleware/templates/rescues/_trace.html.erb (2.3ms)
+  Rendered /home/vagrant/.rvm/gems/ruby-2.3.5/gems/actionpack-4.2.6/lib/action_dispatch/middleware/templates/rescues/_request_and_response.html.erb (0.9ms)
+  Rendered /home/vagrant/.rvm/gems/ruby-2.3.5/gems/actionpack-4.2.6/lib/action_dispatch/middleware/templates/rescues/diagnostics.html.erb within rescues/layout (20.6ms)
+  Rendered /home/vagrant/.rvm/gems/ruby-2.3.5/gems/web-console-2.3.0/lib/web_console/templates/_markup.html.erb (0.3ms)
+  Rendered /home/vagrant/.rvm/gems/ruby-2.3.5/gems/web-console-2.3.0/lib/web_console/templates/_inner_console_markup.html.erb within layouts/inlined_string (0.3ms)
+  Rendered /home/vagrant/.rvm/gems/ruby-2.3.5/gems/web-console-2.3.0/lib/web_console/templates/_prompt_box_markup.html.erb within layouts/inlined_string (0.4ms)
+  Rendered /home/vagrant/.rvm/gems/ruby-2.3.5/gems/web-console-2.3.0/lib/web_console/templates/style.css.erb within layouts/inlined_string (0.3ms)
+  Rendered /home/vagrant/.rvm/gems/ruby-2.3.5/gems/web-console-2.3.0/lib/web_console/templates/console.js.erb within layouts/javascript (14.8ms)
+  Rendered /home/vagrant/.rvm/gems/ruby-2.3.5/gems/web-console-2.3.0/lib/web_console/templates/main.js.erb within layouts/javascript (0.2ms)
+  Rendered /home/vagrant/.rvm/gems/ruby-2.3.5/gems/web-console-2.3.0/lib/web_console/templates/error_page.js.erb within layouts/javascript (0.3ms)
+  Rendered /home/vagrant/.rvm/gems/ruby-2.3.5/gems/web-console-2.3.0/lib/web_console/templates/index.html.erb (29.2ms)
+
+
+Started GET "/login" for 10.0.2.2 at 2019-06-13 13:49:39 +0000
+Processing by SessionsController#new as HTML
+  Rendered sessions/new.html.erb within layouts/application (0.5ms)
+  [1m[35mCategory Load (0.4ms)[0m  SELECT "categories".* FROM "categories"
+  Rendered layouts/_top_nav.html.erb (2.6ms)
+Completed 200 OK in 214ms (Views: 213.2ms | ActiveRecord: 0.4ms)
+
+
+Started GET "/" for 10.0.2.2 at 2019-06-13 13:49:43 +0000
+Processing by ProductsController#index as HTML
+  [1m[36mProduct Load (0.5ms)[0m  [1mSELECT "products".* FROM "products"  ORDER BY "products"."created_at" DESC[0m
+  Rendered products/_product.html.erb (12.4ms)
+  Rendered products/index.html.erb within layouts/application (30.8ms)
+  [1m[35mCategory Load (0.5ms)[0m  SELECT "categories".* FROM "categories"
+  Rendered layouts/_top_nav.html.erb (2.9ms)
+Completed 200 OK in 249ms (Views: 223.6ms | ActiveRecord: 2.2ms)
+
+
+Started GET "/login" for 10.0.2.2 at 2019-06-13 13:49:45 +0000
+Processing by SessionsController#new as HTML
+  Rendered sessions/new.html.erb within layouts/application (0.4ms)
+  [1m[36mCategory Load (0.3ms)[0m  [1mSELECT "categories".* FROM "categories"[0m
+  Rendered layouts/_top_nav.html.erb (2.8ms)
+Completed 200 OK in 256ms (Views: 254.6ms | ActiveRecord: 0.3ms)
+
+
+Started POST "/login" for 10.0.2.2 at 2019-06-13 13:49:49 +0000
+Processing by SessionsController#create as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"Xd/4FD2G330dGY02Ox6G+YywSHPZsWGX6ltuRkUFTzKzbJEGIAM9zXTDy8oYpkW+5ZukkMrGc3mNRXTXf8WDJg==", "email"=>"kcchaha@gmail.com", "password"=>"[FILTERED]", "commit"=>"Submit"}
+  [1m[35mUser Load (0.4ms)[0m  SELECT  "users".* FROM "users" WHERE "users"."email" = $1 LIMIT 1  [["email", "kcchaha@gmail.com"]]
+Redirected to http://localhost:3000/
+Completed 302 Found in 95ms (ActiveRecord: 2.0ms)
+
+
+Started GET "/" for 10.0.2.2 at 2019-06-13 13:49:49 +0000
+Processing by ProductsController#index as HTML
+  [1m[36mProduct Load (1.2ms)[0m  [1mSELECT "products".* FROM "products"  ORDER BY "products"."created_at" DESC[0m
+  Rendered products/_product.html.erb (14.8ms)
+  Rendered products/index.html.erb within layouts/application (31.9ms)
+  [1m[35mCategory Load (0.5ms)[0m  SELECT "categories".* FROM "categories"
+  Rendered layouts/_top_nav.html.erb (3.1ms)
+Completed 200 OK in 259ms (Views: 256.7ms | ActiveRecord: 1.7ms)
+
+
+Started GET "/logout" for 10.0.2.2 at 2019-06-13 13:51:32 +0000
+Processing by SessionsController#destroy as HTML
+Redirected to http://localhost:3000/login
+Completed 302 Found in 2ms (ActiveRecord: 0.0ms)
+
+
+Started GET "/login" for 10.0.2.2 at 2019-06-13 13:51:32 +0000
+Processing by SessionsController#new as HTML
+  Rendered sessions/new.html.erb within layouts/application (0.4ms)
+  [1m[36mCategory Load (0.3ms)[0m  [1mSELECT "categories".* FROM "categories"[0m
+  Rendered layouts/_top_nav.html.erb (2.7ms)
+Completed 200 OK in 199ms (Views: 198.3ms | ActiveRecord: 0.3ms)
+
+
+Started GET "/" for 10.0.2.2 at 2019-06-13 13:58:09 +0000
+Processing by ProductsController#index as HTML
+  [1m[35mProduct Load (0.5ms)[0m  SELECT "products".* FROM "products"  ORDER BY "products"."created_at" DESC
+  Rendered products/_product.html.erb (14.3ms)
+  Rendered products/index.html.erb within layouts/application (36.9ms)
+  [1m[36mCategory Load (0.7ms)[0m  [1mSELECT "categories".* FROM "categories"[0m
+  Rendered layouts/_top_nav.html.erb (31.5ms)
+Completed 200 OK in 326ms (Views: 286.5ms | ActiveRecord: 5.3ms)
+
+
+Started GET "/" for 10.0.2.2 at 2019-06-13 13:58:25 +0000
+  [1m[36mActiveRecord::SchemaMigration Load (0.5ms)[0m  [1mSELECT "schema_migrations".* FROM "schema_migrations"[0m
+Processing by ProductsController#index as HTML
+  [1m[35mProduct Load (1.0ms)[0m  SELECT "products".* FROM "products"  ORDER BY "products"."created_at" DESC
+  Rendered products/_product.html.erb (426.6ms)
+  Rendered products/index.html.erb within layouts/application (459.3ms)
+  [1m[36mCategory Load (0.7ms)[0m  [1mSELECT "categories".* FROM "categories"[0m
+  Rendered layouts/_top_nav.html.erb (36.8ms)
+Completed 200 OK in 1580ms (Views: 1526.5ms | ActiveRecord: 5.4ms)
+
+
+Started GET "/register" for 10.0.2.2 at 2019-06-13 13:58:42 +0000
+
+SyntaxError (/vagrant/jungle-rails/app/controllers/users_controller.rb:22: syntax error, unexpected tSYMBEG, expecting ')'
+  :password_confirmation
+   ^
+/vagrant/jungle-rails/app/controllers/users_controller.rb:23: syntax error, unexpected ')', expecting keyword_end):
+  app/controllers/users_controller.rb:22: syntax error, unexpected tSYMBEG, expecting ')'
+  app/controllers/users_controller.rb:23: syntax error, unexpected ')', expecting keyword_end
+
+
+  Rendered /home/vagrant/.rvm/gems/ruby-2.3.5/gems/actionpack-4.2.6/lib/action_dispatch/middleware/templates/rescues/_source.erb (3.7ms)
+  Rendered /home/vagrant/.rvm/gems/ruby-2.3.5/gems/actionpack-4.2.6/lib/action_dispatch/middleware/templates/rescues/_trace.html.erb (2.6ms)
+  Rendered /home/vagrant/.rvm/gems/ruby-2.3.5/gems/actionpack-4.2.6/lib/action_dispatch/middleware/templates/rescues/_request_and_response.html.erb (1.6ms)
+  Rendered /home/vagrant/.rvm/gems/ruby-2.3.5/gems/actionpack-4.2.6/lib/action_dispatch/middleware/templates/rescues/diagnostics.html.erb within rescues/layout (22.6ms)
+  Rendered /home/vagrant/.rvm/gems/ruby-2.3.5/gems/web-console-2.3.0/lib/web_console/templates/_markup.html.erb (0.3ms)
+  Rendered /home/vagrant/.rvm/gems/ruby-2.3.5/gems/web-console-2.3.0/lib/web_console/templates/_inner_console_markup.html.erb within layouts/inlined_string (0.3ms)
+  Rendered /home/vagrant/.rvm/gems/ruby-2.3.5/gems/web-console-2.3.0/lib/web_console/templates/_prompt_box_markup.html.erb within layouts/inlined_string (0.2ms)
+  Rendered /home/vagrant/.rvm/gems/ruby-2.3.5/gems/web-console-2.3.0/lib/web_console/templates/style.css.erb within layouts/inlined_string (0.4ms)
+  Rendered /home/vagrant/.rvm/gems/ruby-2.3.5/gems/web-console-2.3.0/lib/web_console/templates/console.js.erb within layouts/javascript (14.3ms)
+  Rendered /home/vagrant/.rvm/gems/ruby-2.3.5/gems/web-console-2.3.0/lib/web_console/templates/main.js.erb within layouts/javascript (0.2ms)
+  Rendered /home/vagrant/.rvm/gems/ruby-2.3.5/gems/web-console-2.3.0/lib/web_console/templates/error_page.js.erb within layouts/javascript (0.4ms)
+  Rendered /home/vagrant/.rvm/gems/ruby-2.3.5/gems/web-console-2.3.0/lib/web_console/templates/index.html.erb (28.3ms)
+
+
+Started GET "/register" for 10.0.2.2 at 2019-06-13 13:59:53 +0000
+
+SyntaxError (/vagrant/jungle-rails/app/controllers/users_controller.rb:22: syntax error, unexpected tSYMBEG, expecting ')'
+  :password_confirmation)
+   ^):
+  app/controllers/users_controller.rb:22: syntax error, unexpected tSYMBEG, expecting ')'
+
+
+  Rendered /home/vagrant/.rvm/gems/ruby-2.3.5/gems/actionpack-4.2.6/lib/action_dispatch/middleware/templates/rescues/_source.erb (3.8ms)
+  Rendered /home/vagrant/.rvm/gems/ruby-2.3.5/gems/actionpack-4.2.6/lib/action_dispatch/middleware/templates/rescues/_trace.html.erb (2.9ms)
+  Rendered /home/vagrant/.rvm/gems/ruby-2.3.5/gems/actionpack-4.2.6/lib/action_dispatch/middleware/templates/rescues/_request_and_response.html.erb (1.2ms)
+  Rendered /home/vagrant/.rvm/gems/ruby-2.3.5/gems/actionpack-4.2.6/lib/action_dispatch/middleware/templates/rescues/diagnostics.html.erb within rescues/layout (21.2ms)
+  Rendered /home/vagrant/.rvm/gems/ruby-2.3.5/gems/web-console-2.3.0/lib/web_console/templates/_markup.html.erb (0.3ms)
+  Rendered /home/vagrant/.rvm/gems/ruby-2.3.5/gems/web-console-2.3.0/lib/web_console/templates/_inner_console_markup.html.erb within layouts/inlined_string (0.2ms)
+  Rendered /home/vagrant/.rvm/gems/ruby-2.3.5/gems/web-console-2.3.0/lib/web_console/templates/_prompt_box_markup.html.erb within layouts/inlined_string (0.2ms)
+  Rendered /home/vagrant/.rvm/gems/ruby-2.3.5/gems/web-console-2.3.0/lib/web_console/templates/style.css.erb within layouts/inlined_string (0.4ms)
+  Rendered /home/vagrant/.rvm/gems/ruby-2.3.5/gems/web-console-2.3.0/lib/web_console/templates/console.js.erb within layouts/javascript (15.3ms)
+  Rendered /home/vagrant/.rvm/gems/ruby-2.3.5/gems/web-console-2.3.0/lib/web_console/templates/main.js.erb within layouts/javascript (0.3ms)
+  Rendered /home/vagrant/.rvm/gems/ruby-2.3.5/gems/web-console-2.3.0/lib/web_console/templates/error_page.js.erb within layouts/javascript (0.4ms)
+  Rendered /home/vagrant/.rvm/gems/ruby-2.3.5/gems/web-console-2.3.0/lib/web_console/templates/index.html.erb (29.8ms)
+
+
+Started GET "/register" for 10.0.2.2 at 2019-06-13 14:00:07 +0000
+Processing by UsersController#new as HTML
+  Rendered users/new.html.erb within layouts/application (23.9ms)
+  [1m[35mCategory Load (0.4ms)[0m  SELECT "categories".* FROM "categories"
+  Rendered layouts/_top_nav.html.erb (24.4ms)
+Completed 200 OK in 256ms (Views: 253.6ms | ActiveRecord: 1.7ms)
+
+
+Started GET "/register" for 10.0.2.2 at 2019-06-13 14:06:51 +0000
+Processing by UsersController#new as HTML
+  Rendered users/new.html.erb within layouts/application (0.7ms)
+  [1m[36mCategory Load (0.4ms)[0m  [1mSELECT "categories".* FROM "categories"[0m
+  Rendered layouts/_top_nav.html.erb (25.2ms)
+Completed 200 OK in 239ms (Views: 236.8ms | ActiveRecord: 1.7ms)
+
+
+Started POST "/users" for 10.0.2.2 at 2019-06-13 14:07:13 +0000
+Processing by UsersController#create as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"HEJ8X56jGD+KcECMS7z6T19bQ+DRq4R5vW7NUI+2R3Py8RVNgyb6j+OqBnBoBDkINnCvA8LclpfacNfBtXaLZw==", "user"=>{"first_name"=>"asd", "last_name"=>"asd", "email"=>"asd", "password"=>"[FILTERED]", "password_confirmation"=>"[FILTERED]"}, "commit"=>"Submit"}
+  [1m[35m (0.2ms)[0m  BEGIN
+  [1m[36m (0.3ms)[0m  [1mROLLBACK[0m
+Redirected to http://localhost:3000/register
+Completed 302 Found in 101ms (ActiveRecord: 2.0ms)
+
+
+Started GET "/register" for 10.0.2.2 at 2019-06-13 14:07:13 +0000
+Processing by UsersController#new as HTML
+  Rendered users/new.html.erb within layouts/application (0.6ms)
+  [1m[35mCategory Load (0.3ms)[0m  SELECT "categories".* FROM "categories"
+  Rendered layouts/_top_nav.html.erb (2.5ms)
+Completed 200 OK in 204ms (Views: 203.5ms | ActiveRecord: 0.3ms)
+
+
+Started GET "/register" for 10.0.2.2 at 2019-06-13 14:07:24 +0000
+Processing by UsersController#new as HTML
+  Rendered users/new.html.erb within layouts/application (0.8ms)
+  [1m[36mCategory Load (0.3ms)[0m  [1mSELECT "categories".* FROM "categories"[0m
+  Rendered layouts/_top_nav.html.erb (2.6ms)
+Completed 200 OK in 213ms (Views: 212.2ms | ActiveRecord: 0.3ms)
+
+
+Started POST "/users" for 10.0.2.2 at 2019-06-13 14:07:41 +0000
+Processing by UsersController#create as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"C2eXoWd/bbXQm8HGRTn4ZNldkEiIjp3YwCXTjFU9NSGaV98BzxP+CSIe7mfGelnYoUJBJW455FRO7myGbI5Dng==", "user"=>{"first_name"=>"asd", "last_name"=>"asd", "email"=>"asd", "password"=>"[FILTERED]", "password_confirmation"=>"[FILTERED]"}, "commit"=>"Submit"}
+  [1m[35m (0.1ms)[0m  BEGIN
+  [1m[36mSQL (0.4ms)[0m  [1mINSERT INTO "users" ("first_name", "last_name", "email", "password_digest", "created_at", "updated_at") VALUES ($1, $2, $3, $4, $5, $6) RETURNING "id"[0m  [["first_name", "asd"], ["last_name", "asd"], ["email", "asd"], ["password_digest", "$2a$10$nF3F0mN6R4kgbbK47RHacuz8tKa5bso1SUaTwmHa7SsnN28Oor6Q2"], ["created_at", "2019-06-13 14:07:42.081792"], ["updated_at", "2019-06-13 14:07:42.081792"]]
+  [1m[35m (1.0ms)[0m  COMMIT
+Redirected to http://localhost:3000/
+Completed 302 Found in 87ms (ActiveRecord: 1.7ms)
+
+
+Started GET "/" for 10.0.2.2 at 2019-06-13 14:07:42 +0000
+Processing by ProductsController#index as HTML
+  [1m[36mProduct Load (0.4ms)[0m  [1mSELECT "products".* FROM "products"  ORDER BY "products"."created_at" DESC[0m
+  Rendered products/_product.html.erb (13.7ms)
+  Rendered products/index.html.erb within layouts/application (34.9ms)
+  [1m[35mCategory Load (0.3ms)[0m  SELECT "categories".* FROM "categories"
+  Rendered layouts/_top_nav.html.erb (3.0ms)
+Completed 200 OK in 275ms (Views: 249.8ms | ActiveRecord: 1.9ms)
+
+
+Started GET "/logout" for 10.0.2.2 at 2019-06-13 14:10:35 +0000
+Processing by SessionsController#destroy as HTML
+Redirected to http://localhost:3000/login
+Completed 302 Found in 1ms (ActiveRecord: 0.0ms)
+
+
+Started GET "/login" for 10.0.2.2 at 2019-06-13 14:10:35 +0000
+Processing by SessionsController#new as HTML
+  Rendered sessions/new.html.erb within layouts/application (0.9ms)
+  [1m[36mCategory Load (0.5ms)[0m  [1mSELECT "categories".* FROM "categories"[0m
+  Rendered layouts/_top_nav.html.erb (2.7ms)
+Completed 200 OK in 203ms (Views: 201.6ms | ActiveRecord: 0.5ms)
+
+
+Started GET "/login" for 10.0.2.2 at 2019-06-13 14:11:12 +0000
+Processing by SessionsController#new as HTML
+  Rendered sessions/new.html.erb within layouts/application (0.3ms)
+  [1m[35mCategory Load (0.3ms)[0m  SELECT "categories".* FROM "categories"
+  Rendered layouts/_top_nav.html.erb (2.8ms)
+Completed 200 OK in 200ms (Views: 199.7ms | ActiveRecord: 0.3ms)
+
+
+Started POST "/login" for 10.0.2.2 at 2019-06-13 14:11:20 +0000
+Processing by SessionsController#create as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"lqt/PAdnOueR3mqh1NWlTeJoZ6aP1LTOSbSfIF0CiiMHmzecrwupW2NbRQBXlgTxmne2y2ljzULHfyAqZLH8nA==", "email"=>"kcchaha@gmail.com", "password"=>"[FILTERED]", "commit"=>"Submit"}
+  [1m[36mUser Load (0.4ms)[0m  [1mSELECT  "users".* FROM "users" WHERE "users"."email" = $1 LIMIT 1[0m  [["email", "kcchaha@gmail.com"]]
+Redirected to http://localhost:3000/
+Completed 302 Found in 91ms (ActiveRecord: 0.4ms)
+
+
+Started GET "/" for 10.0.2.2 at 2019-06-13 14:11:20 +0000
+Processing by ProductsController#index as HTML
+  [1m[35mProduct Load (0.5ms)[0m  SELECT "products".* FROM "products"  ORDER BY "products"."created_at" DESC
+  Rendered products/_product.html.erb (16.1ms)
+  Rendered products/index.html.erb within layouts/application (27.9ms)
+  [1m[36mCategory Load (0.4ms)[0m  [1mSELECT "categories".* FROM "categories"[0m
+  Rendered layouts/_top_nav.html.erb (3.0ms)
+Completed 200 OK in 234ms (Views: 232.7ms | ActiveRecord: 0.9ms)
+
+
+Started GET "/logout" for 10.0.2.2 at 2019-06-13 14:11:35 +0000
+Processing by SessionsController#destroy as HTML
+Redirected to http://localhost:3000/login
+Completed 302 Found in 1ms (ActiveRecord: 0.0ms)
+
+
+Started GET "/login" for 10.0.2.2 at 2019-06-13 14:11:35 +0000
+Processing by SessionsController#new as HTML
+  Rendered sessions/new.html.erb within layouts/application (0.4ms)
+  [1m[35mCategory Load (0.4ms)[0m  SELECT "categories".* FROM "categories"
+  Rendered layouts/_top_nav.html.erb (2.7ms)
+Completed 200 OK in 182ms (Views: 181.4ms | ActiveRecord: 0.4ms)
+
+
+Started GET "/" for 10.0.2.2 at 2019-06-13 14:11:40 +0000
+Processing by ProductsController#index as HTML
+  [1m[36mProduct Load (0.5ms)[0m  [1mSELECT "products".* FROM "products"  ORDER BY "products"."created_at" DESC[0m
+  Rendered products/_product.html.erb (13.6ms)
+  Rendered products/index.html.erb within layouts/application (28.3ms)
+  [1m[35mCategory Load (0.5ms)[0m  SELECT "categories".* FROM "categories"
+  Rendered layouts/_top_nav.html.erb (2.9ms)
+Completed 200 OK in 270ms (Views: 268.0ms | ActiveRecord: 1.0ms)
+
+
+Started GET "/" for 10.0.2.2 at 2019-06-13 14:11:42 +0000
+Processing by ProductsController#index as HTML
+  [1m[36mProduct Load (0.4ms)[0m  [1mSELECT "products".* FROM "products"  ORDER BY "products"."created_at" DESC[0m
+  Rendered products/_product.html.erb (12.6ms)
+  Rendered products/index.html.erb within layouts/application (27.9ms)
+  [1m[35mCategory Load (0.4ms)[0m  SELECT "categories".* FROM "categories"
+  Rendered layouts/_top_nav.html.erb (2.8ms)
+Completed 200 OK in 222ms (Views: 220.5ms | ActiveRecord: 0.9ms)

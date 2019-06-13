@@ -13,7 +13,7 @@ class SessionsController < ApplicationController
     else
     # If user's login doesn't work, send them back to the login form.
     flash.now[:error] = 'Invalid email/password combination'
-    render 'login'
+    render '/login'
     end
   end
   

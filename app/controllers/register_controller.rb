@@ -21,7 +21,7 @@ class RegisterController < ApplicationController
     params.require(:register).permit(
     :first_name, 
     :last_name,
-    :email_address,
+    :email,
     :password_digest
     )
   end
