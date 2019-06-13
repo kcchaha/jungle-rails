@@ -12,7 +12,18 @@ Rails.application.routes.draw do
 
   resources :orders, only: [:create, :show]
 
-  resources :register, except: [:edit, :update, :show, :destroy]
+  resources :users, only: [:create, :new]
+
+  resources :sessions, only: [:create, :new, :destroy]
+
+  
+  get '/register' => 'users#new'
+  post '/users' => 'users#create'
+
+  get '/login' => 'sessions#new'
+  post '/login' => 'sessions#create'
+  get '/logout' => 'sessions#destroy'
+
 
 
   namespace :admin do

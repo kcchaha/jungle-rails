@@ -2,6 +2,10 @@ class RegisterController < ApplicationController
   def index
   end
   
+  def new
+    @user = User.new
+  end
+
   def create
     @user = User.new(user_params)
 
@@ -14,11 +18,11 @@ class RegisterController < ApplicationController
 
   private
   def user_params
-    params.require(:user).permit(
+    params.require(:register).permit(
     :first_name, 
     :last_name,
     :email_address,
-    :password
+    :password_digest
     )
   end
 end
