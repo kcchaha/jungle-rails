@@ -23,7 +23,7 @@
           <dt>Price</dt>
           <dd><%= @product.price %></dd>  
           <dt>Overall Rating</dt>
-          <dd><%= @product.reviews.average(:rating) %></dd>
+          <dd><%= @rate %></dd>
         </dl>
 
         <% if current_user%>
@@ -33,13 +33,13 @@
         <div class="listing-reviews">
         <h4>Reviews</h4>
         <ul>
-        <% @product.reviews.each do |review| %>
+        <% @product.reviews.reverse_order.each do |review| %>
           <li><%= review.description %>     <span>Rating: <%= review.rating %></span>
-          <% if current_user.id == review.user_id%>
+          <% if current_user && current_user.id == review.user_id%>
           <button><%= link_to 'Delete', "/products/#{@product.id}/reviews/#{review.id}",
           method: :delete,
           data: { confirm: 'Are you sure?' } %>
-      </button>
+          </button>
           <% end %>
           </li>
         <% end %>
