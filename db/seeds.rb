@@ -132,5 +132,16 @@ cat3.products.create!({
   price: 2_483.75
 })
 
+dog = Product.find_or_create_by! name: 'Red Bookshelf'
+
+dog.reviews.create!({
+  description: "This product is pretty innovative!",
+  rating: 5
+})
+
+dog.reviews.create!({
+  description: "Too complicated to use...",
+  rating: 4
+})
 
 puts "DONE!"

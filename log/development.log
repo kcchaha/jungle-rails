@@ -12043,3 +12043,805 @@ Processing by Admin::ProductsController#index as HTML
   [1m[36mCategory Load (0.5ms)[0m  [1mSELECT "categories".* FROM "categories"[0m
   Rendered layouts/_top_nav.html.erb (3.2ms)
 Completed 200 OK in 242ms (Views: 238.9ms | ActiveRecord: 2.5ms)
+  [1m[36mActiveRecord::SchemaMigration Load (0.5ms)[0m  [1mSELECT "schema_migrations".* FROM "schema_migrations"[0m
+Migrating to CreateReviews (20190614154740)
+  [1m[35m (0.2ms)[0m  BEGIN
+  [1m[36m (5.7ms)[0m  [1mCREATE TABLE "reviews" ("id" serial primary key, "product_id" character varying, "integer" character varying, "user_id" integer, "description" text, "rating" integer, "created_at" timestamp NOT NULL, "updated_at" timestamp NOT NULL) [0m
+  [1m[35mSQL (0.4ms)[0m  INSERT INTO "schema_migrations" ("version") VALUES ($1)  [["version", "20190614154740"]]
+  [1m[36m (3.7ms)[0m  [1mCOMMIT[0m
+  [1m[35mActiveRecord::SchemaMigration Load (0.3ms)[0m  SELECT "schema_migrations".* FROM "schema_migrations"
+  [1m[36m (2.9ms)[0m  [1mSELECT t2.oid::regclass::text AS to_table, a1.attname AS column, a2.attname AS primary_key, c.conname AS name, c.confupdtype AS on_update, c.confdeltype AS on_delete
+FROM pg_constraint c
+JOIN pg_class t1 ON c.conrelid = t1.oid
+JOIN pg_class t2 ON c.confrelid = t2.oid
+JOIN pg_attribute a1 ON a1.attnum = c.conkey[1] AND a1.attrelid = t1.oid
+JOIN pg_attribute a2 ON a2.attnum = c.confkey[1] AND a2.attrelid = t2.oid
+JOIN pg_namespace t3 ON c.connamespace = t3.oid
+WHERE c.contype = 'f'
+  AND t1.relname = 'categories'
+  AND t3.nspname = ANY (current_schemas(false))
+ORDER BY c.conname
+[0m
+  [1m[35m (2.2ms)[0m  SELECT t2.oid::regclass::text AS to_table, a1.attname AS column, a2.attname AS primary_key, c.conname AS name, c.confupdtype AS on_update, c.confdeltype AS on_delete
+FROM pg_constraint c
+JOIN pg_class t1 ON c.conrelid = t1.oid
+JOIN pg_class t2 ON c.confrelid = t2.oid
+JOIN pg_attribute a1 ON a1.attnum = c.conkey[1] AND a1.attrelid = t1.oid
+JOIN pg_attribute a2 ON a2.attnum = c.confkey[1] AND a2.attrelid = t2.oid
+JOIN pg_namespace t3 ON c.connamespace = t3.oid
+WHERE c.contype = 'f'
+  AND t1.relname = 'line_items'
+  AND t3.nspname = ANY (current_schemas(false))
+ORDER BY c.conname
+
+  [1m[36m (3.1ms)[0m  [1mSELECT t2.oid::regclass::text AS to_table, a1.attname AS column, a2.attname AS primary_key, c.conname AS name, c.confupdtype AS on_update, c.confdeltype AS on_delete
+FROM pg_constraint c
+JOIN pg_class t1 ON c.conrelid = t1.oid
+JOIN pg_class t2 ON c.confrelid = t2.oid
+JOIN pg_attribute a1 ON a1.attnum = c.conkey[1] AND a1.attrelid = t1.oid
+JOIN pg_attribute a2 ON a2.attnum = c.confkey[1] AND a2.attrelid = t2.oid
+JOIN pg_namespace t3 ON c.connamespace = t3.oid
+WHERE c.contype = 'f'
+  AND t1.relname = 'orders'
+  AND t3.nspname = ANY (current_schemas(false))
+ORDER BY c.conname
+[0m
+  [1m[35m (2.8ms)[0m  SELECT t2.oid::regclass::text AS to_table, a1.attname AS column, a2.attname AS primary_key, c.conname AS name, c.confupdtype AS on_update, c.confdeltype AS on_delete
+FROM pg_constraint c
+JOIN pg_class t1 ON c.conrelid = t1.oid
+JOIN pg_class t2 ON c.confrelid = t2.oid
+JOIN pg_attribute a1 ON a1.attnum = c.conkey[1] AND a1.attrelid = t1.oid
+JOIN pg_attribute a2 ON a2.attnum = c.confkey[1] AND a2.attrelid = t2.oid
+JOIN pg_namespace t3 ON c.connamespace = t3.oid
+WHERE c.contype = 'f'
+  AND t1.relname = 'products'
+  AND t3.nspname = ANY (current_schemas(false))
+ORDER BY c.conname
+
+  [1m[36m (2.8ms)[0m  [1mSELECT t2.oid::regclass::text AS to_table, a1.attname AS column, a2.attname AS primary_key, c.conname AS name, c.confupdtype AS on_update, c.confdeltype AS on_delete
+FROM pg_constraint c
+JOIN pg_class t1 ON c.conrelid = t1.oid
+JOIN pg_class t2 ON c.confrelid = t2.oid
+JOIN pg_attribute a1 ON a1.attnum = c.conkey[1] AND a1.attrelid = t1.oid
+JOIN pg_attribute a2 ON a2.attnum = c.confkey[1] AND a2.attrelid = t2.oid
+JOIN pg_namespace t3 ON c.connamespace = t3.oid
+WHERE c.contype = 'f'
+  AND t1.relname = 'reviews'
+  AND t3.nspname = ANY (current_schemas(false))
+ORDER BY c.conname
+[0m
+  [1m[35m (2.1ms)[0m  SELECT t2.oid::regclass::text AS to_table, a1.attname AS column, a2.attname AS primary_key, c.conname AS name, c.confupdtype AS on_update, c.confdeltype AS on_delete
+FROM pg_constraint c
+JOIN pg_class t1 ON c.conrelid = t1.oid
+JOIN pg_class t2 ON c.confrelid = t2.oid
+JOIN pg_attribute a1 ON a1.attnum = c.conkey[1] AND a1.attrelid = t1.oid
+JOIN pg_attribute a2 ON a2.attnum = c.confkey[1] AND a2.attrelid = t2.oid
+JOIN pg_namespace t3 ON c.connamespace = t3.oid
+WHERE c.contype = 'f'
+  AND t1.relname = 'users'
+  AND t3.nspname = ANY (current_schemas(false))
+ORDER BY c.conname
+
+  [1m[36mActiveRecord::SchemaMigration Load (0.4ms)[0m  [1mSELECT "schema_migrations".* FROM "schema_migrations"[0m
+  [1m[35mActiveRecord::SchemaMigration Load (0.2ms)[0m  SELECT "schema_migrations".* FROM "schema_migrations"
+Migrating to CreateReviews (20190614154740)
+  [1m[36m (0.2ms)[0m  [1mBEGIN[0m
+  [1m[35m (1.4ms)[0m  DROP TABLE "reviews"
+  [1m[36mSQL (0.4ms)[0m  [1mDELETE FROM "schema_migrations" WHERE "schema_migrations"."version" = $1[0m  [["version", "20190614154740"]]
+  [1m[35m (1.3ms)[0m  COMMIT
+  [1m[36mActiveRecord::SchemaMigration Load (0.4ms)[0m  [1mSELECT "schema_migrations".* FROM "schema_migrations"[0m
+  [1m[35m (2.6ms)[0m  SELECT t2.oid::regclass::text AS to_table, a1.attname AS column, a2.attname AS primary_key, c.conname AS name, c.confupdtype AS on_update, c.confdeltype AS on_delete
+FROM pg_constraint c
+JOIN pg_class t1 ON c.conrelid = t1.oid
+JOIN pg_class t2 ON c.confrelid = t2.oid
+JOIN pg_attribute a1 ON a1.attnum = c.conkey[1] AND a1.attrelid = t1.oid
+JOIN pg_attribute a2 ON a2.attnum = c.confkey[1] AND a2.attrelid = t2.oid
+JOIN pg_namespace t3 ON c.connamespace = t3.oid
+WHERE c.contype = 'f'
+  AND t1.relname = 'categories'
+  AND t3.nspname = ANY (current_schemas(false))
+ORDER BY c.conname
+
+  [1m[36m (2.2ms)[0m  [1mSELECT t2.oid::regclass::text AS to_table, a1.attname AS column, a2.attname AS primary_key, c.conname AS name, c.confupdtype AS on_update, c.confdeltype AS on_delete
+FROM pg_constraint c
+JOIN pg_class t1 ON c.conrelid = t1.oid
+JOIN pg_class t2 ON c.confrelid = t2.oid
+JOIN pg_attribute a1 ON a1.attnum = c.conkey[1] AND a1.attrelid = t1.oid
+JOIN pg_attribute a2 ON a2.attnum = c.confkey[1] AND a2.attrelid = t2.oid
+JOIN pg_namespace t3 ON c.connamespace = t3.oid
+WHERE c.contype = 'f'
+  AND t1.relname = 'line_items'
+  AND t3.nspname = ANY (current_schemas(false))
+ORDER BY c.conname
+[0m
+  [1m[35m (2.7ms)[0m  SELECT t2.oid::regclass::text AS to_table, a1.attname AS column, a2.attname AS primary_key, c.conname AS name, c.confupdtype AS on_update, c.confdeltype AS on_delete
+FROM pg_constraint c
+JOIN pg_class t1 ON c.conrelid = t1.oid
+JOIN pg_class t2 ON c.confrelid = t2.oid
+JOIN pg_attribute a1 ON a1.attnum = c.conkey[1] AND a1.attrelid = t1.oid
+JOIN pg_attribute a2 ON a2.attnum = c.confkey[1] AND a2.attrelid = t2.oid
+JOIN pg_namespace t3 ON c.connamespace = t3.oid
+WHERE c.contype = 'f'
+  AND t1.relname = 'orders'
+  AND t3.nspname = ANY (current_schemas(false))
+ORDER BY c.conname
+
+  [1m[36m (2.6ms)[0m  [1mSELECT t2.oid::regclass::text AS to_table, a1.attname AS column, a2.attname AS primary_key, c.conname AS name, c.confupdtype AS on_update, c.confdeltype AS on_delete
+FROM pg_constraint c
+JOIN pg_class t1 ON c.conrelid = t1.oid
+JOIN pg_class t2 ON c.confrelid = t2.oid
+JOIN pg_attribute a1 ON a1.attnum = c.conkey[1] AND a1.attrelid = t1.oid
+JOIN pg_attribute a2 ON a2.attnum = c.confkey[1] AND a2.attrelid = t2.oid
+JOIN pg_namespace t3 ON c.connamespace = t3.oid
+WHERE c.contype = 'f'
+  AND t1.relname = 'products'
+  AND t3.nspname = ANY (current_schemas(false))
+ORDER BY c.conname
+[0m
+  [1m[35m (2.6ms)[0m  SELECT t2.oid::regclass::text AS to_table, a1.attname AS column, a2.attname AS primary_key, c.conname AS name, c.confupdtype AS on_update, c.confdeltype AS on_delete
+FROM pg_constraint c
+JOIN pg_class t1 ON c.conrelid = t1.oid
+JOIN pg_class t2 ON c.confrelid = t2.oid
+JOIN pg_attribute a1 ON a1.attnum = c.conkey[1] AND a1.attrelid = t1.oid
+JOIN pg_attribute a2 ON a2.attnum = c.confkey[1] AND a2.attrelid = t2.oid
+JOIN pg_namespace t3 ON c.connamespace = t3.oid
+WHERE c.contype = 'f'
+  AND t1.relname = 'users'
+  AND t3.nspname = ANY (current_schemas(false))
+ORDER BY c.conname
+
+  [1m[36mActiveRecord::SchemaMigration Load (0.6ms)[0m  [1mSELECT "schema_migrations".* FROM "schema_migrations"[0m
+Migrating to CreateReviews (20190614155102)
+  [1m[35m (0.1ms)[0m  BEGIN
+  [1m[36m (5.3ms)[0m  [1mCREATE TABLE "reviews" ("id" serial primary key, "product_id" integer, "user_id" integer, "description" text, "rating" integer, "created_at" timestamp NOT NULL, "updated_at" timestamp NOT NULL) [0m
+  [1m[35mSQL (0.3ms)[0m  INSERT INTO "schema_migrations" ("version") VALUES ($1)  [["version", "20190614155102"]]
+  [1m[36m (1.4ms)[0m  [1mCOMMIT[0m
+  [1m[35mActiveRecord::SchemaMigration Load (0.2ms)[0m  SELECT "schema_migrations".* FROM "schema_migrations"
+  [1m[36m (2.7ms)[0m  [1mSELECT t2.oid::regclass::text AS to_table, a1.attname AS column, a2.attname AS primary_key, c.conname AS name, c.confupdtype AS on_update, c.confdeltype AS on_delete
+FROM pg_constraint c
+JOIN pg_class t1 ON c.conrelid = t1.oid
+JOIN pg_class t2 ON c.confrelid = t2.oid
+JOIN pg_attribute a1 ON a1.attnum = c.conkey[1] AND a1.attrelid = t1.oid
+JOIN pg_attribute a2 ON a2.attnum = c.confkey[1] AND a2.attrelid = t2.oid
+JOIN pg_namespace t3 ON c.connamespace = t3.oid
+WHERE c.contype = 'f'
+  AND t1.relname = 'categories'
+  AND t3.nspname = ANY (current_schemas(false))
+ORDER BY c.conname
+[0m
+  [1m[35m (2.2ms)[0m  SELECT t2.oid::regclass::text AS to_table, a1.attname AS column, a2.attname AS primary_key, c.conname AS name, c.confupdtype AS on_update, c.confdeltype AS on_delete
+FROM pg_constraint c
+JOIN pg_class t1 ON c.conrelid = t1.oid
+JOIN pg_class t2 ON c.confrelid = t2.oid
+JOIN pg_attribute a1 ON a1.attnum = c.conkey[1] AND a1.attrelid = t1.oid
+JOIN pg_attribute a2 ON a2.attnum = c.confkey[1] AND a2.attrelid = t2.oid
+JOIN pg_namespace t3 ON c.connamespace = t3.oid
+WHERE c.contype = 'f'
+  AND t1.relname = 'line_items'
+  AND t3.nspname = ANY (current_schemas(false))
+ORDER BY c.conname
+
+  [1m[36m (2.5ms)[0m  [1mSELECT t2.oid::regclass::text AS to_table, a1.attname AS column, a2.attname AS primary_key, c.conname AS name, c.confupdtype AS on_update, c.confdeltype AS on_delete
+FROM pg_constraint c
+JOIN pg_class t1 ON c.conrelid = t1.oid
+JOIN pg_class t2 ON c.confrelid = t2.oid
+JOIN pg_attribute a1 ON a1.attnum = c.conkey[1] AND a1.attrelid = t1.oid
+JOIN pg_attribute a2 ON a2.attnum = c.confkey[1] AND a2.attrelid = t2.oid
+JOIN pg_namespace t3 ON c.connamespace = t3.oid
+WHERE c.contype = 'f'
+  AND t1.relname = 'orders'
+  AND t3.nspname = ANY (current_schemas(false))
+ORDER BY c.conname
+[0m
+  [1m[35m (2.8ms)[0m  SELECT t2.oid::regclass::text AS to_table, a1.attname AS column, a2.attname AS primary_key, c.conname AS name, c.confupdtype AS on_update, c.confdeltype AS on_delete
+FROM pg_constraint c
+JOIN pg_class t1 ON c.conrelid = t1.oid
+JOIN pg_class t2 ON c.confrelid = t2.oid
+JOIN pg_attribute a1 ON a1.attnum = c.conkey[1] AND a1.attrelid = t1.oid
+JOIN pg_attribute a2 ON a2.attnum = c.confkey[1] AND a2.attrelid = t2.oid
+JOIN pg_namespace t3 ON c.connamespace = t3.oid
+WHERE c.contype = 'f'
+  AND t1.relname = 'products'
+  AND t3.nspname = ANY (current_schemas(false))
+ORDER BY c.conname
+
+  [1m[36m (3.1ms)[0m  [1mSELECT t2.oid::regclass::text AS to_table, a1.attname AS column, a2.attname AS primary_key, c.conname AS name, c.confupdtype AS on_update, c.confdeltype AS on_delete
+FROM pg_constraint c
+JOIN pg_class t1 ON c.conrelid = t1.oid
+JOIN pg_class t2 ON c.confrelid = t2.oid
+JOIN pg_attribute a1 ON a1.attnum = c.conkey[1] AND a1.attrelid = t1.oid
+JOIN pg_attribute a2 ON a2.attnum = c.confkey[1] AND a2.attrelid = t2.oid
+JOIN pg_namespace t3 ON c.connamespace = t3.oid
+WHERE c.contype = 'f'
+  AND t1.relname = 'reviews'
+  AND t3.nspname = ANY (current_schemas(false))
+ORDER BY c.conname
+[0m
+  [1m[35m (2.4ms)[0m  SELECT t2.oid::regclass::text AS to_table, a1.attname AS column, a2.attname AS primary_key, c.conname AS name, c.confupdtype AS on_update, c.confdeltype AS on_delete
+FROM pg_constraint c
+JOIN pg_class t1 ON c.conrelid = t1.oid
+JOIN pg_class t2 ON c.confrelid = t2.oid
+JOIN pg_attribute a1 ON a1.attnum = c.conkey[1] AND a1.attrelid = t1.oid
+JOIN pg_attribute a2 ON a2.attnum = c.confkey[1] AND a2.attrelid = t2.oid
+JOIN pg_namespace t3 ON c.connamespace = t3.oid
+WHERE c.contype = 'f'
+  AND t1.relname = 'users'
+  AND t3.nspname = ANY (current_schemas(false))
+ORDER BY c.conname
+
+  [1m[36mProduct Load (0.6ms)[0m  [1mSELECT  "products".* FROM "products" WHERE "products"."id" = $1 LIMIT 1[0m  [["id", 1]]
+  [1m[35mReview Load (0.4ms)[0m  SELECT "reviews".* FROM "reviews" WHERE "reviews"."product_id" = $1  [["product_id", 1]]
+  [1m[36mUser Load (0.5ms)[0m  [1mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 LIMIT 1[0m  [["id", 5]]
+  [1m[35mUser Load (0.5ms)[0m  SELECT  "users".* FROM "users" WHERE "users"."id" = $1 LIMIT 1  [["id", 5]]
+  [1m[36mUser Load (0.6ms)[0m  [1mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 LIMIT 1[0m  [["id", 5]]
+  [1m[35mProduct Load (0.7ms)[0m  SELECT  "products".* FROM "products" WHERE "products"."id" = $1 LIMIT 1  [["id", 1]]
+  [1m[36mReview Load (0.4ms)[0m  [1mSELECT "reviews".* FROM "reviews" WHERE "reviews"."product_id" = $1[0m  [["product_id", 1]]
+  [1m[35mUser Load (0.8ms)[0m  SELECT  "users".* FROM "users" WHERE "users"."id" = $1 LIMIT 1  [["id", 5]]
+  [1m[36mProduct Load (0.7ms)[0m  [1mSELECT  "products".* FROM "products" WHERE "products"."id" = $1 LIMIT 1[0m  [["id", 1]]
+  [1m[35mReview Load (0.5ms)[0m  SELECT "reviews".* FROM "reviews" WHERE "reviews"."product_id" = $1  [["product_id", 1]]
+  [1m[36mProduct Load (0.6ms)[0m  [1mSELECT  "products".* FROM "products" WHERE "products"."id" = $1 LIMIT 1[0m  [["id", 1]]
+  [1m[35mReview Load (0.6ms)[0m  SELECT "reviews".* FROM "reviews" WHERE "reviews"."product_id" = $1  [["product_id", 1]]
+  [1m[36mProduct Load (0.8ms)[0m  [1mSELECT  "products".* FROM "products" WHERE "products"."id" = $1 LIMIT 1[0m  [["id", 1]]
+  [1m[35mReview Load (0.4ms)[0m  SELECT "reviews".* FROM "reviews" WHERE "reviews"."product_id" = $1  [["product_id", 1]]
+  [1m[36mUser Load (0.6ms)[0m  [1mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 LIMIT 1[0m  [["id", 5]]
+  [1m[35mProduct Load (0.8ms)[0m  SELECT  "products".* FROM "products" WHERE "products"."id" = $1 LIMIT 1  [["id", 1]]
+  [1m[36mProduct Load (0.6ms)[0m  [1mSELECT  "products".* FROM "products" WHERE "products"."id" = $1 LIMIT 1[0m  [["id", 1]]
+  [1m[36mUser Load (0.6ms)[0m  [1mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 LIMIT 1[0m  [["id", 5]]
+  [1m[35mReview Load (0.5ms)[0m  SELECT "reviews".* FROM "reviews" WHERE "reviews"."user_id" = $1  [["user_id", 5]]
+  [1m[36mUser Load (0.7ms)[0m  [1mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 LIMIT 1[0m  [["id", 5]]
+  [1m[35mUser Load (0.8ms)[0m  SELECT  "users".* FROM "users" WHERE "users"."id" = $1 LIMIT 1  [["id", 5]]
+  [1m[36mProduct Load (0.7ms)[0m  [1mSELECT  "products".* FROM "products" WHERE "products"."id" = $1 LIMIT 1[0m  [["id", 1]]
+  [1m[35mProduct Load (0.9ms)[0m  SELECT  "products".* FROM "products" WHERE "products"."id" = $1 LIMIT 1  [["id", 1]]
+  [1m[36mReview Load (0.4ms)[0m  [1mSELECT "reviews".* FROM "reviews" WHERE "reviews"."product_id" = $1[0m  [["product_id", 1]]
+  [1m[35mUser Load (0.3ms)[0m  SELECT  "users".* FROM "users" WHERE "users"."id" = $1 LIMIT 1  [["id", 5]]
+  [1m[36mUser Load (0.6ms)[0m  [1mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 LIMIT 1[0m  [["id", 5]]
+  [1m[36mUser Load (0.6ms)[0m  [1mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 LIMIT 1[0m  [["id", 5]]
+  [1m[35mReview Load (0.4ms)[0m  SELECT "reviews".* FROM "reviews" WHERE "reviews"."user_id" = $1  [["user_id", 5]]
+  [1m[36m (5071.6ms)[0m  [1mDROP DATABASE IF EXISTS "jungle_development"[0m
+  [1m[35m (109.2ms)[0m  DROP DATABASE IF EXISTS "jungle_test"
+  [1m[36m (0.5ms)[0m  [1mCREATE DATABASE "jungle_development" ENCODING = 'unicode'[0m
+  [1m[35m (299.8ms)[0m  CREATE DATABASE "jungle_test" ENCODING = 'unicode'
+  [1m[36mSQL (0.3ms)[0m  [1mCREATE EXTENSION IF NOT EXISTS "plpgsql"[0m
+  [1m[35m (2.7ms)[0m  DROP TABLE "categories" CASCADE
+  [1m[36m (5.8ms)[0m  [1mCREATE TABLE "categories" ("id" serial primary key, "name" character varying, "description" text, "created_at" timestamp NOT NULL, "updated_at" timestamp NOT NULL) [0m
+  [1m[35m (1.9ms)[0m  DROP TABLE "line_items" CASCADE
+  [1m[36m (3.4ms)[0m  [1mCREATE TABLE "line_items" ("id" serial primary key, "order_id" integer, "product_id" integer, "quantity" integer, "item_price_cents" integer, "total_price_cents" integer, "created_at" timestamp NOT NULL, "updated_at" timestamp NOT NULL) [0m
+  [1m[35m (2.5ms)[0m  CREATE  INDEX  "index_line_items_on_order_id" ON "line_items" USING btree ("order_id")
+  [1m[36m (2.2ms)[0m  [1mCREATE  INDEX  "index_line_items_on_product_id" ON "line_items" USING btree ("product_id")[0m
+  [1m[35m (1.6ms)[0m  DROP TABLE "orders" CASCADE
+  [1m[36m (5.5ms)[0m  [1mCREATE TABLE "orders" ("id" serial primary key, "total_cents" integer, "created_at" timestamp NOT NULL, "updated_at" timestamp NOT NULL, "stripe_charge_id" character varying, "email" character varying) [0m
+  [1m[35m (1.6ms)[0m  DROP TABLE "products" CASCADE
+  [1m[36m (5.2ms)[0m  [1mCREATE TABLE "products" ("id" serial primary key, "name" character varying, "description" text, "image" character varying, "price_cents" integer, "quantity" integer, "created_at" timestamp NOT NULL, "updated_at" timestamp NOT NULL, "category_id" integer) [0m
+  [1m[35m (2.7ms)[0m  CREATE  INDEX  "index_products_on_category_id" ON "products" USING btree ("category_id")
+  [1m[36m (2.1ms)[0m  [1mDROP TABLE "reviews" CASCADE[0m
+  [1m[35m (5.8ms)[0m  CREATE TABLE "reviews" ("id" serial primary key, "product_id" integer, "user_id" integer, "description" text, "rating" integer, "created_at" timestamp NOT NULL, "updated_at" timestamp NOT NULL) 
+  [1m[36m (2.1ms)[0m  [1mDROP TABLE "users" CASCADE[0m
+  [1m[35m (6.9ms)[0m  CREATE TABLE "users" ("id" serial primary key, "first_name" character varying, "last_name" character varying, "email" character varying, "password_digest" character varying, "created_at" timestamp NOT NULL, "updated_at" timestamp NOT NULL) 
+  [1m[36m (2.5ms)[0m  [1mALTER TABLE "line_items" ADD CONSTRAINT "fk_rails_2dc2e5c22c"
+FOREIGN KEY ("order_id")
+  REFERENCES "orders" ("id")
+[0m
+  [1m[35m (2.0ms)[0m  ALTER TABLE "line_items" ADD CONSTRAINT "fk_rails_11e15d5c6b"
+FOREIGN KEY ("product_id")
+  REFERENCES "products" ("id")
+
+  [1m[36m (1.7ms)[0m  [1mALTER TABLE "products" ADD CONSTRAINT "fk_rails_fb915499a4"
+FOREIGN KEY ("category_id")
+  REFERENCES "categories" ("id")
+[0m
+  [1m[35m (0.8ms)[0m  SELECT version FROM "schema_migrations"
+  [1m[36mSQL (0.5ms)[0m  [1mCREATE EXTENSION IF NOT EXISTS "plpgsql"[0m
+  [1m[35m (7.7ms)[0m  CREATE TABLE "categories" ("id" serial primary key, "name" character varying, "description" text, "created_at" timestamp NOT NULL, "updated_at" timestamp NOT NULL) 
+  [1m[36m (4.4ms)[0m  [1mCREATE TABLE "line_items" ("id" serial primary key, "order_id" integer, "product_id" integer, "quantity" integer, "item_price_cents" integer, "total_price_cents" integer, "created_at" timestamp NOT NULL, "updated_at" timestamp NOT NULL) [0m
+  [1m[35m (3.6ms)[0m  CREATE  INDEX  "index_line_items_on_order_id" ON "line_items" USING btree ("order_id")
+  [1m[36m (3.4ms)[0m  [1mCREATE  INDEX  "index_line_items_on_product_id" ON "line_items" USING btree ("product_id")[0m
+  [1m[35m (6.4ms)[0m  CREATE TABLE "orders" ("id" serial primary key, "total_cents" integer, "created_at" timestamp NOT NULL, "updated_at" timestamp NOT NULL, "stripe_charge_id" character varying, "email" character varying) 
+  [1m[36m (6.2ms)[0m  [1mCREATE TABLE "products" ("id" serial primary key, "name" character varying, "description" text, "image" character varying, "price_cents" integer, "quantity" integer, "created_at" timestamp NOT NULL, "updated_at" timestamp NOT NULL, "category_id" integer) [0m
+  [1m[35m (2.7ms)[0m  CREATE  INDEX  "index_products_on_category_id" ON "products" USING btree ("category_id")
+  [1m[36m (8.3ms)[0m  [1mCREATE TABLE "reviews" ("id" serial primary key, "product_id" integer, "user_id" integer, "description" text, "rating" integer, "created_at" timestamp NOT NULL, "updated_at" timestamp NOT NULL) [0m
+  [1m[35m (7.1ms)[0m  CREATE TABLE "users" ("id" serial primary key, "first_name" character varying, "last_name" character varying, "email" character varying, "password_digest" character varying, "created_at" timestamp NOT NULL, "updated_at" timestamp NOT NULL) 
+  [1m[36m (3.2ms)[0m  [1mALTER TABLE "line_items" ADD CONSTRAINT "fk_rails_2dc2e5c22c"
+FOREIGN KEY ("order_id")
+  REFERENCES "orders" ("id")
+[0m
+  [1m[35m (2.2ms)[0m  ALTER TABLE "line_items" ADD CONSTRAINT "fk_rails_11e15d5c6b"
+FOREIGN KEY ("product_id")
+  REFERENCES "products" ("id")
+
+  [1m[36m (2.1ms)[0m  [1mALTER TABLE "products" ADD CONSTRAINT "fk_rails_fb915499a4"
+FOREIGN KEY ("category_id")
+  REFERENCES "categories" ("id")
+[0m
+  [1m[35m (3.9ms)[0m  CREATE TABLE "schema_migrations" ("version" character varying NOT NULL) 
+  [1m[36m (2.8ms)[0m  [1mCREATE UNIQUE INDEX  "unique_schema_migrations" ON "schema_migrations"  ("version")[0m
+  [1m[35m (0.4ms)[0m  SELECT version FROM "schema_migrations"
+  [1m[36m (1.0ms)[0m  [1mINSERT INTO "schema_migrations" (version) VALUES ('20190614155102')[0m
+  [1m[35m (0.9ms)[0m  INSERT INTO "schema_migrations" (version) VALUES ('20190613133159')
+  [1m[36m (1.1ms)[0m  [1mINSERT INTO "schema_migrations" (version) VALUES ('20160621152728')[0m
+  [1m[35m (0.9ms)[0m  INSERT INTO "schema_migrations" (version) VALUES ('20160621153855')
+  [1m[36m (0.8ms)[0m  [1mINSERT INTO "schema_migrations" (version) VALUES ('20160621153741')[0m
+  [1m[35m (0.9ms)[0m  INSERT INTO "schema_migrations" (version) VALUES ('20160625062916')
+  [1m[36m (0.9ms)[0m  [1mINSERT INTO "schema_migrations" (version) VALUES ('20160623222000')[0m
+  [1m[35m (0.9ms)[0m  INSERT INTO "schema_migrations" (version) VALUES ('20160622113553')
+  [1m[36m (0.7ms)[0m  [1mINSERT INTO "schema_migrations" (version) VALUES ('20160623110200')[0m
+  [1m[35mActiveRecord::SchemaMigration Load (0.3ms)[0m  SELECT "schema_migrations".* FROM "schema_migrations"
+  [1m[36mCategory Load (0.4ms)[0m  [1mSELECT  "categories".* FROM "categories" WHERE "categories"."name" = $1 LIMIT 1[0m  [["name", "Apparel"]]
+  [1m[35m (0.2ms)[0m  BEGIN
+  [1m[36mSQL (0.4ms)[0m  [1mINSERT INTO "categories" ("name", "created_at", "updated_at") VALUES ($1, $2, $3) RETURNING "id"[0m  [["name", "Apparel"], ["created_at", "2019-06-14 16:30:04.779983"], ["updated_at", "2019-06-14 16:30:04.779983"]]
+  [1m[35m (0.8ms)[0m  COMMIT
+  [1m[36mCategory Load (0.2ms)[0m  [1mSELECT  "categories".* FROM "categories" WHERE "categories"."name" = $1 LIMIT 1[0m  [["name", "Electronics"]]
+  [1m[35m (0.1ms)[0m  BEGIN
+  [1m[36mSQL (0.2ms)[0m  [1mINSERT INTO "categories" ("name", "created_at", "updated_at") VALUES ($1, $2, $3) RETURNING "id"[0m  [["name", "Electronics"], ["created_at", "2019-06-14 16:30:04.785767"], ["updated_at", "2019-06-14 16:30:04.785767"]]
+  [1m[35m (0.6ms)[0m  COMMIT
+  [1m[36mCategory Load (0.2ms)[0m  [1mSELECT  "categories".* FROM "categories" WHERE "categories"."name" = $1 LIMIT 1[0m  [["name", "Furniture"]]
+  [1m[35m (0.1ms)[0m  BEGIN
+  [1m[36mSQL (0.2ms)[0m  [1mINSERT INTO "categories" ("name", "created_at", "updated_at") VALUES ($1, $2, $3) RETURNING "id"[0m  [["name", "Furniture"], ["created_at", "2019-06-14 16:30:04.789524"], ["updated_at", "2019-06-14 16:30:04.789524"]]
+  [1m[35m (0.6ms)[0m  COMMIT
+  [1m[36mProduct Load (1.8ms)[0m  [1mSELECT "products".* FROM "products"[0m
+  [1m[35m (0.2ms)[0m  BEGIN
+  [1m[36mSQL (0.8ms)[0m  [1mINSERT INTO "products" ("name", "description", "image", "quantity", "price_cents", "category_id", "created_at", "updated_at") VALUES ($1, $2, $3, $4, $5, $6, $7, $8) RETURNING "id"[0m  [["name", "Men's Classy shirt"], ["description", "Squid shabby chic mumblecore retro offal austin cred selvage. Deep v whatever godard. Twee mixtape kogi meggings master craft beer fingerstache. Fanny pack normcore cliche tilde. Diy etsy shoreditch listicle. Freegan kickstarter green juice williamsburg farm-to-table bitters bespoke portland."], ["image", "apparel1.jpg"], ["quantity", 10], ["price_cents", 6499], ["category_id", 1], ["created_at", "2019-06-14 16:30:05.397770"], ["updated_at", "2019-06-14 16:30:05.397770"]]
+  [1m[35m (0.7ms)[0m  COMMIT
+  [1m[36m (0.1ms)[0m  [1mBEGIN[0m
+  [1m[35mSQL (0.5ms)[0m  INSERT INTO "products" ("name", "description", "image", "quantity", "price_cents", "category_id", "created_at", "updated_at") VALUES ($1, $2, $3, $4, $5, $6, $7, $8) RETURNING "id"  [["name", "Women's Zebra pants"], ["description", "Aesthetic craft beer ugh poutine. Street roof hammock. Narwhal sustainable lumbersexual vhs celiac heirloom you probably haven't heard of them williamsburg. Chillwave gluten-free slow-carb 90's banh mi quinoa squid."], ["image", "apparel2.jpg"], ["quantity", 18], ["price_cents", 12499], ["category_id", 1], ["created_at", "2019-06-14 16:30:05.539471"], ["updated_at", "2019-06-14 16:30:05.539471"]]
+  [1m[36m (0.6ms)[0m  [1mCOMMIT[0m
+  [1m[35m (0.2ms)[0m  BEGIN
+  [1m[36mSQL (0.6ms)[0m  [1mINSERT INTO "products" ("name", "description", "image", "quantity", "price_cents", "category_id", "created_at", "updated_at") VALUES ($1, $2, $3, $4, $5, $6, $7, $8) RETURNING "id"[0m  [["name", "Hipster Hat"], ["description", "Semiotics goth tacos distillery. Fingerstache offal pop-up fixie cold-pressed shabby chic. Blog raw denim bicycle rights cred photo booth beard. Bitters art party yolo bushwick twee vice tousled. 90's loko tofu polaroid vegan crucifix lumbersexual next level. Pop-up shoreditch brooklyn forage chillwave."], ["image", "apparel3.jpg"], ["quantity", 4], ["price_cents", 3449], ["category_id", 1], ["created_at", "2019-06-14 16:30:05.716753"], ["updated_at", "2019-06-14 16:30:05.716753"]]
+  [1m[35m (0.7ms)[0m  COMMIT
+  [1m[36m (0.2ms)[0m  [1mBEGIN[0m
+  [1m[35mSQL (0.5ms)[0m  INSERT INTO "products" ("name", "description", "image", "quantity", "price_cents", "category_id", "created_at", "updated_at") VALUES ($1, $2, $3, $4, $5, $6, $7, $8) RETURNING "id"  [["name", "Hipster Socks"], ["description", "Direct trade next level fingerstache whatever try-hard everyday selvage. Pabst cornhole next level bicycle rights waistcoat craft beer. Godard single-origin coffee hammock leggings yolo kinfolk. Ramps tattooed flexitarian distillery everyday tumblr twee church-key. Gastropub ennui keffiyeh semiotics vhs marfa."], ["image", "apparel4.jpg"], ["quantity", 8], ["price_cents", 2500], ["category_id", 1], ["created_at", "2019-06-14 16:30:06.095420"], ["updated_at", "2019-06-14 16:30:06.095420"]]
+  [1m[36m (0.6ms)[0m  [1mCOMMIT[0m
+  [1m[35m (0.1ms)[0m  BEGIN
+  [1m[36mSQL (0.6ms)[0m  [1mINSERT INTO "products" ("name", "description", "image", "quantity", "price_cents", "category_id", "created_at", "updated_at") VALUES ($1, $2, $3, $4, $5, $6, $7, $8) RETURNING "id"[0m  [["name", "Russian Spy Shoes"], ["description", "Butcher gluten-free wayfarers yr actually vhs cornhole lumbersexual. Pickled kombucha biodiesel selfies roof stumptown. Bitters ugh shoreditch synth. Chartreuse selfies synth flannel austin food truck."], ["image", "apparel5.jpg"], ["quantity", 8], ["price_cents", 122500], ["category_id", 1], ["created_at", "2019-06-14 16:30:06.257989"], ["updated_at", "2019-06-14 16:30:06.257989"]]
+  [1m[35m (0.7ms)[0m  COMMIT
+  [1m[36m (0.2ms)[0m  [1mBEGIN[0m
+  [1m[35mSQL (0.5ms)[0m  INSERT INTO "products" ("name", "description", "image", "quantity", "price_cents", "category_id", "created_at", "updated_at") VALUES ($1, $2, $3, $4, $5, $6, $7, $8) RETURNING "id"  [["name", "Human Feet Shoes"], ["description", "Pork belly before they sold out shabby chic messenger bag knausgaard. Bespoke selvage umami wolf cardigan paleo pitchfork actually. Crucifix asymmetrical pork belly 90's pbr&b sriracha xoxo. Keytar meditation diy direct trade vhs pinterest. Narwhal kickstarter keytar. Health lumbersexual wolf kinfolk +1 readymade."], ["image", "apparel6.jpg"], ["quantity", 82], ["price_cents", 22450], ["category_id", 1], ["created_at", "2019-06-14 16:30:06.409086"], ["updated_at", "2019-06-14 16:30:06.409086"]]
+  [1m[36m (0.7ms)[0m  [1mCOMMIT[0m
+  [1m[35m (0.2ms)[0m  BEGIN
+  [1m[36mSQL (0.4ms)[0m  [1mINSERT INTO "products" ("name", "description", "image", "quantity", "price_cents", "category_id", "created_at", "updated_at") VALUES ($1, $2, $3, $4, $5, $6, $7, $8) RETURNING "id"[0m  [["name", "Modern Skateboards"], ["description", "Master artisan 90's food truck normcore. Loko ramps aesthetic letterpress kinfolk. Pug flexitarian art party pop-up next level. Sartorial cornhole vhs gentrify wayfarers pour-over pitchfork waistcoat. Five dollar toast jean shorts chillwave. Tofu letterpress +1."], ["image", "electronics1.jpg"], ["quantity", 0], ["price_cents", 16449], ["category_id", 2], ["created_at", "2019-06-14 16:30:06.579270"], ["updated_at", "2019-06-14 16:30:06.579270"]]
+  [1m[35m (0.9ms)[0m  COMMIT
+  [1m[36m (0.2ms)[0m  [1mBEGIN[0m
+  [1m[35mSQL (0.4ms)[0m  INSERT INTO "products" ("name", "description", "image", "quantity", "price_cents", "category_id", "created_at", "updated_at") VALUES ($1, $2, $3, $4, $5, $6, $7, $8) RETURNING "id"  [["name", "Hotdog Slicer"], ["description", "Green juice chambray selvage chicharrones vegan tousled kale chips. Crucifix slow-carb lumbersexual actually truffaut. Migas bespoke meh. Chicharrones +1 small batch dreamcatcher offal."], ["image", "electronics2.jpg"], ["quantity", 3], ["price_cents", 2600], ["category_id", 2], ["created_at", "2019-06-14 16:30:06.742078"], ["updated_at", "2019-06-14 16:30:06.742078"]]
+  [1m[36m (0.8ms)[0m  [1mCOMMIT[0m
+  [1m[35m (0.2ms)[0m  BEGIN
+  [1m[36mSQL (0.5ms)[0m  [1mINSERT INTO "products" ("name", "description", "image", "quantity", "price_cents", "category_id", "created_at", "updated_at") VALUES ($1, $2, $3, $4, $5, $6, $7, $8) RETURNING "id"[0m  [["name", "World's Largest Smartwatch"], ["description", "Swag actually jean shorts listicle bushwick try-hard selvage bespoke. Goth yuccie slow-carb gentrify. Artisan gentrify trust fund vegan meh biodiesel whatever leggings. Diy helvetica lomo actually franzen fanny pack. Small batch irony flannel next level venmo kickstarter mixtape."], ["image", "electronics3.jpg"], ["quantity", 32], ["price_cents", 202629], ["category_id", 2], ["created_at", "2019-06-14 16:30:06.902771"], ["updated_at", "2019-06-14 16:30:06.902771"]]
+  [1m[35m (0.6ms)[0m  COMMIT
+  [1m[36m (0.2ms)[0m  [1mBEGIN[0m
+  [1m[35mSQL (0.4ms)[0m  INSERT INTO "products" ("name", "description", "image", "quantity", "price_cents", "category_id", "created_at", "updated_at") VALUES ($1, $2, $3, $4, $5, $6, $7, $8) RETURNING "id"  [["name", "Optimal Sleeping Bed"], ["description", "Banjo everyday ethical photo booth pitchfork tofu heirloom vhs. Fap tilde park poutine ethical keytar green juice. Vinyl everyday retro keffiyeh craft beer pabst cleanse taxidermy. Quinoa bespoke selvage. Pitchfork kale chips pinterest."], ["image", "furniture1.jpg"], ["quantity", 320], ["price_cents", 305200], ["category_id", 3], ["created_at", "2019-06-14 16:30:07.072579"], ["updated_at", "2019-06-14 16:30:07.072579"]]
+  [1m[36m (0.6ms)[0m  [1mCOMMIT[0m
+  [1m[35m (0.2ms)[0m  BEGIN
+  [1m[36mSQL (0.4ms)[0m  [1mINSERT INTO "products" ("name", "description", "image", "quantity", "price_cents", "category_id", "created_at", "updated_at") VALUES ($1, $2, $3, $4, $5, $6, $7, $8) RETURNING "id"[0m  [["name", "Electric Chair"], ["description", "Fanny pack farm-to-table selvage portland asymmetrical trust fund kogi. Pinterest brooklyn kogi +1 xoxo hella chia. Aesthetic loko humblebrag keytar. Locavore swag gluten-free. Tousled retro kale chips bushwick roof carry waistcoat 3 wolf moon."], ["image", "furniture2.jpg"], ["quantity", 2], ["price_cents", 98765], ["category_id", 3], ["created_at", "2019-06-14 16:30:07.254984"], ["updated_at", "2019-06-14 16:30:07.254984"]]
+  [1m[35m (0.6ms)[0m  COMMIT
+  [1m[36m (0.2ms)[0m  [1mBEGIN[0m
+  [1m[35mSQL (0.4ms)[0m  INSERT INTO "products" ("name", "description", "image", "quantity", "price_cents", "category_id", "created_at", "updated_at") VALUES ($1, $2, $3, $4, $5, $6, $7, $8) RETURNING "id"  [["name", "Red Bookshelf"], ["description", "Jean shorts whatever twee messenger bag viral drinking food truck farm-to-table. Letterpress fanny pack next level keffiyeh. Asymmetrical salvia chambray slow-carb brooklyn hoodie. Vice deep v blog listicle fixie xoxo. Cronut helvetica whatever fashion axe pickled."], ["image", "furniture3.jpg"], ["quantity", 23], ["price_cents", 248375], ["category_id", 3], ["created_at", "2019-06-14 16:30:07.512686"], ["updated_at", "2019-06-14 16:30:07.512686"]]
+  [1m[36m (0.8ms)[0m  [1mCOMMIT[0m
+  [1m[35mProduct Load (0.3ms)[0m  SELECT  "products".* FROM "products" WHERE "products"."name" = $1 LIMIT 1  [["name", "Red Bookshelf"]]
+  [1m[36m (0.2ms)[0m  [1mBEGIN[0m
+  [1m[35mSQL (0.6ms)[0m  INSERT INTO "reviews" ("description", "rating", "product_id", "created_at", "updated_at") VALUES ($1, $2, $3, $4, $5) RETURNING "id"  [["description", "This product is pretty innovative!"], ["rating", 5], ["product_id", 12], ["created_at", "2019-06-14 16:30:07.587143"], ["updated_at", "2019-06-14 16:30:07.587143"]]
+  [1m[36m (0.6ms)[0m  [1mCOMMIT[0m
+  [1m[35m (0.1ms)[0m  BEGIN
+  [1m[36mSQL (0.3ms)[0m  [1mINSERT INTO "reviews" ("description", "rating", "product_id", "created_at", "updated_at") VALUES ($1, $2, $3, $4, $5) RETURNING "id"[0m  [["description", "Too complicated to use..."], ["rating", 4], ["product_id", 12], ["created_at", "2019-06-14 16:30:07.591413"], ["updated_at", "2019-06-14 16:30:07.591413"]]
+  [1m[35m (0.5ms)[0m  COMMIT
+
+
+Started GET "/admin/products" for 10.0.2.2 at 2019-06-14 16:34:17 +0000
+  [1m[36mActiveRecord::SchemaMigration Load (0.3ms)[0m  [1mSELECT "schema_migrations".* FROM "schema_migrations"[0m
+Processing by Admin::ProductsController#index as HTML
+  [1m[35mProduct Load (1.3ms)[0m  SELECT "products".* FROM "products"  ORDER BY "products"."id" DESC
+  [1m[36mCategory Load (0.6ms)[0m  [1mSELECT  "categories".* FROM "categories" WHERE "categories"."id" = $1 LIMIT 1[0m  [["id", 3]]
+  [1m[35mCACHE (0.0ms)[0m  SELECT  "categories".* FROM "categories" WHERE "categories"."id" = $1 LIMIT 1  [["id", 3]]
+  [1m[36mCACHE (0.0ms)[0m  [1mSELECT  "categories".* FROM "categories" WHERE "categories"."id" = $1 LIMIT 1[0m  [["id", 3]]
+  [1m[35mCategory Load (0.6ms)[0m  SELECT  "categories".* FROM "categories" WHERE "categories"."id" = $1 LIMIT 1  [["id", 2]]
+  [1m[36mCACHE (0.0ms)[0m  [1mSELECT  "categories".* FROM "categories" WHERE "categories"."id" = $1 LIMIT 1[0m  [["id", 2]]
+  [1m[35mCACHE (0.0ms)[0m  SELECT  "categories".* FROM "categories" WHERE "categories"."id" = $1 LIMIT 1  [["id", 2]]
+  [1m[36mCategory Load (0.5ms)[0m  [1mSELECT  "categories".* FROM "categories" WHERE "categories"."id" = $1 LIMIT 1[0m  [["id", 1]]
+  [1m[35mCACHE (0.0ms)[0m  SELECT  "categories".* FROM "categories" WHERE "categories"."id" = $1 LIMIT 1  [["id", 1]]
+  [1m[36mCACHE (0.0ms)[0m  [1mSELECT  "categories".* FROM "categories" WHERE "categories"."id" = $1 LIMIT 1[0m  [["id", 1]]
+  [1m[35mCACHE (0.0ms)[0m  SELECT  "categories".* FROM "categories" WHERE "categories"."id" = $1 LIMIT 1  [["id", 1]]
+  [1m[36mCACHE (0.0ms)[0m  [1mSELECT  "categories".* FROM "categories" WHERE "categories"."id" = $1 LIMIT 1[0m  [["id", 1]]
+  [1m[35mCACHE (0.0ms)[0m  SELECT  "categories".* FROM "categories" WHERE "categories"."id" = $1 LIMIT 1  [["id", 1]]
+  Rendered admin/products/_product.html.erb (456.8ms)
+  Rendered admin/products/index.html.erb within layouts/application (502.2ms)
+  [1m[36mCategory Load (0.6ms)[0m  [1mSELECT "categories".* FROM "categories"[0m
+  [1m[35mUser Load (0.6ms)[0m  SELECT  "users".* FROM "users" WHERE "users"."id" = $1 LIMIT 1  [["id", 5]]
+  Rendered layouts/_top_nav.html.erb (51.1ms)
+Completed 500 Internal Server Error in 1598ms (ActiveRecord: 10.7ms)
+
+ActiveRecord::RecordNotFound (Couldn't find User with 'id'=5):
+  app/controllers/application_controller.rb:11:in `current_user'
+  app/views/layouts/_top_nav.html.erb:28:in `_app_views_layouts__top_nav_html_erb__352582390548104936_69988086861940'
+  app/views/layouts/application.html.erb:11:in `_app_views_layouts_application_html_erb__1700114169585347569_10170800'
+
+
+  Rendered /home/vagrant/.rvm/gems/ruby-2.3.5/gems/actionpack-4.2.6/lib/action_dispatch/middleware/templates/rescues/_source.erb (9.1ms)
+  Rendered /home/vagrant/.rvm/gems/ruby-2.3.5/gems/actionpack-4.2.6/lib/action_dispatch/middleware/templates/rescues/_trace.html.erb (2.9ms)
+  Rendered /home/vagrant/.rvm/gems/ruby-2.3.5/gems/actionpack-4.2.6/lib/action_dispatch/middleware/templates/rescues/_request_and_response.html.erb (1.1ms)
+  Rendered /home/vagrant/.rvm/gems/ruby-2.3.5/gems/actionpack-4.2.6/lib/action_dispatch/middleware/templates/rescues/diagnostics.html.erb within rescues/layout (25.8ms)
+  Rendered /home/vagrant/.rvm/gems/ruby-2.3.5/gems/web-console-2.3.0/lib/web_console/templates/_markup.html.erb (0.5ms)
+  Rendered /home/vagrant/.rvm/gems/ruby-2.3.5/gems/web-console-2.3.0/lib/web_console/templates/_inner_console_markup.html.erb within layouts/inlined_string (0.3ms)
+  Rendered /home/vagrant/.rvm/gems/ruby-2.3.5/gems/web-console-2.3.0/lib/web_console/templates/_prompt_box_markup.html.erb within layouts/inlined_string (0.3ms)
+  Rendered /home/vagrant/.rvm/gems/ruby-2.3.5/gems/web-console-2.3.0/lib/web_console/templates/style.css.erb within layouts/inlined_string (0.3ms)
+  Rendered /home/vagrant/.rvm/gems/ruby-2.3.5/gems/web-console-2.3.0/lib/web_console/templates/console.js.erb within layouts/javascript (14.7ms)
+  Rendered /home/vagrant/.rvm/gems/ruby-2.3.5/gems/web-console-2.3.0/lib/web_console/templates/main.js.erb within layouts/javascript (0.2ms)
+  Rendered /home/vagrant/.rvm/gems/ruby-2.3.5/gems/web-console-2.3.0/lib/web_console/templates/error_page.js.erb within layouts/javascript (0.4ms)
+  Rendered /home/vagrant/.rvm/gems/ruby-2.3.5/gems/web-console-2.3.0/lib/web_console/templates/index.html.erb (30.4ms)
+
+
+Started GET "/" for 10.0.2.2 at 2019-06-14 16:34:43 +0000
+  [1m[36mActiveRecord::SchemaMigration Load (0.6ms)[0m  [1mSELECT "schema_migrations".* FROM "schema_migrations"[0m
+Processing by ProductsController#index as HTML
+  [1m[35mProduct Load (1.2ms)[0m  SELECT "products".* FROM "products"  ORDER BY "products"."created_at" DESC
+  Rendered products/_product.html.erb (400.3ms)
+  Rendered products/index.html.erb within layouts/application (433.7ms)
+  [1m[36mCategory Load (0.7ms)[0m  [1mSELECT "categories".* FROM "categories"[0m
+  [1m[35mUser Load (0.7ms)[0m  SELECT  "users".* FROM "users" WHERE "users"."id" = $1 LIMIT 1  [["id", 5]]
+  Rendered layouts/_top_nav.html.erb (78.8ms)
+Completed 500 Internal Server Error in 1534ms (ActiveRecord: 8.2ms)
+
+ActiveRecord::RecordNotFound (Couldn't find User with 'id'=5):
+  app/controllers/application_controller.rb:11:in `current_user'
+  app/views/layouts/_top_nav.html.erb:28:in `_app_views_layouts__top_nav_html_erb__4552805752748276477_69855169050220'
+  app/views/layouts/application.html.erb:11:in `_app_views_layouts_application_html_erb__3295312066374497084_30473660'
+
+
+  Rendered /home/vagrant/.rvm/gems/ruby-2.3.5/gems/actionpack-4.2.6/lib/action_dispatch/middleware/templates/rescues/_source.erb (6.4ms)
+  Rendered /home/vagrant/.rvm/gems/ruby-2.3.5/gems/actionpack-4.2.6/lib/action_dispatch/middleware/templates/rescues/_trace.html.erb (2.8ms)
+  Rendered /home/vagrant/.rvm/gems/ruby-2.3.5/gems/actionpack-4.2.6/lib/action_dispatch/middleware/templates/rescues/_request_and_response.html.erb (1.0ms)
+  Rendered /home/vagrant/.rvm/gems/ruby-2.3.5/gems/actionpack-4.2.6/lib/action_dispatch/middleware/templates/rescues/diagnostics.html.erb within rescues/layout (22.4ms)
+  Rendered /home/vagrant/.rvm/gems/ruby-2.3.5/gems/web-console-2.3.0/lib/web_console/templates/_markup.html.erb (0.3ms)
+  Rendered /home/vagrant/.rvm/gems/ruby-2.3.5/gems/web-console-2.3.0/lib/web_console/templates/_inner_console_markup.html.erb within layouts/inlined_string (0.2ms)
+  Rendered /home/vagrant/.rvm/gems/ruby-2.3.5/gems/web-console-2.3.0/lib/web_console/templates/_prompt_box_markup.html.erb within layouts/inlined_string (0.3ms)
+  Rendered /home/vagrant/.rvm/gems/ruby-2.3.5/gems/web-console-2.3.0/lib/web_console/templates/style.css.erb within layouts/inlined_string (0.4ms)
+  Rendered /home/vagrant/.rvm/gems/ruby-2.3.5/gems/web-console-2.3.0/lib/web_console/templates/console.js.erb within layouts/javascript (15.6ms)
+  Rendered /home/vagrant/.rvm/gems/ruby-2.3.5/gems/web-console-2.3.0/lib/web_console/templates/main.js.erb within layouts/javascript (0.3ms)
+  Rendered /home/vagrant/.rvm/gems/ruby-2.3.5/gems/web-console-2.3.0/lib/web_console/templates/error_page.js.erb within layouts/javascript (0.3ms)
+  Rendered /home/vagrant/.rvm/gems/ruby-2.3.5/gems/web-console-2.3.0/lib/web_console/templates/index.html.erb (30.3ms)
+
+
+Started GET "/" for 10.0.2.2 at 2019-06-14 16:34:46 +0000
+Processing by ProductsController#index as HTML
+  [1m[36mProduct Load (0.4ms)[0m  [1mSELECT "products".* FROM "products"  ORDER BY "products"."created_at" DESC[0m
+  Rendered products/_product.html.erb (16.0ms)
+  Rendered products/index.html.erb within layouts/application (30.8ms)
+  [1m[35mCategory Load (0.4ms)[0m  SELECT "categories".* FROM "categories"
+  [1m[36mUser Load (0.4ms)[0m  [1mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 LIMIT 1[0m  [["id", 5]]
+  Rendered layouts/_top_nav.html.erb (13.8ms)
+Completed 500 Internal Server Error in 254ms (ActiveRecord: 1.2ms)
+
+ActiveRecord::RecordNotFound (Couldn't find User with 'id'=5):
+  app/controllers/application_controller.rb:11:in `current_user'
+  app/views/layouts/_top_nav.html.erb:28:in `_app_views_layouts__top_nav_html_erb__4552805752748276477_69855169050220'
+  app/views/layouts/application.html.erb:11:in `_app_views_layouts_application_html_erb__3295312066374497084_30473660'
+
+
+  Rendered /home/vagrant/.rvm/gems/ruby-2.3.5/gems/actionpack-4.2.6/lib/action_dispatch/middleware/templates/rescues/_source.erb (6.4ms)
+  Rendered /home/vagrant/.rvm/gems/ruby-2.3.5/gems/actionpack-4.2.6/lib/action_dispatch/middleware/templates/rescues/_trace.html.erb (2.7ms)
+  Rendered /home/vagrant/.rvm/gems/ruby-2.3.5/gems/actionpack-4.2.6/lib/action_dispatch/middleware/templates/rescues/_request_and_response.html.erb (0.8ms)
+  Rendered /home/vagrant/.rvm/gems/ruby-2.3.5/gems/actionpack-4.2.6/lib/action_dispatch/middleware/templates/rescues/diagnostics.html.erb within rescues/layout (22.1ms)
+  Rendered /home/vagrant/.rvm/gems/ruby-2.3.5/gems/web-console-2.3.0/lib/web_console/templates/_markup.html.erb (0.3ms)
+  Rendered /home/vagrant/.rvm/gems/ruby-2.3.5/gems/web-console-2.3.0/lib/web_console/templates/_inner_console_markup.html.erb within layouts/inlined_string (0.2ms)
+  Rendered /home/vagrant/.rvm/gems/ruby-2.3.5/gems/web-console-2.3.0/lib/web_console/templates/_prompt_box_markup.html.erb within layouts/inlined_string (0.3ms)
+  Rendered /home/vagrant/.rvm/gems/ruby-2.3.5/gems/web-console-2.3.0/lib/web_console/templates/style.css.erb within layouts/inlined_string (1.0ms)
+  Rendered /home/vagrant/.rvm/gems/ruby-2.3.5/gems/web-console-2.3.0/lib/web_console/templates/console.js.erb within layouts/javascript (16.0ms)
+  Rendered /home/vagrant/.rvm/gems/ruby-2.3.5/gems/web-console-2.3.0/lib/web_console/templates/main.js.erb within layouts/javascript (0.3ms)
+  Rendered /home/vagrant/.rvm/gems/ruby-2.3.5/gems/web-console-2.3.0/lib/web_console/templates/error_page.js.erb within layouts/javascript (0.3ms)
+  Rendered /home/vagrant/.rvm/gems/ruby-2.3.5/gems/web-console-2.3.0/lib/web_console/templates/index.html.erb (31.4ms)
+
+
+Started GET "/" for 10.0.2.2 at 2019-06-14 16:34:50 +0000
+Processing by ProductsController#index as HTML
+  [1m[35mProduct Load (0.4ms)[0m  SELECT "products".* FROM "products"  ORDER BY "products"."created_at" DESC
+  Rendered products/_product.html.erb (14.9ms)
+  Rendered products/index.html.erb within layouts/application (27.8ms)
+  [1m[36mCategory Load (0.3ms)[0m  [1mSELECT "categories".* FROM "categories"[0m
+  [1m[35mUser Load (0.2ms)[0m  SELECT  "users".* FROM "users" WHERE "users"."id" = $1 LIMIT 1  [["id", 5]]
+  Rendered layouts/_top_nav.html.erb (16.0ms)
+Completed 500 Internal Server Error in 242ms (ActiveRecord: 0.9ms)
+
+ActiveRecord::RecordNotFound (Couldn't find User with 'id'=5):
+  app/controllers/application_controller.rb:11:in `current_user'
+  app/views/layouts/_top_nav.html.erb:28:in `_app_views_layouts__top_nav_html_erb__4552805752748276477_69855169050220'
+  app/views/layouts/application.html.erb:11:in `_app_views_layouts_application_html_erb__3295312066374497084_30473660'
+
+
+  Rendered /home/vagrant/.rvm/gems/ruby-2.3.5/gems/actionpack-4.2.6/lib/action_dispatch/middleware/templates/rescues/_source.erb (6.5ms)
+  Rendered /home/vagrant/.rvm/gems/ruby-2.3.5/gems/actionpack-4.2.6/lib/action_dispatch/middleware/templates/rescues/_trace.html.erb (2.7ms)
+  Rendered /home/vagrant/.rvm/gems/ruby-2.3.5/gems/actionpack-4.2.6/lib/action_dispatch/middleware/templates/rescues/_request_and_response.html.erb (0.9ms)
+  Rendered /home/vagrant/.rvm/gems/ruby-2.3.5/gems/actionpack-4.2.6/lib/action_dispatch/middleware/templates/rescues/diagnostics.html.erb within rescues/layout (22.6ms)
+  Rendered /home/vagrant/.rvm/gems/ruby-2.3.5/gems/web-console-2.3.0/lib/web_console/templates/_markup.html.erb (0.4ms)
+  Rendered /home/vagrant/.rvm/gems/ruby-2.3.5/gems/web-console-2.3.0/lib/web_console/templates/_inner_console_markup.html.erb within layouts/inlined_string (0.3ms)
+  Rendered /home/vagrant/.rvm/gems/ruby-2.3.5/gems/web-console-2.3.0/lib/web_console/templates/_prompt_box_markup.html.erb within layouts/inlined_string (0.3ms)
+  Rendered /home/vagrant/.rvm/gems/ruby-2.3.5/gems/web-console-2.3.0/lib/web_console/templates/style.css.erb within layouts/inlined_string (0.4ms)
+  Rendered /home/vagrant/.rvm/gems/ruby-2.3.5/gems/web-console-2.3.0/lib/web_console/templates/console.js.erb within layouts/javascript (17.7ms)
+  Rendered /home/vagrant/.rvm/gems/ruby-2.3.5/gems/web-console-2.3.0/lib/web_console/templates/main.js.erb within layouts/javascript (0.4ms)
+  Rendered /home/vagrant/.rvm/gems/ruby-2.3.5/gems/web-console-2.3.0/lib/web_console/templates/error_page.js.erb within layouts/javascript (1.0ms)
+  Rendered /home/vagrant/.rvm/gems/ruby-2.3.5/gems/web-console-2.3.0/lib/web_console/templates/index.html.erb (37.4ms)
+
+
+Started GET "/" for 10.0.2.2 at 2019-06-14 16:36:05 +0000
+Processing by ProductsController#index as HTML
+  [1m[36mProduct Load (0.6ms)[0m  [1mSELECT "products".* FROM "products"  ORDER BY "products"."created_at" DESC[0m
+  Rendered products/_product.html.erb (28.2ms)
+  Rendered products/index.html.erb within layouts/application (44.8ms)
+  [1m[35mCategory Load (0.5ms)[0m  SELECT "categories".* FROM "categories"
+  [1m[36mUser Load (0.4ms)[0m  [1mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 LIMIT 1[0m  [["id", 5]]
+  Rendered layouts/_top_nav.html.erb (14.2ms)
+Completed 500 Internal Server Error in 304ms (ActiveRecord: 1.5ms)
+
+ActiveRecord::RecordNotFound (Couldn't find User with 'id'=5):
+  app/controllers/application_controller.rb:11:in `current_user'
+  app/views/layouts/_top_nav.html.erb:28:in `_app_views_layouts__top_nav_html_erb__4552805752748276477_69855169050220'
+  app/views/layouts/application.html.erb:11:in `_app_views_layouts_application_html_erb__3295312066374497084_30473660'
+
+
+  Rendered /home/vagrant/.rvm/gems/ruby-2.3.5/gems/actionpack-4.2.6/lib/action_dispatch/middleware/templates/rescues/_source.erb (7.1ms)
+  Rendered /home/vagrant/.rvm/gems/ruby-2.3.5/gems/actionpack-4.2.6/lib/action_dispatch/middleware/templates/rescues/_trace.html.erb (3.0ms)
+  Rendered /home/vagrant/.rvm/gems/ruby-2.3.5/gems/actionpack-4.2.6/lib/action_dispatch/middleware/templates/rescues/_request_and_response.html.erb (1.0ms)
+  Rendered /home/vagrant/.rvm/gems/ruby-2.3.5/gems/actionpack-4.2.6/lib/action_dispatch/middleware/templates/rescues/diagnostics.html.erb within rescues/layout (22.8ms)
+  Rendered /home/vagrant/.rvm/gems/ruby-2.3.5/gems/web-console-2.3.0/lib/web_console/templates/_markup.html.erb (0.3ms)
+  Rendered /home/vagrant/.rvm/gems/ruby-2.3.5/gems/web-console-2.3.0/lib/web_console/templates/_inner_console_markup.html.erb within layouts/inlined_string (0.2ms)
+  Rendered /home/vagrant/.rvm/gems/ruby-2.3.5/gems/web-console-2.3.0/lib/web_console/templates/_prompt_box_markup.html.erb within layouts/inlined_string (0.4ms)
+  Rendered /home/vagrant/.rvm/gems/ruby-2.3.5/gems/web-console-2.3.0/lib/web_console/templates/style.css.erb within layouts/inlined_string (0.3ms)
+  Rendered /home/vagrant/.rvm/gems/ruby-2.3.5/gems/web-console-2.3.0/lib/web_console/templates/console.js.erb within layouts/javascript (14.3ms)
+  Rendered /home/vagrant/.rvm/gems/ruby-2.3.5/gems/web-console-2.3.0/lib/web_console/templates/main.js.erb within layouts/javascript (0.3ms)
+  Rendered /home/vagrant/.rvm/gems/ruby-2.3.5/gems/web-console-2.3.0/lib/web_console/templates/error_page.js.erb within layouts/javascript (0.4ms)
+  Rendered /home/vagrant/.rvm/gems/ruby-2.3.5/gems/web-console-2.3.0/lib/web_console/templates/index.html.erb (28.5ms)
+
+
+Started GET "/" for 10.0.2.2 at 2019-06-14 16:38:59 +0000
+  [1m[36mActiveRecord::SchemaMigration Load (0.5ms)[0m  [1mSELECT "schema_migrations".* FROM "schema_migrations"[0m
+Processing by ProductsController#index as HTML
+  [1m[35mProduct Load (1.1ms)[0m  SELECT "products".* FROM "products"  ORDER BY "products"."created_at" DESC
+  Rendered products/_product.html.erb (424.3ms)
+  Rendered products/index.html.erb within layouts/application (457.7ms)
+  [1m[36mCategory Load (0.7ms)[0m  [1mSELECT "categories".* FROM "categories"[0m
+  Rendered layouts/_top_nav.html.erb (284.8ms)
+Completed 500 Internal Server Error in 1794ms (ActiveRecord: 6.1ms)
+
+ActionView::Template::Error (undefined local variable or method `current_user' for #<#<Class:0x000000000432a718>:0x000000000431b858>
+Did you mean?  current_page?):
+    25:             <% end %>
+    26:           </ul>
+    27:         </li>
+    28:         <% if current_user %>
+    29:         <li class="log-out">
+    30:           <%= link_to 'Log Out', :logout %>
+    31:         </li>
+  app/views/layouts/_top_nav.html.erb:28:in `_app_views_layouts__top_nav_html_erb___225690419667908372_69853860370580'
+  app/views/layouts/application.html.erb:11:in `_app_views_layouts_application_html_erb___1597871874166908632_34698260'
+
+
+  Rendered /home/vagrant/.rvm/gems/ruby-2.3.5/gems/actionpack-4.2.6/lib/action_dispatch/middleware/templates/rescues/_source.erb (6.9ms)
+  Rendered /home/vagrant/.rvm/gems/ruby-2.3.5/gems/actionpack-4.2.6/lib/action_dispatch/middleware/templates/rescues/_trace.html.erb (2.8ms)
+  Rendered /home/vagrant/.rvm/gems/ruby-2.3.5/gems/actionpack-4.2.6/lib/action_dispatch/middleware/templates/rescues/_request_and_response.html.erb (1.1ms)
+  Rendered /home/vagrant/.rvm/gems/ruby-2.3.5/gems/actionpack-4.2.6/lib/action_dispatch/middleware/templates/rescues/template_error.html.erb within rescues/layout (23.8ms)
+  Rendered /home/vagrant/.rvm/gems/ruby-2.3.5/gems/web-console-2.3.0/lib/web_console/templates/_markup.html.erb (0.3ms)
+  Rendered /home/vagrant/.rvm/gems/ruby-2.3.5/gems/web-console-2.3.0/lib/web_console/templates/_inner_console_markup.html.erb within layouts/inlined_string (0.2ms)
+  Rendered /home/vagrant/.rvm/gems/ruby-2.3.5/gems/web-console-2.3.0/lib/web_console/templates/_prompt_box_markup.html.erb within layouts/inlined_string (0.2ms)
+  Rendered /home/vagrant/.rvm/gems/ruby-2.3.5/gems/web-console-2.3.0/lib/web_console/templates/style.css.erb within layouts/inlined_string (0.4ms)
+  Rendered /home/vagrant/.rvm/gems/ruby-2.3.5/gems/web-console-2.3.0/lib/web_console/templates/console.js.erb within layouts/javascript (16.1ms)
+  Rendered /home/vagrant/.rvm/gems/ruby-2.3.5/gems/web-console-2.3.0/lib/web_console/templates/main.js.erb within layouts/javascript (0.3ms)
+  Rendered /home/vagrant/.rvm/gems/ruby-2.3.5/gems/web-console-2.3.0/lib/web_console/templates/error_page.js.erb within layouts/javascript (0.4ms)
+  Rendered /home/vagrant/.rvm/gems/ruby-2.3.5/gems/web-console-2.3.0/lib/web_console/templates/index.html.erb (32.1ms)
+
+
+Started GET "/register" for 10.0.2.2 at 2019-06-14 16:40:40 +0000
+Processing by UsersController#new as HTML
+  Rendered users/new.html.erb within layouts/application (21.0ms)
+  [1m[35mCategory Load (0.4ms)[0m  SELECT "categories".* FROM "categories"
+  [1m[36mUser Load (0.3ms)[0m  [1mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 LIMIT 1[0m  [["id", 5]]
+  Rendered layouts/_top_nav.html.erb (69.6ms)
+Completed 500 Internal Server Error in 299ms (ActiveRecord: 3.6ms)
+
+ActiveRecord::RecordNotFound (Couldn't find User with 'id'=5):
+  app/controllers/application_controller.rb:11:in `current_user'
+  app/views/layouts/_top_nav.html.erb:28:in `_app_views_layouts__top_nav_html_erb___225690419667908372_69853860370580'
+  app/views/layouts/application.html.erb:11:in `_app_views_layouts_application_html_erb___1597871874166908632_34698260'
+
+
+  Rendered /home/vagrant/.rvm/gems/ruby-2.3.5/gems/actionpack-4.2.6/lib/action_dispatch/middleware/templates/rescues/_source.erb (7.7ms)
+  Rendered /home/vagrant/.rvm/gems/ruby-2.3.5/gems/actionpack-4.2.6/lib/action_dispatch/middleware/templates/rescues/_trace.html.erb (2.9ms)
+  Rendered /home/vagrant/.rvm/gems/ruby-2.3.5/gems/actionpack-4.2.6/lib/action_dispatch/middleware/templates/rescues/_request_and_response.html.erb (1.0ms)
+  Rendered /home/vagrant/.rvm/gems/ruby-2.3.5/gems/actionpack-4.2.6/lib/action_dispatch/middleware/templates/rescues/diagnostics.html.erb within rescues/layout (24.1ms)
+  Rendered /home/vagrant/.rvm/gems/ruby-2.3.5/gems/web-console-2.3.0/lib/web_console/templates/_markup.html.erb (0.3ms)
+  Rendered /home/vagrant/.rvm/gems/ruby-2.3.5/gems/web-console-2.3.0/lib/web_console/templates/_inner_console_markup.html.erb within layouts/inlined_string (0.2ms)
+  Rendered /home/vagrant/.rvm/gems/ruby-2.3.5/gems/web-console-2.3.0/lib/web_console/templates/_prompt_box_markup.html.erb within layouts/inlined_string (0.4ms)
+  Rendered /home/vagrant/.rvm/gems/ruby-2.3.5/gems/web-console-2.3.0/lib/web_console/templates/style.css.erb within layouts/inlined_string (0.4ms)
+  Rendered /home/vagrant/.rvm/gems/ruby-2.3.5/gems/web-console-2.3.0/lib/web_console/templates/console.js.erb within layouts/javascript (15.4ms)
+  Rendered /home/vagrant/.rvm/gems/ruby-2.3.5/gems/web-console-2.3.0/lib/web_console/templates/main.js.erb within layouts/javascript (0.2ms)
+  Rendered /home/vagrant/.rvm/gems/ruby-2.3.5/gems/web-console-2.3.0/lib/web_console/templates/error_page.js.erb within layouts/javascript (0.5ms)
+  Rendered /home/vagrant/.rvm/gems/ruby-2.3.5/gems/web-console-2.3.0/lib/web_console/templates/index.html.erb (30.7ms)
+
+
+Started GET "/signup" for 10.0.2.2 at 2019-06-14 16:41:33 +0000
+
+ActionController::RoutingError (No route matches [GET] "/signup"):
+  actionpack (4.2.6) lib/action_dispatch/middleware/debug_exceptions.rb:21:in `call'
+  web-console (2.3.0) lib/web_console/middleware.rb:28:in `block in call'
+  web-console (2.3.0) lib/web_console/middleware.rb:18:in `catch'
+  web-console (2.3.0) lib/web_console/middleware.rb:18:in `call'
+  actionpack (4.2.6) lib/action_dispatch/middleware/show_exceptions.rb:30:in `call'
+  railties (4.2.6) lib/rails/rack/logger.rb:38:in `call_app'
+  railties (4.2.6) lib/rails/rack/logger.rb:20:in `block in call'
+  activesupport (4.2.6) lib/active_support/tagged_logging.rb:68:in `block in tagged'
+  activesupport (4.2.6) lib/active_support/tagged_logging.rb:26:in `tagged'
+  activesupport (4.2.6) lib/active_support/tagged_logging.rb:68:in `tagged'
+  railties (4.2.6) lib/rails/rack/logger.rb:20:in `call'
+  quiet_assets (1.0.3) lib/quiet_assets.rb:23:in `call_with_quiet_assets'
+  actionpack (4.2.6) lib/action_dispatch/middleware/request_id.rb:21:in `call'
+  rack (1.6.4) lib/rack/methodoverride.rb:22:in `call'
+  rack (1.6.4) lib/rack/runtime.rb:18:in `call'
+  activesupport (4.2.6) lib/active_support/cache/strategy/local_cache_middleware.rb:28:in `call'
+  rack (1.6.4) lib/rack/lock.rb:17:in `call'
+  actionpack (4.2.6) lib/action_dispatch/middleware/static.rb:120:in `call'
+  rack (1.6.4) lib/rack/sendfile.rb:113:in `call'
+  railties (4.2.6) lib/rails/engine.rb:518:in `call'
+  railties (4.2.6) lib/rails/application.rb:165:in `call'
+  rack (1.6.4) lib/rack/content_length.rb:15:in `call'
+  puma (3.5.2) lib/puma/configuration.rb:225:in `call'
+  puma (3.5.2) lib/puma/server.rb:569:in `handle_request'
+  puma (3.5.2) lib/puma/server.rb:406:in `process_client'
+  puma (3.5.2) lib/puma/server.rb:271:in `block in run'
+  puma (3.5.2) lib/puma/thread_pool.rb:116:in `block in spawn_thread'
+
+
+  Rendered /home/vagrant/.rvm/gems/ruby-2.3.5/gems/actionpack-4.2.6/lib/action_dispatch/middleware/templates/rescues/_trace.html.erb (1.6ms)
+  Rendered /home/vagrant/.rvm/gems/ruby-2.3.5/gems/actionpack-4.2.6/lib/action_dispatch/middleware/templates/routes/_route.html.erb (2.2ms)
+  Rendered /home/vagrant/.rvm/gems/ruby-2.3.5/gems/actionpack-4.2.6/lib/action_dispatch/middleware/templates/routes/_table.html.erb (5.5ms)
+  Rendered /home/vagrant/.rvm/gems/ruby-2.3.5/gems/actionpack-4.2.6/lib/action_dispatch/middleware/templates/rescues/_request_and_response.html.erb (1.8ms)
+  Rendered /home/vagrant/.rvm/gems/ruby-2.3.5/gems/actionpack-4.2.6/lib/action_dispatch/middleware/templates/rescues/routing_error.html.erb within rescues/layout (34.6ms)
+  Rendered /home/vagrant/.rvm/gems/ruby-2.3.5/gems/web-console-2.3.0/lib/web_console/templates/_markup.html.erb (0.4ms)
+  Rendered /home/vagrant/.rvm/gems/ruby-2.3.5/gems/web-console-2.3.0/lib/web_console/templates/_inner_console_markup.html.erb within layouts/inlined_string (0.3ms)
+  Rendered /home/vagrant/.rvm/gems/ruby-2.3.5/gems/web-console-2.3.0/lib/web_console/templates/_prompt_box_markup.html.erb within layouts/inlined_string (0.2ms)
+  Rendered /home/vagrant/.rvm/gems/ruby-2.3.5/gems/web-console-2.3.0/lib/web_console/templates/style.css.erb within layouts/inlined_string (0.3ms)
+  Rendered /home/vagrant/.rvm/gems/ruby-2.3.5/gems/web-console-2.3.0/lib/web_console/templates/console.js.erb within layouts/javascript (15.2ms)
+  Rendered /home/vagrant/.rvm/gems/ruby-2.3.5/gems/web-console-2.3.0/lib/web_console/templates/main.js.erb within layouts/javascript (0.2ms)
+  Rendered /home/vagrant/.rvm/gems/ruby-2.3.5/gems/web-console-2.3.0/lib/web_console/templates/error_page.js.erb within layouts/javascript (0.3ms)
+  Rendered /home/vagrant/.rvm/gems/ruby-2.3.5/gems/web-console-2.3.0/lib/web_console/templates/index.html.erb (30.6ms)
+
+
+Started GET "/register" for 10.0.2.2 at 2019-06-14 16:42:31 +0000
+Processing by UsersController#new as HTML
+  Rendered users/new.html.erb within layouts/application (1.0ms)
+  [1m[35mCategory Load (0.5ms)[0m  SELECT "categories".* FROM "categories"
+  Rendered layouts/_top_nav.html.erb (6.8ms)
+Completed 200 OK in 213ms (Views: 212.1ms | ActiveRecord: 0.5ms)
+
+
+Started POST "/users" for 10.0.2.2 at 2019-06-14 16:42:41 +0000
+Processing by UsersController#create as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"b+9zEW7eULwJbqd4AWmJbCPFm+i2Tbt5EiuIHL9krxXdpkkorK+XmLtAnZJJLAggxo0ZmF1X3BAbaKEhi/zhWg==", "user"=>{"first_name"=>"Chenchen", "last_name"=>"Kuang", "email"=>"kcchaha@gmail.com", "password"=>"[FILTERED]", "password_confirmation"=>"[FILTERED]"}, "commit"=>"Submit"}
+  [1m[36m (0.5ms)[0m  [1mBEGIN[0m
+  [1m[35mSQL (0.5ms)[0m  INSERT INTO "users" ("first_name", "last_name", "email", "password_digest", "created_at", "updated_at") VALUES ($1, $2, $3, $4, $5, $6) RETURNING "id"  [["first_name", "Chenchen"], ["last_name", "Kuang"], ["email", "kcchaha@gmail.com"], ["password_digest", "$2a$10$eVcySv4SA1tUGjzusEbUFuvRt1ZG1EY7zpTXesfi.G/KBElwcDI0m"], ["created_at", "2019-06-14 16:42:41.871125"], ["updated_at", "2019-06-14 16:42:41.871125"]]
+  [1m[36m (0.8ms)[0m  [1mCOMMIT[0m
+Redirected to http://localhost:3000/
+Completed 302 Found in 88ms (ActiveRecord: 1.8ms)
+
+
+Started GET "/" for 10.0.2.2 at 2019-06-14 16:42:41 +0000
+Processing by ProductsController#index as HTML
+  [1m[35mProduct Load (0.4ms)[0m  SELECT "products".* FROM "products"  ORDER BY "products"."created_at" DESC
+  Rendered products/_product.html.erb (14.6ms)
+  Rendered products/index.html.erb within layouts/application (34.6ms)
+  [1m[36mCategory Load (0.4ms)[0m  [1mSELECT "categories".* FROM "categories"[0m
+  Rendered layouts/_top_nav.html.erb (2.4ms)
+Completed 200 OK in 250ms (Views: 225.3ms | ActiveRecord: 2.1ms)
+
+
+Started GET "/" for 10.0.2.2 at 2019-06-14 16:44:20 +0000
+Processing by ProductsController#index as HTML
+  [1m[35mProduct Load (0.5ms)[0m  SELECT "products".* FROM "products"  ORDER BY "products"."created_at" DESC
+  Rendered products/_product.html.erb (14.8ms)
+  Rendered products/index.html.erb within layouts/application (26.5ms)
+  [1m[36mCategory Load (0.5ms)[0m  [1mSELECT "categories".* FROM "categories"[0m
+  [1m[35mUser Load (0.4ms)[0m  SELECT  "users".* FROM "users" WHERE "users"."id" = $1 LIMIT 1  [["id", 1]]
+  Rendered layouts/_top_nav.html.erb (4.5ms)
+Completed 200 OK in 218ms (Views: 215.5ms | ActiveRecord: 1.5ms)
+
+
+Started GET "/logout" for 10.0.2.2 at 2019-06-14 16:45:17 +0000
+Processing by SessionsController#destroy as HTML
+Redirected to http://localhost:3000/login
+Completed 302 Found in 1ms (ActiveRecord: 0.0ms)
+
+
+Started GET "/login" for 10.0.2.2 at 2019-06-14 16:45:17 +0000
+Processing by SessionsController#new as HTML
+  Rendered sessions/new.html.erb within layouts/application (0.8ms)
+  [1m[36mCategory Load (0.6ms)[0m  [1mSELECT "categories".* FROM "categories"[0m
+  Rendered layouts/_top_nav.html.erb (2.8ms)
+Completed 200 OK in 207ms (Views: 205.4ms | ActiveRecord: 0.6ms)
+
+
+Started GET "/" for 10.0.2.2 at 2019-06-14 16:45:19 +0000
+Processing by ProductsController#index as HTML
+  [1m[35mProduct Load (0.5ms)[0m  SELECT "products".* FROM "products"  ORDER BY "products"."created_at" DESC
+  Rendered products/_product.html.erb (19.9ms)
+  Rendered products/index.html.erb within layouts/application (31.6ms)
+  [1m[36mCategory Load (0.5ms)[0m  [1mSELECT "categories".* FROM "categories"[0m
+  Rendered layouts/_top_nav.html.erb (2.4ms)
+Completed 200 OK in 220ms (Views: 217.8ms | ActiveRecord: 1.0ms)
+
+
+Started GET "/login" for 10.0.2.2 at 2019-06-14 16:45:21 +0000
+Processing by SessionsController#new as HTML
+  Rendered sessions/new.html.erb within layouts/application (0.4ms)
+  [1m[35mCategory Load (0.3ms)[0m  SELECT "categories".* FROM "categories"
+  Rendered layouts/_top_nav.html.erb (2.3ms)
+Completed 200 OK in 194ms (Views: 193.3ms | ActiveRecord: 0.3ms)
+
+
+Started POST "/login" for 10.0.2.2 at 2019-06-14 16:45:25 +0000
+Processing by SessionsController#create as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"5Vgx61lYao285Ptkz79fYJsuIXQtGyaXrDxjyjIn8/RXEQvSmymtqQ7KwY6H+t4sfmajBMYBQf6lf0r3Br+9uw==", "email"=>"kcchaha@gmail.com", "password"=>"[FILTERED]", "commit"=>"Submit"}
+  [1m[36mUser Load (0.3ms)[0m  [1mSELECT  "users".* FROM "users" WHERE "users"."email" = $1 LIMIT 1[0m  [["email", "kcchaha@gmail.com"]]
+Redirected to http://localhost:3000/
+Completed 302 Found in 79ms (ActiveRecord: 0.3ms)
+
+
+Started GET "/" for 10.0.2.2 at 2019-06-14 16:45:25 +0000
+Processing by ProductsController#index as HTML
+  [1m[35mProduct Load (0.4ms)[0m  SELECT "products".* FROM "products"  ORDER BY "products"."created_at" DESC
+  Rendered products/_product.html.erb (12.5ms)
+  Rendered products/index.html.erb within layouts/application (25.8ms)
+  [1m[36mCategory Load (0.4ms)[0m  [1mSELECT "categories".* FROM "categories"[0m
+  [1m[35mUser Load (0.2ms)[0m  SELECT  "users".* FROM "users" WHERE "users"."id" = $1 LIMIT 1  [["id", 1]]
+  Rendered layouts/_top_nav.html.erb (3.7ms)
+Completed 200 OK in 231ms (Views: 229.5ms | ActiveRecord: 1.0ms)
+
+
+Started GET "/logout" for 10.0.2.2 at 2019-06-14 16:50:20 +0000
+Processing by SessionsController#destroy as HTML
+Redirected to http://localhost:3000/login
+Completed 302 Found in 1ms (ActiveRecord: 0.0ms)
+
+
+Started GET "/login" for 10.0.2.2 at 2019-06-14 16:50:20 +0000
+Processing by SessionsController#new as HTML
+  Rendered sessions/new.html.erb within layouts/application (0.3ms)
+  [1m[36mCategory Load (0.5ms)[0m  [1mSELECT "categories".* FROM "categories"[0m
+  Rendered layouts/_top_nav.html.erb (3.0ms)
+Completed 200 OK in 188ms (Views: 187.3ms | ActiveRecord: 0.5ms)
+
+
+Started POST "/login" for 10.0.2.2 at 2019-06-14 16:51:00 +0000
+Processing by SessionsController#create as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"RCCIN5XrFzdp/RgUwc7YROL8sXcb50NOFMCWpN+Erv32abIOV5rQE9vTIv6Ji1kIB7QzB/D9JCcdg7+Z6xzgsg==", "email"=>"kcchaha@gmail.com", "password"=>"[FILTERED]", "commit"=>"Submit"}
+  [1m[35mUser Load (0.6ms)[0m  SELECT  "users".* FROM "users" WHERE "users"."email" = $1 LIMIT 1  [["email", "kcchaha@gmail.com"]]
+Redirected to http://localhost:3000/
+Completed 302 Found in 79ms (ActiveRecord: 0.6ms)
+
+
+Started GET "/" for 10.0.2.2 at 2019-06-14 16:51:00 +0000
+Processing by ProductsController#index as HTML
+  [1m[36mProduct Load (0.6ms)[0m  [1mSELECT "products".* FROM "products"  ORDER BY "products"."created_at" DESC[0m
+  Rendered products/_product.html.erb (16.1ms)
+  Rendered products/index.html.erb within layouts/application (28.9ms)
+  [1m[35mCategory Load (0.7ms)[0m  SELECT "categories".* FROM "categories"
+  [1m[36mUser Load (0.6ms)[0m  [1mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 LIMIT 1[0m  [["id", 1]]
+  Rendered layouts/_top_nav.html.erb (5.4ms)
+Completed 200 OK in 256ms (Views: 253.3ms | ActiveRecord: 1.9ms)
+
+
+Started GET "/products/12" for 10.0.2.2 at 2019-06-14 16:51:04 +0000
+Processing by ProductsController#show as HTML
+  Parameters: {"id"=>"12"}
+  [1m[35mProduct Load (0.3ms)[0m  SELECT  "products".* FROM "products" WHERE "products"."id" = $1 LIMIT 1  [["id", 12]]
+  [1m[36mCategory Load (0.2ms)[0m  [1mSELECT  "categories".* FROM "categories" WHERE "categories"."id" = $1 LIMIT 1[0m  [["id", 3]]
+  Rendered products/show.html.erb within layouts/application (30.3ms)
+  [1m[35mCategory Load (0.4ms)[0m  SELECT "categories".* FROM "categories"
+  [1m[36mUser Load (0.3ms)[0m  [1mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 LIMIT 1[0m  [["id", 1]]
+  Rendered layouts/_top_nav.html.erb (3.8ms)
+Completed 200 OK in 243ms (Views: 238.8ms | ActiveRecord: 1.2ms)
+
+
+Started GET "/products/12" for 10.0.2.2 at 2019-06-14 17:09:06 +0000
+Processing by ProductsController#show as HTML
+  Parameters: {"id"=>"12"}
+  [1m[35mProduct Load (0.5ms)[0m  SELECT  "products".* FROM "products" WHERE "products"."id" = $1 LIMIT 1  [["id", 12]]
+  [1m[36mCategory Load (0.5ms)[0m  [1mSELECT  "categories".* FROM "categories" WHERE "categories"."id" = $1 LIMIT 1[0m  [["id", 3]]
+  [1m[35mReview Load (0.5ms)[0m  SELECT "reviews".* FROM "reviews" WHERE "reviews"."product_id" = $1  [["product_id", 12]]
+  Rendered products/show.html.erb within layouts/application (49.9ms)
+  [1m[36mCategory Load (0.4ms)[0m  [1mSELECT "categories".* FROM "categories"[0m
+  [1m[35mUser Load (0.5ms)[0m  SELECT  "users".* FROM "users" WHERE "users"."id" = $1 LIMIT 1  [["id", 1]]
+  Rendered layouts/_top_nav.html.erb (4.0ms)
+Completed 200 OK in 272ms (Views: 266.4ms | ActiveRecord: 3.9ms)
