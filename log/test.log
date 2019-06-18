@@ -909,3 +909,270 @@ FOREIGN KEY ("category_id")
   [1m[35m (0.3ms)[0m  RELEASE SAVEPOINT active_record_1
   [1m[36mUser Exists (0.6ms)[0m  [1mSELECT  1 AS one FROM "users" WHERE "users"."email" = 'test2@test.com' LIMIT 1[0m
   [1m[35m (0.6ms)[0m  ROLLBACK
+  [1m[36mActiveRecord::SchemaMigration Load (0.5ms)[0m  [1mSELECT "schema_migrations".* FROM "schema_migrations"[0m
+  [1m[35m (1.6ms)[0m  ALTER TABLE "widgets" DISABLE TRIGGER ALL;ALTER TABLE "categories" DISABLE TRIGGER ALL;ALTER TABLE "reviews" DISABLE TRIGGER ALL;ALTER TABLE "users" DISABLE TRIGGER ALL;ALTER TABLE "schema_migrations" DISABLE TRIGGER ALL;ALTER TABLE "orders" DISABLE TRIGGER ALL;ALTER TABLE "line_items" DISABLE TRIGGER ALL;ALTER TABLE "products" DISABLE TRIGGER ALL
+  [1m[36m (1.4ms)[0m  [1m          SELECT schemaname || '.' || tablename
+          FROM pg_tables
+          WHERE
+            tablename !~ '_prt_' AND
+             tablename <> 'schema_migrations'  AND
+            schemaname = ANY (current_schemas(false))
+[0m
+  [1m[35m (1.2ms)[0m  select table_name from information_schema.views where table_schema = 'jungle_test'
+  [1m[36m (21.8ms)[0m  [1mTRUNCATE TABLE "public"."widgets", "public"."categories", "public"."reviews", "public"."users", "public"."orders", "public"."line_items", "public"."products" RESTART IDENTITY CASCADE;[0m
+  [1m[35m (1.0ms)[0m  ALTER TABLE "schema_migrations" ENABLE TRIGGER ALL;ALTER TABLE "widgets" ENABLE TRIGGER ALL;ALTER TABLE "categories" ENABLE TRIGGER ALL;ALTER TABLE "reviews" ENABLE TRIGGER ALL;ALTER TABLE "users" ENABLE TRIGGER ALL;ALTER TABLE "orders" ENABLE TRIGGER ALL;ALTER TABLE "line_items" ENABLE TRIGGER ALL;ALTER TABLE "products" ENABLE TRIGGER ALL
+  [1m[36m (1.4ms)[0m  [1mALTER TABLE "schema_migrations" DISABLE TRIGGER ALL;ALTER TABLE "widgets" DISABLE TRIGGER ALL;ALTER TABLE "categories" DISABLE TRIGGER ALL;ALTER TABLE "reviews" DISABLE TRIGGER ALL;ALTER TABLE "users" DISABLE TRIGGER ALL;ALTER TABLE "orders" DISABLE TRIGGER ALL;ALTER TABLE "line_items" DISABLE TRIGGER ALL;ALTER TABLE "products" DISABLE TRIGGER ALL[0m
+  [1m[35m (20.8ms)[0m  TRUNCATE TABLE "public"."widgets", "public"."categories", "public"."reviews", "public"."users", "public"."orders", "public"."line_items", "public"."products" RESTART IDENTITY CASCADE;
+  [1m[36m (1.2ms)[0m  [1mALTER TABLE "widgets" ENABLE TRIGGER ALL;ALTER TABLE "categories" ENABLE TRIGGER ALL;ALTER TABLE "schema_migrations" ENABLE TRIGGER ALL;ALTER TABLE "reviews" ENABLE TRIGGER ALL;ALTER TABLE "users" ENABLE TRIGGER ALL;ALTER TABLE "orders" ENABLE TRIGGER ALL;ALTER TABLE "line_items" ENABLE TRIGGER ALL;ALTER TABLE "products" ENABLE TRIGGER ALL[0m
+  [1m[36mActiveRecord::SchemaMigration Load (0.5ms)[0m  [1mSELECT "schema_migrations".* FROM "schema_migrations"[0m
+  [1m[35m (2.3ms)[0m  ALTER TABLE "widgets" DISABLE TRIGGER ALL;ALTER TABLE "categories" DISABLE TRIGGER ALL;ALTER TABLE "schema_migrations" DISABLE TRIGGER ALL;ALTER TABLE "reviews" DISABLE TRIGGER ALL;ALTER TABLE "users" DISABLE TRIGGER ALL;ALTER TABLE "orders" DISABLE TRIGGER ALL;ALTER TABLE "line_items" DISABLE TRIGGER ALL;ALTER TABLE "products" DISABLE TRIGGER ALL
+  [1m[36m (1.5ms)[0m  [1m          SELECT schemaname || '.' || tablename
+          FROM pg_tables
+          WHERE
+            tablename !~ '_prt_' AND
+             tablename <> 'schema_migrations'  AND
+            schemaname = ANY (current_schemas(false))
+[0m
+  [1m[35m (1.3ms)[0m  select table_name from information_schema.views where table_schema = 'jungle_test'
+  [1m[36m (21.3ms)[0m  [1mTRUNCATE TABLE "public"."widgets", "public"."categories", "public"."reviews", "public"."users", "public"."orders", "public"."line_items", "public"."products" RESTART IDENTITY CASCADE;[0m
+  [1m[35m (1.1ms)[0m  ALTER TABLE "schema_migrations" ENABLE TRIGGER ALL;ALTER TABLE "widgets" ENABLE TRIGGER ALL;ALTER TABLE "categories" ENABLE TRIGGER ALL;ALTER TABLE "reviews" ENABLE TRIGGER ALL;ALTER TABLE "users" ENABLE TRIGGER ALL;ALTER TABLE "orders" ENABLE TRIGGER ALL;ALTER TABLE "line_items" ENABLE TRIGGER ALL;ALTER TABLE "products" ENABLE TRIGGER ALL
+Started GET "/" for 127.0.0.1 at 2019-06-18 15:43:20 +0000
+Processing by ProductsController#index as HTML
+  [1m[36mProduct Load (1.2ms)[0m  [1mSELECT "products".* FROM "products"  ORDER BY "products"."created_at" DESC[0m
+  Rendered collection (0.0ms)
+  Rendered products/index.html.erb within layouts/application (13.7ms)
+  [1m[35mCategory Load (0.6ms)[0m  SELECT "categories".* FROM "categories"
+  Rendered layouts/_top_nav.html.erb (24.7ms)
+Completed 200 OK in 8069ms (Views: 7995.9ms | ActiveRecord: 4.5ms)
+  [1m[36m (1.4ms)[0m  [1mALTER TABLE "schema_migrations" DISABLE TRIGGER ALL;ALTER TABLE "widgets" DISABLE TRIGGER ALL;ALTER TABLE "categories" DISABLE TRIGGER ALL;ALTER TABLE "reviews" DISABLE TRIGGER ALL;ALTER TABLE "users" DISABLE TRIGGER ALL;ALTER TABLE "orders" DISABLE TRIGGER ALL;ALTER TABLE "line_items" DISABLE TRIGGER ALL;ALTER TABLE "products" DISABLE TRIGGER ALL[0m
+  [1m[35m (20.9ms)[0m  TRUNCATE TABLE "public"."widgets", "public"."categories", "public"."reviews", "public"."users", "public"."orders", "public"."line_items", "public"."products" RESTART IDENTITY CASCADE;
+  [1m[36m (1.1ms)[0m  [1mALTER TABLE "schema_migrations" ENABLE TRIGGER ALL;ALTER TABLE "widgets" ENABLE TRIGGER ALL;ALTER TABLE "categories" ENABLE TRIGGER ALL;ALTER TABLE "reviews" ENABLE TRIGGER ALL;ALTER TABLE "users" ENABLE TRIGGER ALL;ALTER TABLE "orders" ENABLE TRIGGER ALL;ALTER TABLE "line_items" ENABLE TRIGGER ALL;ALTER TABLE "products" ENABLE TRIGGER ALL[0m
+  [1m[36mActiveRecord::SchemaMigration Load (0.5ms)[0m  [1mSELECT "schema_migrations".* FROM "schema_migrations"[0m
+  [1m[35m (2.8ms)[0m  ALTER TABLE "schema_migrations" DISABLE TRIGGER ALL;ALTER TABLE "widgets" DISABLE TRIGGER ALL;ALTER TABLE "categories" DISABLE TRIGGER ALL;ALTER TABLE "reviews" DISABLE TRIGGER ALL;ALTER TABLE "users" DISABLE TRIGGER ALL;ALTER TABLE "orders" DISABLE TRIGGER ALL;ALTER TABLE "line_items" DISABLE TRIGGER ALL;ALTER TABLE "products" DISABLE TRIGGER ALL
+  [1m[36m (1.5ms)[0m  [1m          SELECT schemaname || '.' || tablename
+          FROM pg_tables
+          WHERE
+            tablename !~ '_prt_' AND
+             tablename <> 'schema_migrations'  AND
+            schemaname = ANY (current_schemas(false))
+[0m
+  [1m[35m (1.1ms)[0m  select table_name from information_schema.views where table_schema = 'jungle_test'
+  [1m[36m (22.9ms)[0m  [1mTRUNCATE TABLE "public"."widgets", "public"."categories", "public"."reviews", "public"."users", "public"."orders", "public"."line_items", "public"."products" RESTART IDENTITY CASCADE;[0m
+  [1m[35m (1.2ms)[0m  ALTER TABLE "widgets" ENABLE TRIGGER ALL;ALTER TABLE "categories" ENABLE TRIGGER ALL;ALTER TABLE "schema_migrations" ENABLE TRIGGER ALL;ALTER TABLE "reviews" ENABLE TRIGGER ALL;ALTER TABLE "users" ENABLE TRIGGER ALL;ALTER TABLE "orders" ENABLE TRIGGER ALL;ALTER TABLE "line_items" ENABLE TRIGGER ALL;ALTER TABLE "products" ENABLE TRIGGER ALL
+Started GET "/" for 127.0.0.1 at 2019-06-18 15:47:05 +0000
+Processing by ProductsController#index as HTML
+  [1m[36mProduct Load (1.3ms)[0m  [1mSELECT "products".* FROM "products"  ORDER BY "products"."created_at" DESC[0m
+  Rendered collection (0.0ms)
+  Rendered products/index.html.erb within layouts/application (14.2ms)
+  [1m[35mCategory Load (0.6ms)[0m  SELECT "categories".* FROM "categories"
+  Rendered layouts/_top_nav.html.erb (24.1ms)
+Completed 200 OK in 808ms (Views: 743.7ms | ActiveRecord: 3.8ms)
+  [1m[36m (1.6ms)[0m  [1mALTER TABLE "widgets" DISABLE TRIGGER ALL;ALTER TABLE "categories" DISABLE TRIGGER ALL;ALTER TABLE "schema_migrations" DISABLE TRIGGER ALL;ALTER TABLE "reviews" DISABLE TRIGGER ALL;ALTER TABLE "users" DISABLE TRIGGER ALL;ALTER TABLE "orders" DISABLE TRIGGER ALL;ALTER TABLE "line_items" DISABLE TRIGGER ALL;ALTER TABLE "products" DISABLE TRIGGER ALL[0m
+  [1m[35m (24.5ms)[0m  TRUNCATE TABLE "public"."widgets", "public"."categories", "public"."reviews", "public"."users", "public"."orders", "public"."line_items", "public"."products" RESTART IDENTITY CASCADE;
+  [1m[36m (1.2ms)[0m  [1mALTER TABLE "widgets" ENABLE TRIGGER ALL;ALTER TABLE "categories" ENABLE TRIGGER ALL;ALTER TABLE "schema_migrations" ENABLE TRIGGER ALL;ALTER TABLE "reviews" ENABLE TRIGGER ALL;ALTER TABLE "users" ENABLE TRIGGER ALL;ALTER TABLE "orders" ENABLE TRIGGER ALL;ALTER TABLE "line_items" ENABLE TRIGGER ALL;ALTER TABLE "products" ENABLE TRIGGER ALL[0m
+  [1m[36mActiveRecord::SchemaMigration Load (0.4ms)[0m  [1mSELECT "schema_migrations".* FROM "schema_migrations"[0m
+  [1m[35m (1.6ms)[0m  ALTER TABLE "widgets" DISABLE TRIGGER ALL;ALTER TABLE "categories" DISABLE TRIGGER ALL;ALTER TABLE "schema_migrations" DISABLE TRIGGER ALL;ALTER TABLE "reviews" DISABLE TRIGGER ALL;ALTER TABLE "users" DISABLE TRIGGER ALL;ALTER TABLE "orders" DISABLE TRIGGER ALL;ALTER TABLE "line_items" DISABLE TRIGGER ALL;ALTER TABLE "products" DISABLE TRIGGER ALL
+  [1m[36m (1.4ms)[0m  [1m          SELECT schemaname || '.' || tablename
+          FROM pg_tables
+          WHERE
+            tablename !~ '_prt_' AND
+             tablename <> 'schema_migrations'  AND
+            schemaname = ANY (current_schemas(false))
+[0m
+  [1m[35m (1.3ms)[0m  select table_name from information_schema.views where table_schema = 'jungle_test'
+  [1m[36m (20.5ms)[0m  [1mTRUNCATE TABLE "public"."widgets", "public"."categories", "public"."reviews", "public"."users", "public"."orders", "public"."line_items", "public"."products" RESTART IDENTITY CASCADE;[0m
+  [1m[35m (1.7ms)[0m  ALTER TABLE "widgets" ENABLE TRIGGER ALL;ALTER TABLE "categories" ENABLE TRIGGER ALL;ALTER TABLE "schema_migrations" ENABLE TRIGGER ALL;ALTER TABLE "reviews" ENABLE TRIGGER ALL;ALTER TABLE "users" ENABLE TRIGGER ALL;ALTER TABLE "orders" ENABLE TRIGGER ALL;ALTER TABLE "line_items" ENABLE TRIGGER ALL;ALTER TABLE "products" ENABLE TRIGGER ALL
+Started GET "/" for 127.0.0.1 at 2019-06-18 15:47:34 +0000
+Processing by ProductsController#index as HTML
+  [1m[36mProduct Load (1.2ms)[0m  [1mSELECT "products".* FROM "products"  ORDER BY "products"."created_at" DESC[0m
+  Rendered collection (0.0ms)
+  Rendered products/index.html.erb within layouts/application (15.0ms)
+  [1m[35mCategory Load (0.8ms)[0m  SELECT "categories".* FROM "categories"
+  Rendered layouts/_top_nav.html.erb (27.2ms)
+Completed 200 OK in 796ms (Views: 725.3ms | ActiveRecord: 4.3ms)
+  [1m[36m (1.1ms)[0m  [1mALTER TABLE "widgets" DISABLE TRIGGER ALL;ALTER TABLE "categories" DISABLE TRIGGER ALL;ALTER TABLE "schema_migrations" DISABLE TRIGGER ALL;ALTER TABLE "reviews" DISABLE TRIGGER ALL;ALTER TABLE "users" DISABLE TRIGGER ALL;ALTER TABLE "orders" DISABLE TRIGGER ALL;ALTER TABLE "line_items" DISABLE TRIGGER ALL;ALTER TABLE "products" DISABLE TRIGGER ALL[0m
+  [1m[35m (19.9ms)[0m  TRUNCATE TABLE "public"."widgets", "public"."categories", "public"."reviews", "public"."users", "public"."orders", "public"."line_items", "public"."products" RESTART IDENTITY CASCADE;
+  [1m[36m (1.1ms)[0m  [1mALTER TABLE "widgets" ENABLE TRIGGER ALL;ALTER TABLE "categories" ENABLE TRIGGER ALL;ALTER TABLE "schema_migrations" ENABLE TRIGGER ALL;ALTER TABLE "reviews" ENABLE TRIGGER ALL;ALTER TABLE "users" ENABLE TRIGGER ALL;ALTER TABLE "orders" ENABLE TRIGGER ALL;ALTER TABLE "line_items" ENABLE TRIGGER ALL;ALTER TABLE "products" ENABLE TRIGGER ALL[0m
+  [1m[36mActiveRecord::SchemaMigration Load (0.4ms)[0m  [1mSELECT "schema_migrations".* FROM "schema_migrations"[0m
+  [1m[35m (2.3ms)[0m  ALTER TABLE "widgets" DISABLE TRIGGER ALL;ALTER TABLE "categories" DISABLE TRIGGER ALL;ALTER TABLE "schema_migrations" DISABLE TRIGGER ALL;ALTER TABLE "reviews" DISABLE TRIGGER ALL;ALTER TABLE "users" DISABLE TRIGGER ALL;ALTER TABLE "orders" DISABLE TRIGGER ALL;ALTER TABLE "line_items" DISABLE TRIGGER ALL;ALTER TABLE "products" DISABLE TRIGGER ALL
+  [1m[36m (1.3ms)[0m  [1m          SELECT schemaname || '.' || tablename
+          FROM pg_tables
+          WHERE
+            tablename !~ '_prt_' AND
+             tablename <> 'schema_migrations'  AND
+            schemaname = ANY (current_schemas(false))
+[0m
+  [1m[35m (1.2ms)[0m  select table_name from information_schema.views where table_schema = 'jungle_test'
+  [1m[36m (22.1ms)[0m  [1mTRUNCATE TABLE "public"."widgets", "public"."categories", "public"."reviews", "public"."users", "public"."orders", "public"."line_items", "public"."products" RESTART IDENTITY CASCADE;[0m
+  [1m[35m (1.2ms)[0m  ALTER TABLE "widgets" ENABLE TRIGGER ALL;ALTER TABLE "categories" ENABLE TRIGGER ALL;ALTER TABLE "schema_migrations" ENABLE TRIGGER ALL;ALTER TABLE "reviews" ENABLE TRIGGER ALL;ALTER TABLE "users" ENABLE TRIGGER ALL;ALTER TABLE "orders" ENABLE TRIGGER ALL;ALTER TABLE "line_items" ENABLE TRIGGER ALL;ALTER TABLE "products" ENABLE TRIGGER ALL
+  [1m[36m (0.4ms)[0m  [1mBEGIN[0m
+  [1m[35mSQL (0.6ms)[0m  INSERT INTO "categories" ("name", "created_at", "updated_at") VALUES ($1, $2, $3) RETURNING "id"  [["name", "Apparel"], ["created_at", "2019-06-18 16:10:05.671119"], ["updated_at", "2019-06-18 16:10:05.671119"]]
+  [1m[36m (0.8ms)[0m  [1mCOMMIT[0m
+  [1m[35m (0.2ms)[0m  BEGIN
+  [1m[36mSQL (0.8ms)[0m  [1mINSERT INTO "products" ("name", "description", "quantity", "price_cents", "category_id", "created_at", "updated_at") VALUES ($1, $2, $3, $4, $5, $6, $7) RETURNING "id"[0m  [["name", "Wayfarers hella freegan aesthetic quinoa tilde ennui."], ["description", "Disrupt ramps retro pabst tacos roof. Put a bird on it wayfarers gastropub. Five dollar toast swag yolo hammock pabst jean shorts. Vice flannel etsy kickstarter green juice. Humblebrag pitchfork skateboard keffiyeh pabst slow-carb keytar. Bicycle rights meggings meh."], ["quantity", 10], ["price_cents", 6499], ["category_id", 1], ["created_at", "2019-06-18 16:10:06.097669"], ["updated_at", "2019-06-18 16:10:06.097669"]]
+  [1m[35m (0.9ms)[0m  COMMIT
+  [1m[36m (0.2ms)[0m  [1mBEGIN[0m
+  [1m[35mSQL (0.5ms)[0m  INSERT INTO "products" ("name", "description", "quantity", "price_cents", "category_id", "created_at", "updated_at") VALUES ($1, $2, $3, $4, $5, $6, $7) RETURNING "id"  [["name", "Swag actually polaroid brunch chicharrones."], ["description", "Kinfolk migas master vinyl seitan fanny pack lo-fi 90's. Twee beard pitchfork. Trust fund hella listicle mlkshk cold-pressed williamsburg thundercats offal. Meh knausgaard cliche cray pinterest. Try-hard mlkshk thundercats."], ["quantity", 10], ["price_cents", 6499], ["category_id", 1], ["created_at", "2019-06-18 16:10:06.103862"], ["updated_at", "2019-06-18 16:10:06.103862"]]
+  [1m[36m (0.7ms)[0m  [1mCOMMIT[0m
+  [1m[35m (0.1ms)[0m  BEGIN
+  [1m[36mSQL (0.3ms)[0m  [1mINSERT INTO "products" ("name", "description", "quantity", "price_cents", "category_id", "created_at", "updated_at") VALUES ($1, $2, $3, $4, $5, $6, $7) RETURNING "id"[0m  [["name", "Pork belly meditation quinoa xoxo."], ["description", "Bicycle rights bushwick whatever tofu. Bicycle rights meditation cliche kale chips post-ironic +1 fanny pack venmo. Drinking actually helvetica cornhole tousled cardigan selfies. Salvia hashtag cornhole pug fanny pack."], ["quantity", 10], ["price_cents", 6499], ["category_id", 1], ["created_at", "2019-06-18 16:10:06.108477"], ["updated_at", "2019-06-18 16:10:06.108477"]]
+  [1m[35m (0.5ms)[0m  COMMIT
+  [1m[36m (0.1ms)[0m  [1mBEGIN[0m
+  [1m[35mSQL (0.5ms)[0m  INSERT INTO "products" ("name", "description", "quantity", "price_cents", "category_id", "created_at", "updated_at") VALUES ($1, $2, $3, $4, $5, $6, $7) RETURNING "id"  [["name", "Waistcoat lo-fi marfa brooklyn cronut single-origin coffee pickled church-key."], ["description", "Beard chartreuse thundercats chicharrones selfies celiac. Gluten-free locavore forage mlkshk roof kale chips. Viral master banjo. Listicle twee artisan hammock normcore scenester vinegar ramps. Pug freegan biodiesel cardigan."], ["quantity", 10], ["price_cents", 6499], ["category_id", 1], ["created_at", "2019-06-18 16:10:06.112613"], ["updated_at", "2019-06-18 16:10:06.112613"]]
+  [1m[36m (0.6ms)[0m  [1mCOMMIT[0m
+  [1m[35m (0.1ms)[0m  BEGIN
+  [1m[36mSQL (0.4ms)[0m  [1mINSERT INTO "products" ("name", "description", "quantity", "price_cents", "category_id", "created_at", "updated_at") VALUES ($1, $2, $3, $4, $5, $6, $7) RETURNING "id"[0m  [["name", "Deep v drinking brooklyn lumbersexual hoodie knausgaard pop-up yolo."], ["description", "Echo green juice 3 wolf moon typewriter iphone quinoa celiac. Vegan shoreditch heirloom humblebrag freegan art party butcher pabst. Lo-fi everyday pop-up beard fashion axe. Asymmetrical kitsch wayfarers godard drinking bicycle rights banjo brunch."], ["quantity", 10], ["price_cents", 6499], ["category_id", 1], ["created_at", "2019-06-18 16:10:06.116778"], ["updated_at", "2019-06-18 16:10:06.116778"]]
+  [1m[35m (0.6ms)[0m  COMMIT
+  [1m[36m (0.1ms)[0m  [1mBEGIN[0m
+  [1m[35mSQL (0.4ms)[0m  INSERT INTO "products" ("name", "description", "quantity", "price_cents", "category_id", "created_at", "updated_at") VALUES ($1, $2, $3, $4, $5, $6, $7) RETURNING "id"  [["name", "Next level offal hoodie retro."], ["description", "Heirloom organic stumptown ugh. Cardigan pour-over polaroid franzen green juice celiac. Taxidermy tilde ramps meditation you probably haven't heard of them. Vhs umami literally pitchfork."], ["quantity", 10], ["price_cents", 6499], ["category_id", 1], ["created_at", "2019-06-18 16:10:06.120869"], ["updated_at", "2019-06-18 16:10:06.120869"]]
+  [1m[36m (0.6ms)[0m  [1mCOMMIT[0m
+  [1m[35m (0.1ms)[0m  BEGIN
+  [1m[36mSQL (0.3ms)[0m  [1mINSERT INTO "products" ("name", "description", "quantity", "price_cents", "category_id", "created_at", "updated_at") VALUES ($1, $2, $3, $4, $5, $6, $7) RETURNING "id"[0m  [["name", "Brooklyn venmo chambray swag franzen carry actually raw denim."], ["description", "Whatever street gluten-free wolf polaroid poutine. Slow-carb art party sustainable kale chips fingerstache disrupt. Kinfolk ennui pabst messenger bag twee etsy austin. Thundercats +1 etsy messenger bag crucifix."], ["quantity", 10], ["price_cents", 6499], ["category_id", 1], ["created_at", "2019-06-18 16:10:06.125111"], ["updated_at", "2019-06-18 16:10:06.125111"]]
+  [1m[35m (0.7ms)[0m  COMMIT
+  [1m[36m (0.1ms)[0m  [1mBEGIN[0m
+  [1m[35mSQL (0.3ms)[0m  INSERT INTO "products" ("name", "description", "quantity", "price_cents", "category_id", "created_at", "updated_at") VALUES ($1, $2, $3, $4, $5, $6, $7) RETURNING "id"  [["name", "Messenger bag narwhal park tote bag ugh quinoa photo booth normcore."], ["description", "Tattooed kale chips try-hard yuccie. Messenger bag trust fund vice master marfa. Squid disrupt portland migas meh pinterest yolo art party. Cray 90's jean shorts street keffiyeh intelligentsia. Marfa fixie pinterest fap offal beard sartorial."], ["quantity", 10], ["price_cents", 6499], ["category_id", 1], ["created_at", "2019-06-18 16:10:06.129272"], ["updated_at", "2019-06-18 16:10:06.129272"]]
+  [1m[36m (0.6ms)[0m  [1mCOMMIT[0m
+  [1m[35m (0.1ms)[0m  BEGIN
+  [1m[36mSQL (0.4ms)[0m  [1mINSERT INTO "products" ("name", "description", "quantity", "price_cents", "category_id", "created_at", "updated_at") VALUES ($1, $2, $3, $4, $5, $6, $7) RETURNING "id"[0m  [["name", "Vegan church-key salvia brunch."], ["description", "Helvetica normcore drinking leggings selvage. Pop-up banjo tote bag ethical meditation viral you probably haven't heard of them hashtag. Master migas blog bicycle rights chia yuccie. Vice +1 master organic pork belly vhs. Iphone yuccie polaroid actually plaid. Echo hashtag park."], ["quantity", 10], ["price_cents", 6499], ["category_id", 1], ["created_at", "2019-06-18 16:10:06.133257"], ["updated_at", "2019-06-18 16:10:06.133257"]]
+  [1m[35m (0.6ms)[0m  COMMIT
+  [1m[36m (0.1ms)[0m  [1mBEGIN[0m
+  [1m[35mSQL (0.3ms)[0m  INSERT INTO "products" ("name", "description", "quantity", "price_cents", "category_id", "created_at", "updated_at") VALUES ($1, $2, $3, $4, $5, $6, $7) RETURNING "id"  [["name", "You probably haven't heard of them brunch ethical deep v hashtag hella."], ["description", "Raw denim brunch heirloom shabby chic photo booth tumblr banh mi. +1 cliche roof 90's loko. Cliche intelligentsia freegan try-hard. Vice pickled +1 next level fap gluten-free portland. Tacos waistcoat dreamcatcher."], ["quantity", 10], ["price_cents", 6499], ["category_id", 1], ["created_at", "2019-06-18 16:10:06.137344"], ["updated_at", "2019-06-18 16:10:06.137344"]]
+  [1m[36m (0.7ms)[0m  [1mCOMMIT[0m
+Started GET "/" for 127.0.0.1 at 2019-06-18 16:10:06 +0000
+Processing by ProductsController#index as HTML
+  [1m[35mProduct Load (1.1ms)[0m  SELECT "products".* FROM "products"  ORDER BY "products"."created_at" DESC
+  Rendered products/_product.html.erb (9.6ms)
+  Rendered products/index.html.erb within layouts/application (31.1ms)
+  [1m[36mCategory Load (0.7ms)[0m  [1mSELECT "categories".* FROM "categories"[0m
+  Rendered layouts/_top_nav.html.erb (7.5ms)
+Completed 200 OK in 658ms (Views: 642.3ms | ActiveRecord: 1.8ms)
+  [1m[35m (1.3ms)[0m  ALTER TABLE "widgets" DISABLE TRIGGER ALL;ALTER TABLE "categories" DISABLE TRIGGER ALL;ALTER TABLE "schema_migrations" DISABLE TRIGGER ALL;ALTER TABLE "reviews" DISABLE TRIGGER ALL;ALTER TABLE "users" DISABLE TRIGGER ALL;ALTER TABLE "orders" DISABLE TRIGGER ALL;ALTER TABLE "line_items" DISABLE TRIGGER ALL;ALTER TABLE "products" DISABLE TRIGGER ALL
+  [1m[36m (22.0ms)[0m  [1mTRUNCATE TABLE "public"."widgets", "public"."categories", "public"."reviews", "public"."users", "public"."orders", "public"."line_items", "public"."products" RESTART IDENTITY CASCADE;[0m
+  [1m[35m (1.1ms)[0m  ALTER TABLE "widgets" ENABLE TRIGGER ALL;ALTER TABLE "categories" ENABLE TRIGGER ALL;ALTER TABLE "schema_migrations" ENABLE TRIGGER ALL;ALTER TABLE "reviews" ENABLE TRIGGER ALL;ALTER TABLE "users" ENABLE TRIGGER ALL;ALTER TABLE "orders" ENABLE TRIGGER ALL;ALTER TABLE "line_items" ENABLE TRIGGER ALL;ALTER TABLE "products" ENABLE TRIGGER ALL
+  [1m[36mActiveRecord::SchemaMigration Load (0.5ms)[0m  [1mSELECT "schema_migrations".* FROM "schema_migrations"[0m
+  [1m[35m (2.5ms)[0m  ALTER TABLE "widgets" DISABLE TRIGGER ALL;ALTER TABLE "categories" DISABLE TRIGGER ALL;ALTER TABLE "schema_migrations" DISABLE TRIGGER ALL;ALTER TABLE "reviews" DISABLE TRIGGER ALL;ALTER TABLE "users" DISABLE TRIGGER ALL;ALTER TABLE "orders" DISABLE TRIGGER ALL;ALTER TABLE "line_items" DISABLE TRIGGER ALL;ALTER TABLE "products" DISABLE TRIGGER ALL
+  [1m[36m (1.4ms)[0m  [1m          SELECT schemaname || '.' || tablename
+          FROM pg_tables
+          WHERE
+            tablename !~ '_prt_' AND
+             tablename <> 'schema_migrations'  AND
+            schemaname = ANY (current_schemas(false))
+[0m
+  [1m[35m (1.1ms)[0m  select table_name from information_schema.views where table_schema = 'jungle_test'
+  [1m[36m (22.6ms)[0m  [1mTRUNCATE TABLE "public"."widgets", "public"."categories", "public"."reviews", "public"."users", "public"."orders", "public"."line_items", "public"."products" RESTART IDENTITY CASCADE;[0m
+  [1m[35m (1.3ms)[0m  ALTER TABLE "widgets" ENABLE TRIGGER ALL;ALTER TABLE "categories" ENABLE TRIGGER ALL;ALTER TABLE "schema_migrations" ENABLE TRIGGER ALL;ALTER TABLE "reviews" ENABLE TRIGGER ALL;ALTER TABLE "users" ENABLE TRIGGER ALL;ALTER TABLE "orders" ENABLE TRIGGER ALL;ALTER TABLE "line_items" ENABLE TRIGGER ALL;ALTER TABLE "products" ENABLE TRIGGER ALL
+  [1m[36m (0.3ms)[0m  [1mBEGIN[0m
+  [1m[35mSQL (0.6ms)[0m  INSERT INTO "categories" ("name", "created_at", "updated_at") VALUES ($1, $2, $3) RETURNING "id"  [["name", "Apparel"], ["created_at", "2019-06-18 17:07:12.976363"], ["updated_at", "2019-06-18 17:07:12.976363"]]
+  [1m[36m (0.7ms)[0m  [1mCOMMIT[0m
+  [1m[35m (0.3ms)[0m  BEGIN
+  [1m[36mSQL (0.9ms)[0m  [1mINSERT INTO "products" ("name", "description", "quantity", "price_cents", "category_id", "created_at", "updated_at") VALUES ($1, $2, $3, $4, $5, $6, $7) RETURNING "id"[0m  [["name", "Pbr&b goth lomo echo ugh small batch jean shorts."], ["description", "Freegan trust fund blog artisan franzen organic narwhal green juice. Synth kombucha pour-over venmo portland taxidermy chicharrones literally. Forage brooklyn next level direct trade before they sold out pitchfork. Hoodie franzen iphone five dollar toast vinyl cornhole selfies. Kinfolk keytar gentrify waistcoat seitan vinyl. Squid marfa slow-carb crucifix meditation church-key cliche mustache."], ["quantity", 10], ["price_cents", 6499], ["category_id", 1], ["created_at", "2019-06-18 17:07:13.416198"], ["updated_at", "2019-06-18 17:07:13.416198"]]
+  [1m[35m (1.1ms)[0m  COMMIT
+  [1m[36m (0.2ms)[0m  [1mBEGIN[0m
+  [1m[35mSQL (0.5ms)[0m  INSERT INTO "products" ("name", "description", "quantity", "price_cents", "category_id", "created_at", "updated_at") VALUES ($1, $2, $3, $4, $5, $6, $7) RETURNING "id"  [["name", "Kale chips meditation salvia food truck celiac godard."], ["description", "Banh mi tumblr pug biodiesel. Skateboard marfa swag banh mi lomo vinyl plaid art party. Skateboard carry cardigan forage. Park kombucha tilde kale chips wes anderson cold-pressed asymmetrical pork belly. Keytar iphone echo tumblr hammock hashtag +1."], ["quantity", 10], ["price_cents", 6499], ["category_id", 1], ["created_at", "2019-06-18 17:07:13.423008"], ["updated_at", "2019-06-18 17:07:13.423008"]]
+  [1m[36m (0.7ms)[0m  [1mCOMMIT[0m
+  [1m[35m (0.1ms)[0m  BEGIN
+  [1m[36mSQL (0.4ms)[0m  [1mINSERT INTO "products" ("name", "description", "quantity", "price_cents", "category_id", "created_at", "updated_at") VALUES ($1, $2, $3, $4, $5, $6, $7) RETURNING "id"[0m  [["name", "Raw denim bushwick drinking."], ["description", "Before they sold out pug cronut narwhal. Meh celiac single-origin coffee fixie marfa jean shorts ramps asymmetrical. Paleo art party readymade bitters slow-carb twee. Twee listicle irony chartreuse church-key."], ["quantity", 10], ["price_cents", 6499], ["category_id", 1], ["created_at", "2019-06-18 17:07:13.427777"], ["updated_at", "2019-06-18 17:07:13.427777"]]
+  [1m[35m (0.9ms)[0m  COMMIT
+  [1m[36m (0.2ms)[0m  [1mBEGIN[0m
+  [1m[35mSQL (0.5ms)[0m  INSERT INTO "products" ("name", "description", "quantity", "price_cents", "category_id", "created_at", "updated_at") VALUES ($1, $2, $3, $4, $5, $6, $7) RETURNING "id"  [["name", "Craft beer cliche small batch actually asymmetrical yuccie kale chips mlkshk."], ["description", "Actually cold-pressed ethical kogi celiac farm-to-table authentic put a bird on it. Truffaut plaid synth goth scenester. Skateboard jean shorts narwhal ugh franzen pop-up diy. Semiotics asymmetrical xoxo plaid meggings letterpress. Cronut gastropub kinfolk tote bag. Keytar diy lumbersexual blue bottle cornhole post-ironic."], ["quantity", 10], ["price_cents", 6499], ["category_id", 1], ["created_at", "2019-06-18 17:07:13.432404"], ["updated_at", "2019-06-18 17:07:13.432404"]]
+  [1m[36m (0.7ms)[0m  [1mCOMMIT[0m
+  [1m[35m (0.2ms)[0m  BEGIN
+  [1m[36mSQL (0.4ms)[0m  [1mINSERT INTO "products" ("name", "description", "quantity", "price_cents", "category_id", "created_at", "updated_at") VALUES ($1, $2, $3, $4, $5, $6, $7) RETURNING "id"[0m  [["name", "Farm-to-table aesthetic blog kogi."], ["description", "Salvia bushwick yr pinterest ugh master offal. Selvage vegan ethical cornhole 90's you probably haven't heard of them portland. Sustainable tofu flannel brooklyn knausgaard. Kombucha pork belly pug. Meh farm-to-table echo asymmetrical squid blog."], ["quantity", 10], ["price_cents", 6499], ["category_id", 1], ["created_at", "2019-06-18 17:07:13.436915"], ["updated_at", "2019-06-18 17:07:13.436915"]]
+  [1m[35m (0.7ms)[0m  COMMIT
+  [1m[36m (0.2ms)[0m  [1mBEGIN[0m
+  [1m[35mSQL (0.5ms)[0m  INSERT INTO "products" ("name", "description", "quantity", "price_cents", "category_id", "created_at", "updated_at") VALUES ($1, $2, $3, $4, $5, $6, $7) RETURNING "id"  [["name", "Wolf fashion axe kale chips church-key photo booth gluten-free."], ["description", "Ugh tacos paleo 3 wolf moon organic heirloom artisan chillwave. Chia vegan flannel pop-up 90's raw denim tattooed waistcoat. Kogi brunch umami mumblecore craft beer. Migas park fingerstache plaid tacos aesthetic goth vinegar. Direct trade sriracha portland fingerstache."], ["quantity", 10], ["price_cents", 6499], ["category_id", 1], ["created_at", "2019-06-18 17:07:13.442091"], ["updated_at", "2019-06-18 17:07:13.442091"]]
+  [1m[36m (0.7ms)[0m  [1mCOMMIT[0m
+  [1m[35m (0.1ms)[0m  BEGIN
+  [1m[36mSQL (0.5ms)[0m  [1mINSERT INTO "products" ("name", "description", "quantity", "price_cents", "category_id", "created_at", "updated_at") VALUES ($1, $2, $3, $4, $5, $6, $7) RETURNING "id"[0m  [["name", "Yuccie xoxo plaid."], ["description", "Whatever blue bottle cold-pressed pour-over pork belly. Seitan chillwave selvage cliche crucifix actually slow-carb. Photo booth church-key readymade butcher 8-bit. Pitchfork yuccie plaid 3 wolf moon biodiesel heirloom banjo. Lo-fi pbr&b 90's."], ["quantity", 10], ["price_cents", 6499], ["category_id", 1], ["created_at", "2019-06-18 17:07:13.446865"], ["updated_at", "2019-06-18 17:07:13.446865"]]
+  [1m[35m (0.8ms)[0m  COMMIT
+  [1m[36m (0.1ms)[0m  [1mBEGIN[0m
+  [1m[35mSQL (0.4ms)[0m  INSERT INTO "products" ("name", "description", "quantity", "price_cents", "category_id", "created_at", "updated_at") VALUES ($1, $2, $3, $4, $5, $6, $7) RETURNING "id"  [["name", "Gastropub vegan godard carry."], ["description", "Lomo squid kogi cronut wes anderson. Literally ethical vhs knausgaard church-key offal meditation. Microdosing etsy cardigan thundercats chartreuse mustache helvetica. Artisan chartreuse semiotics celiac williamsburg green juice. Put a bird on it occupy health cred listicle yuccie. Before they sold out actually mixtape semiotics kinfolk normcore."], ["quantity", 10], ["price_cents", 6499], ["category_id", 1], ["created_at", "2019-06-18 17:07:13.451885"], ["updated_at", "2019-06-18 17:07:13.451885"]]
+  [1m[36m (0.8ms)[0m  [1mCOMMIT[0m
+  [1m[35m (0.2ms)[0m  BEGIN
+  [1m[36mSQL (0.3ms)[0m  [1mINSERT INTO "products" ("name", "description", "quantity", "price_cents", "category_id", "created_at", "updated_at") VALUES ($1, $2, $3, $4, $5, $6, $7) RETURNING "id"[0m  [["name", "Mlkshk waistcoat yuccie kickstarter brooklyn."], ["description", "Knausgaard cold-pressed offal literally health distillery. Brooklyn beard deep v cold-pressed. Drinking kitsch etsy marfa kale chips pour-over squid. Art party keytar cronut chartreuse actually synth austin. Wes anderson banh mi scenester migas pabst."], ["quantity", 10], ["price_cents", 6499], ["category_id", 1], ["created_at", "2019-06-18 17:07:13.456617"], ["updated_at", "2019-06-18 17:07:13.456617"]]
+  [1m[35m (0.7ms)[0m  COMMIT
+  [1m[36m (0.2ms)[0m  [1mBEGIN[0m
+  [1m[35mSQL (0.4ms)[0m  INSERT INTO "products" ("name", "description", "quantity", "price_cents", "category_id", "created_at", "updated_at") VALUES ($1, $2, $3, $4, $5, $6, $7) RETURNING "id"  [["name", "Lumbersexual cliche 90's blog iphone semiotics."], ["description", "Quinoa godard 90's ugh knausgaard. Microdosing flexitarian pitchfork twee ethical try-hard shabby chic. Keffiyeh selvage scenester lo-fi wes anderson. Fingerstache hashtag neutra you probably haven't heard of them. Yuccie skateboard fap freegan five dollar toast. Blog park cardigan asymmetrical farm-to-table green juice fingerstache bushwick."], ["quantity", 10], ["price_cents", 6499], ["category_id", 1], ["created_at", "2019-06-18 17:07:13.461458"], ["updated_at", "2019-06-18 17:07:13.461458"]]
+  [1m[36m (0.8ms)[0m  [1mCOMMIT[0m
+Started GET "/" for 127.0.0.1 at 2019-06-18 17:07:14 +0000
+Processing by ProductsController#index as HTML
+  [1m[35mProduct Load (0.9ms)[0m  SELECT "products".* FROM "products"  ORDER BY "products"."created_at" DESC
+  Rendered products/_product.html.erb (9.3ms)
+  Rendered products/index.html.erb within layouts/application (31.4ms)
+  [1m[36mCategory Load (0.6ms)[0m  [1mSELECT "categories".* FROM "categories"[0m
+  Rendered layouts/_top_nav.html.erb (8.0ms)
+Completed 200 OK in 716ms (Views: 699.2ms | ActiveRecord: 1.5ms)
+  [1m[35m (1.4ms)[0m  ALTER TABLE "widgets" DISABLE TRIGGER ALL;ALTER TABLE "categories" DISABLE TRIGGER ALL;ALTER TABLE "schema_migrations" DISABLE TRIGGER ALL;ALTER TABLE "reviews" DISABLE TRIGGER ALL;ALTER TABLE "users" DISABLE TRIGGER ALL;ALTER TABLE "orders" DISABLE TRIGGER ALL;ALTER TABLE "line_items" DISABLE TRIGGER ALL;ALTER TABLE "products" DISABLE TRIGGER ALL
+  [1m[36m (22.5ms)[0m  [1mTRUNCATE TABLE "public"."widgets", "public"."categories", "public"."reviews", "public"."users", "public"."orders", "public"."line_items", "public"."products" RESTART IDENTITY CASCADE;[0m
+  [1m[35m (1.1ms)[0m  ALTER TABLE "widgets" ENABLE TRIGGER ALL;ALTER TABLE "categories" ENABLE TRIGGER ALL;ALTER TABLE "schema_migrations" ENABLE TRIGGER ALL;ALTER TABLE "reviews" ENABLE TRIGGER ALL;ALTER TABLE "users" ENABLE TRIGGER ALL;ALTER TABLE "orders" ENABLE TRIGGER ALL;ALTER TABLE "line_items" ENABLE TRIGGER ALL;ALTER TABLE "products" ENABLE TRIGGER ALL
+  [1m[36mActiveRecord::SchemaMigration Load (0.4ms)[0m  [1mSELECT "schema_migrations".* FROM "schema_migrations"[0m
+  [1m[35m (1.5ms)[0m  ALTER TABLE "widgets" DISABLE TRIGGER ALL;ALTER TABLE "categories" DISABLE TRIGGER ALL;ALTER TABLE "schema_migrations" DISABLE TRIGGER ALL;ALTER TABLE "reviews" DISABLE TRIGGER ALL;ALTER TABLE "users" DISABLE TRIGGER ALL;ALTER TABLE "orders" DISABLE TRIGGER ALL;ALTER TABLE "line_items" DISABLE TRIGGER ALL;ALTER TABLE "products" DISABLE TRIGGER ALL
+  [1m[36m (1.3ms)[0m  [1m          SELECT schemaname || '.' || tablename
+          FROM pg_tables
+          WHERE
+            tablename !~ '_prt_' AND
+             tablename <> 'schema_migrations'  AND
+            schemaname = ANY (current_schemas(false))
+[0m
+  [1m[35m (1.2ms)[0m  select table_name from information_schema.views where table_schema = 'jungle_test'
+  [1m[36m (21.5ms)[0m  [1mTRUNCATE TABLE "public"."widgets", "public"."categories", "public"."reviews", "public"."users", "public"."orders", "public"."line_items", "public"."products" RESTART IDENTITY CASCADE;[0m
+  [1m[35m (1.1ms)[0m  ALTER TABLE "widgets" ENABLE TRIGGER ALL;ALTER TABLE "categories" ENABLE TRIGGER ALL;ALTER TABLE "schema_migrations" ENABLE TRIGGER ALL;ALTER TABLE "reviews" ENABLE TRIGGER ALL;ALTER TABLE "users" ENABLE TRIGGER ALL;ALTER TABLE "orders" ENABLE TRIGGER ALL;ALTER TABLE "line_items" ENABLE TRIGGER ALL;ALTER TABLE "products" ENABLE TRIGGER ALL
+  [1m[36m (1.0ms)[0m  [1mALTER TABLE "widgets" DISABLE TRIGGER ALL;ALTER TABLE "categories" DISABLE TRIGGER ALL;ALTER TABLE "schema_migrations" DISABLE TRIGGER ALL;ALTER TABLE "reviews" DISABLE TRIGGER ALL;ALTER TABLE "users" DISABLE TRIGGER ALL;ALTER TABLE "orders" DISABLE TRIGGER ALL;ALTER TABLE "line_items" DISABLE TRIGGER ALL;ALTER TABLE "products" DISABLE TRIGGER ALL[0m
+  [1m[35m (18.8ms)[0m  TRUNCATE TABLE "public"."widgets", "public"."categories", "public"."reviews", "public"."users", "public"."orders", "public"."line_items", "public"."products" RESTART IDENTITY CASCADE;
+  [1m[36m (1.1ms)[0m  [1mALTER TABLE "widgets" ENABLE TRIGGER ALL;ALTER TABLE "categories" ENABLE TRIGGER ALL;ALTER TABLE "schema_migrations" ENABLE TRIGGER ALL;ALTER TABLE "reviews" ENABLE TRIGGER ALL;ALTER TABLE "users" ENABLE TRIGGER ALL;ALTER TABLE "orders" ENABLE TRIGGER ALL;ALTER TABLE "line_items" ENABLE TRIGGER ALL;ALTER TABLE "products" ENABLE TRIGGER ALL[0m
+  [1m[36mActiveRecord::SchemaMigration Load (0.4ms)[0m  [1mSELECT "schema_migrations".* FROM "schema_migrations"[0m
+  [1m[35m (1.4ms)[0m  ALTER TABLE "widgets" DISABLE TRIGGER ALL;ALTER TABLE "categories" DISABLE TRIGGER ALL;ALTER TABLE "schema_migrations" DISABLE TRIGGER ALL;ALTER TABLE "reviews" DISABLE TRIGGER ALL;ALTER TABLE "users" DISABLE TRIGGER ALL;ALTER TABLE "orders" DISABLE TRIGGER ALL;ALTER TABLE "line_items" DISABLE TRIGGER ALL;ALTER TABLE "products" DISABLE TRIGGER ALL
+  [1m[36m (1.2ms)[0m  [1m          SELECT schemaname || '.' || tablename
+          FROM pg_tables
+          WHERE
+            tablename !~ '_prt_' AND
+             tablename <> 'schema_migrations'  AND
+            schemaname = ANY (current_schemas(false))
+[0m
+  [1m[35m (1.2ms)[0m  select table_name from information_schema.views where table_schema = 'jungle_test'
+  [1m[36m (22.6ms)[0m  [1mTRUNCATE TABLE "public"."widgets", "public"."categories", "public"."reviews", "public"."users", "public"."orders", "public"."line_items", "public"."products" RESTART IDENTITY CASCADE;[0m
+  [1m[35m (1.2ms)[0m  ALTER TABLE "widgets" ENABLE TRIGGER ALL;ALTER TABLE "categories" ENABLE TRIGGER ALL;ALTER TABLE "schema_migrations" ENABLE TRIGGER ALL;ALTER TABLE "reviews" ENABLE TRIGGER ALL;ALTER TABLE "users" ENABLE TRIGGER ALL;ALTER TABLE "orders" ENABLE TRIGGER ALL;ALTER TABLE "line_items" ENABLE TRIGGER ALL;ALTER TABLE "products" ENABLE TRIGGER ALL
+  [1m[36m (0.3ms)[0m  [1mBEGIN[0m
+  [1m[35mSQL (0.5ms)[0m  INSERT INTO "categories" ("name", "created_at", "updated_at") VALUES ($1, $2, $3) RETURNING "id"  [["name", "Apparel"], ["created_at", "2019-06-18 17:09:48.760335"], ["updated_at", "2019-06-18 17:09:48.760335"]]
+  [1m[36m (0.7ms)[0m  [1mCOMMIT[0m
+  [1m[35m (0.2ms)[0m  BEGIN
+  [1m[36mSQL (0.9ms)[0m  [1mINSERT INTO "products" ("name", "description", "image", "quantity", "price_cents", "category_id", "created_at", "updated_at") VALUES ($1, $2, $3, $4, $5, $6, $7, $8) RETURNING "id"[0m  [["name", "Kale chips offal gastropub shoreditch."], ["description", "Tote bag goth food truck venmo truffaut carry umami austin. Dreamcatcher roof kombucha marfa 3 wolf moon banjo schlitz. Organic pbr&b mustache post-ironic single-origin coffee. Fashion axe +1 brooklyn fingerstache waistcoat messenger bag mustache. Vinyl tumblr small batch. Tattooed xoxo craft beer."], ["image", "apparel1.jpg"], ["quantity", 10], ["price_cents", 6499], ["category_id", 1], ["created_at", "2019-06-18 17:09:49.325189"], ["updated_at", "2019-06-18 17:09:49.325189"]]
+  [1m[35m (0.7ms)[0m  COMMIT
+  [1m[36m (0.2ms)[0m  [1mBEGIN[0m
+  [1m[35mSQL (0.6ms)[0m  INSERT INTO "products" ("name", "description", "image", "quantity", "price_cents", "category_id", "created_at", "updated_at") VALUES ($1, $2, $3, $4, $5, $6, $7, $8) RETURNING "id"  [["name", "Celiac fixie meggings roof chartreuse."], ["description", "Venmo post-ironic pickled scenester tumblr. Pork belly plaid pitchfork taxidermy intelligentsia pour-over fap. Fingerstache green juice thundercats fashion axe. Disrupt franzen tumblr kitsch tofu post-ironic chambray asymmetrical. Disrupt paleo kickstarter sustainable chartreuse."], ["image", "apparel1.jpg"], ["quantity", 10], ["price_cents", 6499], ["category_id", 1], ["created_at", "2019-06-18 17:09:49.497872"], ["updated_at", "2019-06-18 17:09:49.497872"]]
+  [1m[36m (0.6ms)[0m  [1mCOMMIT[0m
+  [1m[35m (0.1ms)[0m  BEGIN
+  [1m[36mSQL (0.6ms)[0m  [1mINSERT INTO "products" ("name", "description", "image", "quantity", "price_cents", "category_id", "created_at", "updated_at") VALUES ($1, $2, $3, $4, $5, $6, $7, $8) RETURNING "id"[0m  [["name", "Drinking pug pickled fanny pack mustache."], ["description", "Neutra ethical pug roof. Vegan iphone franzen slow-carb. Before they sold out chartreuse ennui ethical. Viral bitters helvetica fap literally occupy post-ironic. Synth beard bushwick gentrify brooklyn park direct trade microdosing. Everyday loko scenester ramps kogi brunch."], ["image", "apparel1.jpg"], ["quantity", 10], ["price_cents", 6499], ["category_id", 1], ["created_at", "2019-06-18 17:09:49.666993"], ["updated_at", "2019-06-18 17:09:49.666993"]]
+  [1m[35m (0.6ms)[0m  COMMIT
+  [1m[36m (0.1ms)[0m  [1mBEGIN[0m
+  [1m[35mSQL (0.6ms)[0m  INSERT INTO "products" ("name", "description", "image", "quantity", "price_cents", "category_id", "created_at", "updated_at") VALUES ($1, $2, $3, $4, $5, $6, $7, $8) RETURNING "id"  [["name", "Viral franzen mumblecore migas."], ["description", "Butcher austin 8-bit vegan pork belly mlkshk keffiyeh. Knausgaard etsy kale chips wayfarers small batch portland. Cold-pressed ugh health chia green juice roof vegan. Lumbersexual food truck austin sriracha cold-pressed cred. Cornhole trust fund kinfolk offal bitters. Fingerstache raw denim 8-bit bitters whatever."], ["image", "apparel1.jpg"], ["quantity", 10], ["price_cents", 6499], ["category_id", 1], ["created_at", "2019-06-18 17:09:49.833958"], ["updated_at", "2019-06-18 17:09:49.833958"]]
+  [1m[36m (0.7ms)[0m  [1mCOMMIT[0m
+  [1m[35m (0.3ms)[0m  BEGIN
+  [1m[36mSQL (0.5ms)[0m  [1mINSERT INTO "products" ("name", "description", "image", "quantity", "price_cents", "category_id", "created_at", "updated_at") VALUES ($1, $2, $3, $4, $5, $6, $7, $8) RETURNING "id"[0m  [["name", "Neutra five dollar toast loko selvage."], ["description", "Hella banh mi bushwick schlitz. Mustache letterpress franzen typewriter. Portland crucifix venmo xoxo try-hard. Pug sriracha jean shorts. Neutra yuccie synth heirloom williamsburg distillery slow-carb meh. Photo booth vice celiac."], ["image", "apparel1.jpg"], ["quantity", 10], ["price_cents", 6499], ["category_id", 1], ["created_at", "2019-06-18 17:09:50.006585"], ["updated_at", "2019-06-18 17:09:50.006585"]]
+  [1m[35m (0.7ms)[0m  COMMIT
+  [1m[36m (0.2ms)[0m  [1mBEGIN[0m
+  [1m[35mSQL (0.6ms)[0m  INSERT INTO "products" ("name", "description", "image", "quantity", "price_cents", "category_id", "created_at", "updated_at") VALUES ($1, $2, $3, $4, $5, $6, $7, $8) RETURNING "id"  [["name", "Franzen seitan brooklyn polaroid kitsch cronut."], ["description", "Farm-to-table blog vinyl hoodie seitan offal. Migas squid readymade. Master shoreditch viral iphone austin venmo. Truffaut actually austin plaid carry before they sold out master slow-carb. Polaroid pop-up tacos semiotics green juice hella bespoke irony. Kogi slow-carb wayfarers occupy locavore literally."], ["image", "apparel1.jpg"], ["quantity", 10], ["price_cents", 6499], ["category_id", 1], ["created_at", "2019-06-18 17:09:50.182999"], ["updated_at", "2019-06-18 17:09:50.182999"]]
+  [1m[36m (0.6ms)[0m  [1mCOMMIT[0m
+  [1m[35m (0.2ms)[0m  BEGIN
+  [1m[36mSQL (0.5ms)[0m  [1mINSERT INTO "products" ("name", "description", "image", "quantity", "price_cents", "category_id", "created_at", "updated_at") VALUES ($1, $2, $3, $4, $5, $6, $7, $8) RETURNING "id"[0m  [["name", "Paleo typewriter microdosing chambray irony."], ["description", "Iphone flexitarian waistcoat vice pug. Ethical cronut scenester. Shabby chic lo-fi 3 wolf moon meh portland waistcoat echo wayfarers. +1 swag tote bag kogi freegan microdosing bushwick biodiesel. Pop-up everyday crucifix small batch put a bird on it flexitarian."], ["image", "apparel1.jpg"], ["quantity", 10], ["price_cents", 6499], ["category_id", 1], ["created_at", "2019-06-18 17:09:50.352991"], ["updated_at", "2019-06-18 17:09:50.352991"]]
+  [1m[35m (0.8ms)[0m  COMMIT
+  [1m[36m (0.1ms)[0m  [1mBEGIN[0m
+  [1m[35mSQL (0.4ms)[0m  INSERT INTO "products" ("name", "description", "image", "quantity", "price_cents", "category_id", "created_at", "updated_at") VALUES ($1, $2, $3, $4, $5, $6, $7, $8) RETURNING "id"  [["name", "Cold-pressed hammock before they sold out vice knausgaard freegan tousled."], ["description", "Kitsch skateboard vegan. Truffaut scenester knausgaard narwhal. Jean shorts ennui yr synth dreamcatcher hella. Kickstarter fingerstache vinyl. Neutra banjo gentrify blog retro. Park hella venmo organic."], ["image", "apparel1.jpg"], ["quantity", 10], ["price_cents", 6499], ["category_id", 1], ["created_at", "2019-06-18 17:09:50.522705"], ["updated_at", "2019-06-18 17:09:50.522705"]]
+  [1m[36m (0.7ms)[0m  [1mCOMMIT[0m
+  [1m[35m (0.1ms)[0m  BEGIN
+  [1m[36mSQL (0.5ms)[0m  [1mINSERT INTO "products" ("name", "description", "image", "quantity", "price_cents", "category_id", "created_at", "updated_at") VALUES ($1, $2, $3, $4, $5, $6, $7, $8) RETURNING "id"[0m  [["name", "Asymmetrical mlkshk vinyl street meditation."], ["description", "Wes anderson cornhole craft beer master. Fingerstache pbr&b polaroid umami. Chartreuse stumptown church-key craft beer 8-bit. Austin health readymade williamsburg."], ["image", "apparel1.jpg"], ["quantity", 10], ["price_cents", 6499], ["category_id", 1], ["created_at", "2019-06-18 17:09:50.696793"], ["updated_at", "2019-06-18 17:09:50.696793"]]
+  [1m[35m (0.7ms)[0m  COMMIT
+  [1m[36m (0.2ms)[0m  [1mBEGIN[0m
+  [1m[35mSQL (0.5ms)[0m  INSERT INTO "products" ("name", "description", "image", "quantity", "price_cents", "category_id", "created_at", "updated_at") VALUES ($1, $2, $3, $4, $5, $6, $7, $8) RETURNING "id"  [["name", "Yolo plaid freegan forage venmo mustache."], ["description", "Pabst vhs 8-bit. Seitan authentic photo booth. Tattooed jean shorts freegan pop-up single-origin coffee williamsburg street irony. 90's xoxo typewriter biodiesel cray."], ["image", "apparel1.jpg"], ["quantity", 10], ["price_cents", 6499], ["category_id", 1], ["created_at", "2019-06-18 17:09:50.864654"], ["updated_at", "2019-06-18 17:09:50.864654"]]
+  [1m[36m (0.7ms)[0m  [1mCOMMIT[0m
+Started GET "/" for 127.0.0.1 at 2019-06-18 17:09:51 +0000
+Processing by ProductsController#index as HTML
+  [1m[35mProduct Load (1.0ms)[0m  SELECT "products".* FROM "products"  ORDER BY "products"."created_at" DESC
+  Rendered products/_product.html.erb (19.1ms)
+  Rendered products/index.html.erb within layouts/application (42.5ms)
+  [1m[36mCategory Load (0.6ms)[0m  [1mSELECT "categories".* FROM "categories"[0m
+  Rendered layouts/_top_nav.html.erb (7.1ms)
+Completed 200 OK in 710ms (Views: 694.8ms | ActiveRecord: 1.7ms)
+  [1m[35m (1.2ms)[0m  ALTER TABLE "widgets" DISABLE TRIGGER ALL;ALTER TABLE "categories" DISABLE TRIGGER ALL;ALTER TABLE "schema_migrations" DISABLE TRIGGER ALL;ALTER TABLE "reviews" DISABLE TRIGGER ALL;ALTER TABLE "users" DISABLE TRIGGER ALL;ALTER TABLE "orders" DISABLE TRIGGER ALL;ALTER TABLE "line_items" DISABLE TRIGGER ALL;ALTER TABLE "products" DISABLE TRIGGER ALL
+  [1m[36m (23.0ms)[0m  [1mTRUNCATE TABLE "public"."widgets", "public"."categories", "public"."reviews", "public"."users", "public"."orders", "public"."line_items", "public"."products" RESTART IDENTITY CASCADE;[0m
+  [1m[35m (1.2ms)[0m  ALTER TABLE "widgets" ENABLE TRIGGER ALL;ALTER TABLE "categories" ENABLE TRIGGER ALL;ALTER TABLE "schema_migrations" ENABLE TRIGGER ALL;ALTER TABLE "reviews" ENABLE TRIGGER ALL;ALTER TABLE "users" ENABLE TRIGGER ALL;ALTER TABLE "orders" ENABLE TRIGGER ALL;ALTER TABLE "line_items" ENABLE TRIGGER ALL;ALTER TABLE "products" ENABLE TRIGGER ALL
