@@ -2846,3 +2846,524 @@ Completed 200 OK in 19ms (Views: 16.6ms | ActiveRecord: 1.7ms)
   [1m[35m (1.1ms)[0m  ALTER TABLE "widgets" DISABLE TRIGGER ALL;ALTER TABLE "categories" DISABLE TRIGGER ALL;ALTER TABLE "schema_migrations" DISABLE TRIGGER ALL;ALTER TABLE "reviews" DISABLE TRIGGER ALL;ALTER TABLE "users" DISABLE TRIGGER ALL;ALTER TABLE "orders" DISABLE TRIGGER ALL;ALTER TABLE "line_items" DISABLE TRIGGER ALL;ALTER TABLE "products" DISABLE TRIGGER ALL
   [1m[36m (20.3ms)[0m  [1mTRUNCATE TABLE "public"."widgets", "public"."categories", "public"."reviews", "public"."users", "public"."orders", "public"."line_items", "public"."products" RESTART IDENTITY CASCADE;[0m
   [1m[35m (1.2ms)[0m  ALTER TABLE "widgets" ENABLE TRIGGER ALL;ALTER TABLE "categories" ENABLE TRIGGER ALL;ALTER TABLE "schema_migrations" ENABLE TRIGGER ALL;ALTER TABLE "reviews" ENABLE TRIGGER ALL;ALTER TABLE "users" ENABLE TRIGGER ALL;ALTER TABLE "orders" ENABLE TRIGGER ALL;ALTER TABLE "line_items" ENABLE TRIGGER ALL;ALTER TABLE "products" ENABLE TRIGGER ALL
+  [1m[36mActiveRecord::SchemaMigration Load (0.5ms)[0m  [1mSELECT "schema_migrations".* FROM "schema_migrations"[0m
+  [1m[35m (2.4ms)[0m  ALTER TABLE "widgets" DISABLE TRIGGER ALL;ALTER TABLE "categories" DISABLE TRIGGER ALL;ALTER TABLE "schema_migrations" DISABLE TRIGGER ALL;ALTER TABLE "reviews" DISABLE TRIGGER ALL;ALTER TABLE "users" DISABLE TRIGGER ALL;ALTER TABLE "orders" DISABLE TRIGGER ALL;ALTER TABLE "line_items" DISABLE TRIGGER ALL;ALTER TABLE "products" DISABLE TRIGGER ALL
+  [1m[36m (1.4ms)[0m  [1m          SELECT schemaname || '.' || tablename
+          FROM pg_tables
+          WHERE
+            tablename !~ '_prt_' AND
+             tablename <> 'schema_migrations'  AND
+            schemaname = ANY (current_schemas(false))
+[0m
+  [1m[35m (1.1ms)[0m  select table_name from information_schema.views where table_schema = 'jungle_test'
+  [1m[36m (25.3ms)[0m  [1mTRUNCATE TABLE "public"."widgets", "public"."categories", "public"."reviews", "public"."users", "public"."orders", "public"."line_items", "public"."products" RESTART IDENTITY CASCADE;[0m
+  [1m[35m (1.1ms)[0m  ALTER TABLE "widgets" ENABLE TRIGGER ALL;ALTER TABLE "categories" ENABLE TRIGGER ALL;ALTER TABLE "schema_migrations" ENABLE TRIGGER ALL;ALTER TABLE "reviews" ENABLE TRIGGER ALL;ALTER TABLE "users" ENABLE TRIGGER ALL;ALTER TABLE "orders" ENABLE TRIGGER ALL;ALTER TABLE "line_items" ENABLE TRIGGER ALL;ALTER TABLE "products" ENABLE TRIGGER ALL
+  [1m[36m (0.2ms)[0m  [1mBEGIN[0m
+  [1m[35m (0.2ms)[0m  COMMIT
+  [1m[36m (0.1ms)[0m  [1mBEGIN[0m
+  [1m[35m (0.4ms)[0m  SAVEPOINT active_record_1
+  [1m[36mUser Exists (0.8ms)[0m  [1mSELECT  1 AS one FROM "users" WHERE "users"."email" = 'kcchaha@gmail.com' LIMIT 1[0m
+  [1m[35m (0.3ms)[0m  ROLLBACK TO SAVEPOINT active_record_1
+  [1m[36m (0.4ms)[0m  [1mROLLBACK[0m
+  [1m[36mActiveRecord::SchemaMigration Load (0.3ms)[0m  [1mSELECT "schema_migrations".* FROM "schema_migrations"[0m
+  [1m[35m (1.3ms)[0m  ALTER TABLE "widgets" DISABLE TRIGGER ALL;ALTER TABLE "categories" DISABLE TRIGGER ALL;ALTER TABLE "schema_migrations" DISABLE TRIGGER ALL;ALTER TABLE "reviews" DISABLE TRIGGER ALL;ALTER TABLE "users" DISABLE TRIGGER ALL;ALTER TABLE "orders" DISABLE TRIGGER ALL;ALTER TABLE "line_items" DISABLE TRIGGER ALL;ALTER TABLE "products" DISABLE TRIGGER ALL
+  [1m[36m (1.1ms)[0m  [1m          SELECT schemaname || '.' || tablename
+          FROM pg_tables
+          WHERE
+            tablename !~ '_prt_' AND
+             tablename <> 'schema_migrations'  AND
+            schemaname = ANY (current_schemas(false))
+[0m
+  [1m[35m (1.0ms)[0m  select table_name from information_schema.views where table_schema = 'jungle_test'
+  [1m[36m (24.4ms)[0m  [1mTRUNCATE TABLE "public"."widgets", "public"."categories", "public"."reviews", "public"."users", "public"."orders", "public"."line_items", "public"."products" RESTART IDENTITY CASCADE;[0m
+  [1m[35m (1.2ms)[0m  ALTER TABLE "widgets" ENABLE TRIGGER ALL;ALTER TABLE "categories" ENABLE TRIGGER ALL;ALTER TABLE "schema_migrations" ENABLE TRIGGER ALL;ALTER TABLE "reviews" ENABLE TRIGGER ALL;ALTER TABLE "users" ENABLE TRIGGER ALL;ALTER TABLE "orders" ENABLE TRIGGER ALL;ALTER TABLE "line_items" ENABLE TRIGGER ALL;ALTER TABLE "products" ENABLE TRIGGER ALL
+  [1m[36m (0.1ms)[0m  [1mBEGIN[0m
+  [1m[35m (0.1ms)[0m  COMMIT
+  [1m[36m (0.1ms)[0m  [1mBEGIN[0m
+  [1m[35m (0.1ms)[0m  SAVEPOINT active_record_1
+  [1m[36mUser Exists (0.5ms)[0m  [1mSELECT  1 AS one FROM "users" WHERE "users"."email" = 'kcchaha@gmail.com' LIMIT 1[0m
+  [1m[35mSQL (0.3ms)[0m  INSERT INTO "users" ("first_name", "last_name", "email", "password_digest", "created_at", "updated_at") VALUES ($1, $2, $3, $4, $5, $6) RETURNING "id"  [["first_name", "Chenchen"], ["last_name", "Enfys"], ["email", "kcchaha@gmail.com"], ["password_digest", "$2a$04$o6yPy10wY0ZaqSbVW4Wev.d5Z66sS2158I6jaqj0S2v/XuHnfjO.W"], ["created_at", "2019-06-18 21:30:37.351978"], ["updated_at", "2019-06-18 21:30:37.351978"]]
+  [1m[36m (0.1ms)[0m  [1mRELEASE SAVEPOINT active_record_1[0m
+  [1m[35m (0.1ms)[0m  ROLLBACK
+  [1m[36mActiveRecord::SchemaMigration Load (0.4ms)[0m  [1mSELECT "schema_migrations".* FROM "schema_migrations"[0m
+  [1m[35m (2.2ms)[0m  ALTER TABLE "widgets" DISABLE TRIGGER ALL;ALTER TABLE "categories" DISABLE TRIGGER ALL;ALTER TABLE "schema_migrations" DISABLE TRIGGER ALL;ALTER TABLE "reviews" DISABLE TRIGGER ALL;ALTER TABLE "users" DISABLE TRIGGER ALL;ALTER TABLE "orders" DISABLE TRIGGER ALL;ALTER TABLE "line_items" DISABLE TRIGGER ALL;ALTER TABLE "products" DISABLE TRIGGER ALL
+  [1m[36m (1.4ms)[0m  [1m          SELECT schemaname || '.' || tablename
+          FROM pg_tables
+          WHERE
+            tablename !~ '_prt_' AND
+             tablename <> 'schema_migrations'  AND
+            schemaname = ANY (current_schemas(false))
+[0m
+  [1m[35m (1.2ms)[0m  select table_name from information_schema.views where table_schema = 'jungle_test'
+  [1m[36m (25.6ms)[0m  [1mTRUNCATE TABLE "public"."widgets", "public"."categories", "public"."reviews", "public"."users", "public"."orders", "public"."line_items", "public"."products" RESTART IDENTITY CASCADE;[0m
+  [1m[35m (1.2ms)[0m  ALTER TABLE "widgets" ENABLE TRIGGER ALL;ALTER TABLE "categories" ENABLE TRIGGER ALL;ALTER TABLE "schema_migrations" ENABLE TRIGGER ALL;ALTER TABLE "reviews" ENABLE TRIGGER ALL;ALTER TABLE "users" ENABLE TRIGGER ALL;ALTER TABLE "orders" ENABLE TRIGGER ALL;ALTER TABLE "line_items" ENABLE TRIGGER ALL;ALTER TABLE "products" ENABLE TRIGGER ALL
+  [1m[36m (0.2ms)[0m  [1mBEGIN[0m
+  [1m[35m (0.2ms)[0m  COMMIT
+  [1m[36m (0.1ms)[0m  [1mBEGIN[0m
+  [1m[35m (0.3ms)[0m  SAVEPOINT active_record_1
+  [1m[36mUser Exists (1.0ms)[0m  [1mSELECT  1 AS one FROM "users" WHERE "users"."email" = 'kcchaha@gmail.com' LIMIT 1[0m
+  [1m[35mSQL (0.5ms)[0m  INSERT INTO "users" ("first_name", "last_name", "email", "password_digest", "created_at", "updated_at") VALUES ($1, $2, $3, $4, $5, $6) RETURNING "id"  [["first_name", "Chenchen"], ["last_name", "Enfys"], ["email", "kcchaha@gmail.com"], ["password_digest", "$2a$04$bvaY/w.RwTl8HuKJsEKjtuOT9CMRpkp//dDaaayLw.MJUSarFqhoq"], ["created_at", "2019-06-18 21:43:14.253035"], ["updated_at", "2019-06-18 21:43:14.253035"]]
+  [1m[36m (0.2ms)[0m  [1mRELEASE SAVEPOINT active_record_1[0m
+Started GET "/login" for 127.0.0.1 at 2019-06-18 21:43:14 +0000
+Processing by SessionsController#new as HTML
+  Rendered sessions/new.html.erb within layouts/application (5.3ms)
+  [1m[35mCategory Load (0.5ms)[0m  SELECT "categories".* FROM "categories"
+  Rendered layouts/_top_nav.html.erb (22.8ms)
+Completed 200 OK in 637ms (Views: 622.4ms | ActiveRecord: 1.2ms)
+  [1m[36m (0.5ms)[0m  [1mROLLBACK[0m
+  [1m[36mActiveRecord::SchemaMigration Load (0.5ms)[0m  [1mSELECT "schema_migrations".* FROM "schema_migrations"[0m
+  [1m[35m (1.7ms)[0m  ALTER TABLE "widgets" DISABLE TRIGGER ALL;ALTER TABLE "categories" DISABLE TRIGGER ALL;ALTER TABLE "schema_migrations" DISABLE TRIGGER ALL;ALTER TABLE "reviews" DISABLE TRIGGER ALL;ALTER TABLE "users" DISABLE TRIGGER ALL;ALTER TABLE "orders" DISABLE TRIGGER ALL;ALTER TABLE "line_items" DISABLE TRIGGER ALL;ALTER TABLE "products" DISABLE TRIGGER ALL
+  [1m[36m (1.3ms)[0m  [1m          SELECT schemaname || '.' || tablename
+          FROM pg_tables
+          WHERE
+            tablename !~ '_prt_' AND
+             tablename <> 'schema_migrations'  AND
+            schemaname = ANY (current_schemas(false))
+[0m
+  [1m[35m (1.3ms)[0m  select table_name from information_schema.views where table_schema = 'jungle_test'
+  [1m[36m (28.0ms)[0m  [1mTRUNCATE TABLE "public"."widgets", "public"."categories", "public"."reviews", "public"."users", "public"."orders", "public"."line_items", "public"."products" RESTART IDENTITY CASCADE;[0m
+  [1m[35m (1.2ms)[0m  ALTER TABLE "widgets" ENABLE TRIGGER ALL;ALTER TABLE "categories" ENABLE TRIGGER ALL;ALTER TABLE "schema_migrations" ENABLE TRIGGER ALL;ALTER TABLE "reviews" ENABLE TRIGGER ALL;ALTER TABLE "users" ENABLE TRIGGER ALL;ALTER TABLE "orders" ENABLE TRIGGER ALL;ALTER TABLE "line_items" ENABLE TRIGGER ALL;ALTER TABLE "products" ENABLE TRIGGER ALL
+  [1m[36m (0.2ms)[0m  [1mBEGIN[0m
+  [1m[35m (0.1ms)[0m  COMMIT
+  [1m[36m (0.1ms)[0m  [1mBEGIN[0m
+  [1m[35m (0.2ms)[0m  SAVEPOINT active_record_1
+  [1m[36mUser Exists (0.6ms)[0m  [1mSELECT  1 AS one FROM "users" WHERE "users"."email" = 'kcchaha@gmail.com' LIMIT 1[0m
+  [1m[35mSQL (0.6ms)[0m  INSERT INTO "users" ("first_name", "last_name", "email", "password_digest", "created_at", "updated_at") VALUES ($1, $2, $3, $4, $5, $6) RETURNING "id"  [["first_name", "Chenchen"], ["last_name", "Enfys"], ["email", "kcchaha@gmail.com"], ["password_digest", "$2a$04$aYRyHWKMDjPij3aM8dTKMegA3AejzlzXXcDf4GKQ.8U/j8m4EAOgW"], ["created_at", "2019-06-18 21:43:41.119415"], ["updated_at", "2019-06-18 21:43:41.119415"]]
+  [1m[36m (0.3ms)[0m  [1mRELEASE SAVEPOINT active_record_1[0m
+Started GET "/login" for 127.0.0.1 at 2019-06-18 21:43:41 +0000
+Processing by SessionsController#new as HTML
+  Rendered sessions/new.html.erb within layouts/application (4.6ms)
+  [1m[35mCategory Load (0.7ms)[0m  SELECT "categories".* FROM "categories"
+  Rendered layouts/_top_nav.html.erb (22.2ms)
+Completed 200 OK in 646ms (Views: 630.6ms | ActiveRecord: 1.4ms)
+Started POST "/login" for 127.0.0.1 at 2019-06-18 21:43:43 +0000
+Processing by SessionsController#create as HTML
+  Parameters: {"utf8"=>"✓", "email"=>"kcchaha@gmail.com", "password"=>"[FILTERED]", "commit"=>"Submit"}
+Completed 500 Internal Server Error in 20ms (ActiveRecord: 0.0ms)
+  [1m[36m (0.4ms)[0m  [1mROLLBACK[0m
+  [1m[36mActiveRecord::SchemaMigration Load (0.5ms)[0m  [1mSELECT "schema_migrations".* FROM "schema_migrations"[0m
+  [1m[35m (1.3ms)[0m  ALTER TABLE "widgets" DISABLE TRIGGER ALL;ALTER TABLE "categories" DISABLE TRIGGER ALL;ALTER TABLE "schema_migrations" DISABLE TRIGGER ALL;ALTER TABLE "reviews" DISABLE TRIGGER ALL;ALTER TABLE "users" DISABLE TRIGGER ALL;ALTER TABLE "orders" DISABLE TRIGGER ALL;ALTER TABLE "line_items" DISABLE TRIGGER ALL;ALTER TABLE "products" DISABLE TRIGGER ALL
+  [1m[36m (1.3ms)[0m  [1m          SELECT schemaname || '.' || tablename
+          FROM pg_tables
+          WHERE
+            tablename !~ '_prt_' AND
+             tablename <> 'schema_migrations'  AND
+            schemaname = ANY (current_schemas(false))
+[0m
+  [1m[35m (1.1ms)[0m  select table_name from information_schema.views where table_schema = 'jungle_test'
+  [1m[36m (27.0ms)[0m  [1mTRUNCATE TABLE "public"."widgets", "public"."categories", "public"."reviews", "public"."users", "public"."orders", "public"."line_items", "public"."products" RESTART IDENTITY CASCADE;[0m
+  [1m[35m (1.4ms)[0m  ALTER TABLE "widgets" ENABLE TRIGGER ALL;ALTER TABLE "categories" ENABLE TRIGGER ALL;ALTER TABLE "schema_migrations" ENABLE TRIGGER ALL;ALTER TABLE "reviews" ENABLE TRIGGER ALL;ALTER TABLE "users" ENABLE TRIGGER ALL;ALTER TABLE "orders" ENABLE TRIGGER ALL;ALTER TABLE "line_items" ENABLE TRIGGER ALL;ALTER TABLE "products" ENABLE TRIGGER ALL
+  [1m[36m (0.3ms)[0m  [1mBEGIN[0m
+  [1m[35m (0.1ms)[0m  COMMIT
+  [1m[36m (0.1ms)[0m  [1mBEGIN[0m
+  [1m[35m (0.4ms)[0m  SAVEPOINT active_record_1
+  [1m[36mUser Exists (0.7ms)[0m  [1mSELECT  1 AS one FROM "users" WHERE "users"."email" = 'kcchaha@gmail.com' LIMIT 1[0m
+  [1m[35mSQL (0.5ms)[0m  INSERT INTO "users" ("first_name", "last_name", "email", "password_digest", "created_at", "updated_at") VALUES ($1, $2, $3, $4, $5, $6) RETURNING "id"  [["first_name", "Chenchen"], ["last_name", "Enfys"], ["email", "kcchaha@gmail.com"], ["password_digest", "$2a$04$dHUpYb7/IcWcPv89favVKeazLZOz5qekDuDWfX.1wDhuS7bTkfB/q"], ["created_at", "2019-06-18 21:44:35.637583"], ["updated_at", "2019-06-18 21:44:35.637583"]]
+  [1m[36m (0.3ms)[0m  [1mRELEASE SAVEPOINT active_record_1[0m
+Started GET "/login" for 127.0.0.1 at 2019-06-18 21:44:35 +0000
+Processing by SessionsController#new as HTML
+  Rendered sessions/new.html.erb within layouts/application (4.7ms)
+  [1m[35mCategory Load (0.7ms)[0m  SELECT "categories".* FROM "categories"
+  Rendered layouts/_top_nav.html.erb (24.5ms)
+Completed 200 OK in 748ms (Views: 733.1ms | ActiveRecord: 1.2ms)
+Started POST "/login" for 127.0.0.1 at 2019-06-18 21:44:38 +0000
+Processing by SessionsController#create as HTML
+  Parameters: {"utf8"=>"✓", "email"=>"kcchaha@gmail.com", "password"=>"[FILTERED]", "commit"=>"Submit"}
+Completed 500 Internal Server Error in 25ms (ActiveRecord: 0.0ms)
+  [1m[36m (0.4ms)[0m  [1mROLLBACK[0m
+  [1m[36mActiveRecord::SchemaMigration Load (0.4ms)[0m  [1mSELECT "schema_migrations".* FROM "schema_migrations"[0m
+  [1m[35m (2.7ms)[0m  ALTER TABLE "widgets" DISABLE TRIGGER ALL;ALTER TABLE "categories" DISABLE TRIGGER ALL;ALTER TABLE "schema_migrations" DISABLE TRIGGER ALL;ALTER TABLE "reviews" DISABLE TRIGGER ALL;ALTER TABLE "users" DISABLE TRIGGER ALL;ALTER TABLE "orders" DISABLE TRIGGER ALL;ALTER TABLE "line_items" DISABLE TRIGGER ALL;ALTER TABLE "products" DISABLE TRIGGER ALL
+  [1m[36m (1.3ms)[0m  [1m          SELECT schemaname || '.' || tablename
+          FROM pg_tables
+          WHERE
+            tablename !~ '_prt_' AND
+             tablename <> 'schema_migrations'  AND
+            schemaname = ANY (current_schemas(false))
+[0m
+  [1m[35m (1.1ms)[0m  select table_name from information_schema.views where table_schema = 'jungle_test'
+  [1m[36m (27.3ms)[0m  [1mTRUNCATE TABLE "public"."widgets", "public"."categories", "public"."reviews", "public"."users", "public"."orders", "public"."line_items", "public"."products" RESTART IDENTITY CASCADE;[0m
+  [1m[35m (1.1ms)[0m  ALTER TABLE "widgets" ENABLE TRIGGER ALL;ALTER TABLE "categories" ENABLE TRIGGER ALL;ALTER TABLE "schema_migrations" ENABLE TRIGGER ALL;ALTER TABLE "reviews" ENABLE TRIGGER ALL;ALTER TABLE "users" ENABLE TRIGGER ALL;ALTER TABLE "orders" ENABLE TRIGGER ALL;ALTER TABLE "line_items" ENABLE TRIGGER ALL;ALTER TABLE "products" ENABLE TRIGGER ALL
+  [1m[36m (0.2ms)[0m  [1mBEGIN[0m
+  [1m[35m (0.2ms)[0m  COMMIT
+  [1m[36m (0.1ms)[0m  [1mBEGIN[0m
+  [1m[35m (0.2ms)[0m  SAVEPOINT active_record_1
+  [1m[36mUser Exists (0.7ms)[0m  [1mSELECT  1 AS one FROM "users" WHERE "users"."email" = 'kcchaha@gmail.com' LIMIT 1[0m
+  [1m[35mSQL (0.5ms)[0m  INSERT INTO "users" ("first_name", "last_name", "email", "password_digest", "created_at", "updated_at") VALUES ($1, $2, $3, $4, $5, $6) RETURNING "id"  [["first_name", "Chenchen"], ["last_name", "Enfys"], ["email", "kcchaha@gmail.com"], ["password_digest", "$2a$04$iG1r0YzCVmMr3hgNs0P7zO6zZtDMd3Pk3q/Q2eueT6ogyL9m1xyva"], ["created_at", "2019-06-18 21:51:03.902418"], ["updated_at", "2019-06-18 21:51:03.902418"]]
+  [1m[36m (0.2ms)[0m  [1mRELEASE SAVEPOINT active_record_1[0m
+Started GET "/login" for 127.0.0.1 at 2019-06-18 21:51:03 +0000
+Processing by SessionsController#new as HTML
+  Rendered sessions/new.html.erb within layouts/application (4.3ms)
+  [1m[35mCategory Load (0.5ms)[0m  SELECT "categories".* FROM "categories"
+  Rendered layouts/_top_nav.html.erb (22.7ms)
+Completed 200 OK in 695ms (Views: 680.8ms | ActiveRecord: 1.0ms)
+Started POST "/login" for 127.0.0.1 at 2019-06-18 21:51:06 +0000
+Processing by SessionsController#create as HTML
+  Parameters: {"utf8"=>"✓", "email"=>"kcchaha@gmail.com", "password"=>"[FILTERED]", "commit"=>"Submit"}
+  [1m[36mUser Load (0.3ms)[0m  [1mSELECT  "users".* FROM "users" WHERE "users"."email" = $1 LIMIT 1[0m  [["email", "kcchaha@gmail.com"]]
+Completed 500 Internal Server Error in 30ms (ActiveRecord: 0.3ms)
+  [1m[35m (0.2ms)[0m  ROLLBACK
+  [1m[36mActiveRecord::SchemaMigration Load (0.4ms)[0m  [1mSELECT "schema_migrations".* FROM "schema_migrations"[0m
+  [1m[35m (1.5ms)[0m  ALTER TABLE "widgets" DISABLE TRIGGER ALL;ALTER TABLE "categories" DISABLE TRIGGER ALL;ALTER TABLE "schema_migrations" DISABLE TRIGGER ALL;ALTER TABLE "reviews" DISABLE TRIGGER ALL;ALTER TABLE "users" DISABLE TRIGGER ALL;ALTER TABLE "orders" DISABLE TRIGGER ALL;ALTER TABLE "line_items" DISABLE TRIGGER ALL;ALTER TABLE "products" DISABLE TRIGGER ALL
+  [1m[36m (1.3ms)[0m  [1m          SELECT schemaname || '.' || tablename
+          FROM pg_tables
+          WHERE
+            tablename !~ '_prt_' AND
+             tablename <> 'schema_migrations'  AND
+            schemaname = ANY (current_schemas(false))
+[0m
+  [1m[35m (1.2ms)[0m  select table_name from information_schema.views where table_schema = 'jungle_test'
+  [1m[36m (20.9ms)[0m  [1mTRUNCATE TABLE "public"."widgets", "public"."categories", "public"."reviews", "public"."users", "public"."orders", "public"."line_items", "public"."products" RESTART IDENTITY CASCADE;[0m
+  [1m[35m (1.1ms)[0m  ALTER TABLE "widgets" ENABLE TRIGGER ALL;ALTER TABLE "categories" ENABLE TRIGGER ALL;ALTER TABLE "schema_migrations" ENABLE TRIGGER ALL;ALTER TABLE "reviews" ENABLE TRIGGER ALL;ALTER TABLE "users" ENABLE TRIGGER ALL;ALTER TABLE "orders" ENABLE TRIGGER ALL;ALTER TABLE "line_items" ENABLE TRIGGER ALL;ALTER TABLE "products" ENABLE TRIGGER ALL
+  [1m[36m (0.2ms)[0m  [1mBEGIN[0m
+  [1m[35m (0.1ms)[0m  COMMIT
+  [1m[36m (0.1ms)[0m  [1mBEGIN[0m
+  [1m[35m (0.3ms)[0m  SAVEPOINT active_record_1
+  [1m[36mUser Exists (0.7ms)[0m  [1mSELECT  1 AS one FROM "users" WHERE "users"."email" = 'kcchaha@gmail.com' LIMIT 1[0m
+  [1m[35mSQL (0.5ms)[0m  INSERT INTO "users" ("first_name", "last_name", "email", "password_digest", "created_at", "updated_at") VALUES ($1, $2, $3, $4, $5, $6) RETURNING "id"  [["first_name", "Chenchen"], ["last_name", "Enfys"], ["email", "kcchaha@gmail.com"], ["password_digest", "$2a$04$zG5gs98xj98g1XOEpD69Meo3f2k6WJ6SVhj3qrCvk5pbhGzG/LVI6"], ["created_at", "2019-06-18 21:52:23.842468"], ["updated_at", "2019-06-18 21:52:23.842468"]]
+  [1m[36m (0.3ms)[0m  [1mRELEASE SAVEPOINT active_record_1[0m
+Started GET "/login" for 127.0.0.1 at 2019-06-18 21:52:23 +0000
+Processing by SessionsController#new as HTML
+  Rendered sessions/new.html.erb within layouts/application (4.7ms)
+  [1m[35mCategory Load (0.5ms)[0m  SELECT "categories".* FROM "categories"
+  Rendered layouts/_top_nav.html.erb (22.2ms)
+Completed 200 OK in 656ms (Views: 641.8ms | ActiveRecord: 1.0ms)
+Started POST "/login" for 127.0.0.1 at 2019-06-18 21:52:26 +0000
+Processing by SessionsController#create as HTML
+  Parameters: {"utf8"=>"✓", "email"=>"kcchaha@gmail.com", "password"=>"[FILTERED]", "commit"=>"Submit"}
+  [1m[36mUser Load (0.4ms)[0m  [1mSELECT  "users".* FROM "users" WHERE "users"."email" = $1 LIMIT 1[0m  [["email", "kcchaha@gmail.com"]]
+Completed 500 Internal Server Error in 32ms (ActiveRecord: 0.4ms)
+  [1m[35m (0.2ms)[0m  ROLLBACK
+  [1m[36mActiveRecord::SchemaMigration Load (0.4ms)[0m  [1mSELECT "schema_migrations".* FROM "schema_migrations"[0m
+  [1m[35m (1.6ms)[0m  ALTER TABLE "widgets" DISABLE TRIGGER ALL;ALTER TABLE "categories" DISABLE TRIGGER ALL;ALTER TABLE "schema_migrations" DISABLE TRIGGER ALL;ALTER TABLE "reviews" DISABLE TRIGGER ALL;ALTER TABLE "users" DISABLE TRIGGER ALL;ALTER TABLE "orders" DISABLE TRIGGER ALL;ALTER TABLE "line_items" DISABLE TRIGGER ALL;ALTER TABLE "products" DISABLE TRIGGER ALL
+  [1m[36m (1.4ms)[0m  [1m          SELECT schemaname || '.' || tablename
+          FROM pg_tables
+          WHERE
+            tablename !~ '_prt_' AND
+             tablename <> 'schema_migrations'  AND
+            schemaname = ANY (current_schemas(false))
+[0m
+  [1m[35m (1.3ms)[0m  select table_name from information_schema.views where table_schema = 'jungle_test'
+  [1m[36m (20.1ms)[0m  [1mTRUNCATE TABLE "public"."widgets", "public"."categories", "public"."reviews", "public"."users", "public"."orders", "public"."line_items", "public"."products" RESTART IDENTITY CASCADE;[0m
+  [1m[35m (1.0ms)[0m  ALTER TABLE "widgets" ENABLE TRIGGER ALL;ALTER TABLE "categories" ENABLE TRIGGER ALL;ALTER TABLE "schema_migrations" ENABLE TRIGGER ALL;ALTER TABLE "reviews" ENABLE TRIGGER ALL;ALTER TABLE "users" ENABLE TRIGGER ALL;ALTER TABLE "orders" ENABLE TRIGGER ALL;ALTER TABLE "line_items" ENABLE TRIGGER ALL;ALTER TABLE "products" ENABLE TRIGGER ALL
+  [1m[36m (0.2ms)[0m  [1mBEGIN[0m
+  [1m[35m (0.2ms)[0m  COMMIT
+  [1m[36m (0.1ms)[0m  [1mBEGIN[0m
+  [1m[35m (0.3ms)[0m  SAVEPOINT active_record_1
+  [1m[36mUser Exists (1.0ms)[0m  [1mSELECT  1 AS one FROM "users" WHERE "users"."email" = 'kcchaha@gmail.com' LIMIT 1[0m
+  [1m[35mSQL (0.7ms)[0m  INSERT INTO "users" ("first_name", "last_name", "email", "password_digest", "created_at", "updated_at") VALUES ($1, $2, $3, $4, $5, $6) RETURNING "id"  [["first_name", "Chenchen"], ["last_name", "Enfys"], ["email", "kcchaha@gmail.com"], ["password_digest", "$2a$04$7hU7d.eKVRhDGc4i30QLa.iR9r3qDyVI4cD.xPI8oKZFtj8b5iQPe"], ["created_at", "2019-06-18 21:53:48.622427"], ["updated_at", "2019-06-18 21:53:48.622427"]]
+  [1m[36m (0.3ms)[0m  [1mRELEASE SAVEPOINT active_record_1[0m
+  [1m[35m (0.4ms)[0m  ROLLBACK
+  [1m[36mActiveRecord::SchemaMigration Load (0.5ms)[0m  [1mSELECT "schema_migrations".* FROM "schema_migrations"[0m
+  [1m[35m (1.5ms)[0m  ALTER TABLE "widgets" DISABLE TRIGGER ALL;ALTER TABLE "categories" DISABLE TRIGGER ALL;ALTER TABLE "schema_migrations" DISABLE TRIGGER ALL;ALTER TABLE "reviews" DISABLE TRIGGER ALL;ALTER TABLE "users" DISABLE TRIGGER ALL;ALTER TABLE "orders" DISABLE TRIGGER ALL;ALTER TABLE "line_items" DISABLE TRIGGER ALL;ALTER TABLE "products" DISABLE TRIGGER ALL
+  [1m[36m (1.3ms)[0m  [1m          SELECT schemaname || '.' || tablename
+          FROM pg_tables
+          WHERE
+            tablename !~ '_prt_' AND
+             tablename <> 'schema_migrations'  AND
+            schemaname = ANY (current_schemas(false))
+[0m
+  [1m[35m (1.1ms)[0m  select table_name from information_schema.views where table_schema = 'jungle_test'
+  [1m[36m (25.8ms)[0m  [1mTRUNCATE TABLE "public"."widgets", "public"."categories", "public"."reviews", "public"."users", "public"."orders", "public"."line_items", "public"."products" RESTART IDENTITY CASCADE;[0m
+  [1m[35m (1.2ms)[0m  ALTER TABLE "widgets" ENABLE TRIGGER ALL;ALTER TABLE "categories" ENABLE TRIGGER ALL;ALTER TABLE "schema_migrations" ENABLE TRIGGER ALL;ALTER TABLE "reviews" ENABLE TRIGGER ALL;ALTER TABLE "users" ENABLE TRIGGER ALL;ALTER TABLE "orders" ENABLE TRIGGER ALL;ALTER TABLE "line_items" ENABLE TRIGGER ALL;ALTER TABLE "products" ENABLE TRIGGER ALL
+  [1m[36m (0.2ms)[0m  [1mBEGIN[0m
+  [1m[35m (0.2ms)[0m  COMMIT
+  [1m[36m (0.1ms)[0m  [1mBEGIN[0m
+  [1m[35m (0.3ms)[0m  SAVEPOINT active_record_1
+  [1m[36mUser Exists (0.7ms)[0m  [1mSELECT  1 AS one FROM "users" WHERE "users"."email" = 'kcchaha@gmail.com' LIMIT 1[0m
+  [1m[35mSQL (0.5ms)[0m  INSERT INTO "users" ("first_name", "last_name", "email", "password_digest", "created_at", "updated_at") VALUES ($1, $2, $3, $4, $5, $6) RETURNING "id"  [["first_name", "Chenchen"], ["last_name", "Enfys"], ["email", "kcchaha@gmail.com"], ["password_digest", "$2a$04$IepGcoQ75Lqzudypes.ZVuPdAupZ/SYtqKFV2ByhKiShWZCRJm326"], ["created_at", "2019-06-18 21:54:31.148923"], ["updated_at", "2019-06-18 21:54:31.148923"]]
+  [1m[36m (0.3ms)[0m  [1mRELEASE SAVEPOINT active_record_1[0m
+Started GET "/sessions" for 127.0.0.1 at 2019-06-18 21:54:31 +0000
+  [1m[35m (0.3ms)[0m  ROLLBACK
+  [1m[36mActiveRecord::SchemaMigration Load (0.5ms)[0m  [1mSELECT "schema_migrations".* FROM "schema_migrations"[0m
+  [1m[35m (1.5ms)[0m  ALTER TABLE "widgets" DISABLE TRIGGER ALL;ALTER TABLE "categories" DISABLE TRIGGER ALL;ALTER TABLE "schema_migrations" DISABLE TRIGGER ALL;ALTER TABLE "reviews" DISABLE TRIGGER ALL;ALTER TABLE "users" DISABLE TRIGGER ALL;ALTER TABLE "orders" DISABLE TRIGGER ALL;ALTER TABLE "line_items" DISABLE TRIGGER ALL;ALTER TABLE "products" DISABLE TRIGGER ALL
+  [1m[36m (1.3ms)[0m  [1m          SELECT schemaname || '.' || tablename
+          FROM pg_tables
+          WHERE
+            tablename !~ '_prt_' AND
+             tablename <> 'schema_migrations'  AND
+            schemaname = ANY (current_schemas(false))
+[0m
+  [1m[35m (1.3ms)[0m  select table_name from information_schema.views where table_schema = 'jungle_test'
+  [1m[36m (19.5ms)[0m  [1mTRUNCATE TABLE "public"."widgets", "public"."categories", "public"."reviews", "public"."users", "public"."orders", "public"."line_items", "public"."products" RESTART IDENTITY CASCADE;[0m
+  [1m[35m (1.2ms)[0m  ALTER TABLE "widgets" ENABLE TRIGGER ALL;ALTER TABLE "categories" ENABLE TRIGGER ALL;ALTER TABLE "schema_migrations" ENABLE TRIGGER ALL;ALTER TABLE "reviews" ENABLE TRIGGER ALL;ALTER TABLE "users" ENABLE TRIGGER ALL;ALTER TABLE "orders" ENABLE TRIGGER ALL;ALTER TABLE "line_items" ENABLE TRIGGER ALL;ALTER TABLE "products" ENABLE TRIGGER ALL
+  [1m[36m (0.2ms)[0m  [1mBEGIN[0m
+  [1m[35m (0.1ms)[0m  COMMIT
+  [1m[36m (0.1ms)[0m  [1mBEGIN[0m
+  [1m[35m (0.2ms)[0m  SAVEPOINT active_record_1
+  [1m[36mUser Exists (0.7ms)[0m  [1mSELECT  1 AS one FROM "users" WHERE "users"."email" = 'kcchaha@gmail.com' LIMIT 1[0m
+  [1m[35mSQL (0.5ms)[0m  INSERT INTO "users" ("first_name", "last_name", "email", "password_digest", "created_at", "updated_at") VALUES ($1, $2, $3, $4, $5, $6) RETURNING "id"  [["first_name", "Chenchen"], ["last_name", "Enfys"], ["email", "kcchaha@gmail.com"], ["password_digest", "$2a$04$OBSV0lKjXWtQpA0EAke8uOW8nRvR6Zrs0ELpTlLICAnbRpDHIoBJm"], ["created_at", "2019-06-18 21:55:56.648584"], ["updated_at", "2019-06-18 21:55:56.648584"]]
+  [1m[36m (0.3ms)[0m  [1mRELEASE SAVEPOINT active_record_1[0m
+Started GET "/" for 127.0.0.1 at 2019-06-18 21:55:56 +0000
+Processing by ProductsController#index as HTML
+  [1m[35mProduct Load (1.0ms)[0m  SELECT "products".* FROM "products"  ORDER BY "products"."created_at" DESC
+  Rendered collection (0.0ms)
+  Rendered products/index.html.erb within layouts/application (11.7ms)
+  [1m[36mCategory Load (0.5ms)[0m  [1mSELECT "categories".* FROM "categories"[0m
+  Rendered layouts/_top_nav.html.erb (23.3ms)
+Completed 200 OK in 743ms (Views: 687.3ms | ActiveRecord: 2.6ms)
+Started GET "/login" for 127.0.0.1 at 2019-06-18 21:55:57 +0000
+Processing by SessionsController#new as HTML
+  Rendered sessions/new.html.erb within layouts/application (0.7ms)
+  [1m[35mCategory Load (0.3ms)[0m  SELECT "categories".* FROM "categories"
+  Rendered layouts/_top_nav.html.erb (1.6ms)
+Completed 200 OK in 25ms (Views: 24.6ms | ActiveRecord: 0.3ms)
+Started POST "/login" for 127.0.0.1 at 2019-06-18 21:55:59 +0000
+Processing by SessionsController#create as HTML
+  Parameters: {"utf8"=>"✓", "email"=>"kcchaha@gmail.com", "password"=>"[FILTERED]", "commit"=>"Submit"}
+  [1m[36mUser Load (0.2ms)[0m  [1mSELECT  "users".* FROM "users" WHERE "users"."email" = $1 LIMIT 1[0m  [["email", "kcchaha@gmail.com"]]
+Completed 500 Internal Server Error in 30ms (ActiveRecord: 0.2ms)
+  [1m[35m (0.2ms)[0m  ROLLBACK
+  [1m[36mActiveRecord::SchemaMigration Load (0.5ms)[0m  [1mSELECT "schema_migrations".* FROM "schema_migrations"[0m
+  [1m[35m (1.6ms)[0m  ALTER TABLE "widgets" DISABLE TRIGGER ALL;ALTER TABLE "categories" DISABLE TRIGGER ALL;ALTER TABLE "schema_migrations" DISABLE TRIGGER ALL;ALTER TABLE "reviews" DISABLE TRIGGER ALL;ALTER TABLE "users" DISABLE TRIGGER ALL;ALTER TABLE "orders" DISABLE TRIGGER ALL;ALTER TABLE "line_items" DISABLE TRIGGER ALL;ALTER TABLE "products" DISABLE TRIGGER ALL
+  [1m[36m (1.3ms)[0m  [1m          SELECT schemaname || '.' || tablename
+          FROM pg_tables
+          WHERE
+            tablename !~ '_prt_' AND
+             tablename <> 'schema_migrations'  AND
+            schemaname = ANY (current_schemas(false))
+[0m
+  [1m[35m (1.4ms)[0m  select table_name from information_schema.views where table_schema = 'jungle_test'
+  [1m[36m (24.0ms)[0m  [1mTRUNCATE TABLE "public"."widgets", "public"."categories", "public"."reviews", "public"."users", "public"."orders", "public"."line_items", "public"."products" RESTART IDENTITY CASCADE;[0m
+  [1m[35m (1.3ms)[0m  ALTER TABLE "widgets" ENABLE TRIGGER ALL;ALTER TABLE "categories" ENABLE TRIGGER ALL;ALTER TABLE "schema_migrations" ENABLE TRIGGER ALL;ALTER TABLE "reviews" ENABLE TRIGGER ALL;ALTER TABLE "users" ENABLE TRIGGER ALL;ALTER TABLE "orders" ENABLE TRIGGER ALL;ALTER TABLE "line_items" ENABLE TRIGGER ALL;ALTER TABLE "products" ENABLE TRIGGER ALL
+  [1m[36m (0.3ms)[0m  [1mBEGIN[0m
+  [1m[35m (0.2ms)[0m  COMMIT
+  [1m[36m (0.1ms)[0m  [1mBEGIN[0m
+  [1m[35m (0.4ms)[0m  SAVEPOINT active_record_1
+  [1m[36mUser Exists (0.7ms)[0m  [1mSELECT  1 AS one FROM "users" WHERE "users"."email" = 'kcchaha@gmail.com' LIMIT 1[0m
+  [1m[35mSQL (0.4ms)[0m  INSERT INTO "users" ("first_name", "last_name", "email", "password_digest", "created_at", "updated_at") VALUES ($1, $2, $3, $4, $5, $6) RETURNING "id"  [["first_name", "Chenchen"], ["last_name", "Enfys"], ["email", "kcchaha@gmail.com"], ["password_digest", "$2a$04$4VrsXM0GRCnb7ZfXe19QHOlncM.92iJ7rJx0zwh7oxESKuKNuUKJO"], ["created_at", "2019-06-18 21:57:54.234335"], ["updated_at", "2019-06-18 21:57:54.234335"]]
+  [1m[36m (0.3ms)[0m  [1mRELEASE SAVEPOINT active_record_1[0m
+Started GET "/" for 127.0.0.1 at 2019-06-18 21:57:54 +0000
+Processing by ProductsController#index as HTML
+  [1m[35mProduct Load (1.0ms)[0m  SELECT "products".* FROM "products"  ORDER BY "products"."created_at" DESC
+  Rendered collection (0.0ms)
+  Rendered products/index.html.erb within layouts/application (12.2ms)
+  [1m[36mCategory Load (0.7ms)[0m  [1mSELECT "categories".* FROM "categories"[0m
+  Rendered layouts/_top_nav.html.erb (22.7ms)
+Completed 200 OK in 745ms (Views: 690.9ms | ActiveRecord: 3.2ms)
+Started GET "/login" for 127.0.0.1 at 2019-06-18 21:57:55 +0000
+Processing by SessionsController#new as HTML
+  Rendered sessions/new.html.erb within layouts/application (0.7ms)
+  [1m[35mCategory Load (0.5ms)[0m  SELECT "categories".* FROM "categories"
+  Rendered layouts/_top_nav.html.erb (1.8ms)
+Completed 200 OK in 25ms (Views: 24.6ms | ActiveRecord: 0.5ms)
+Started POST "/login" for 127.0.0.1 at 2019-06-18 21:57:57 +0000
+Processing by SessionsController#create as HTML
+  Parameters: {"utf8"=>"✓", "email"=>"kcchaha@gmail.com", "password"=>"[FILTERED]", "commit"=>"Submit"}
+  [1m[36mUser Load (0.4ms)[0m  [1mSELECT  "users".* FROM "users" WHERE "users"."email" = $1 LIMIT 1[0m  [["email", "kcchaha@gmail.com"]]
+Completed 500 Internal Server Error in 32ms (ActiveRecord: 0.4ms)
+  [1m[35m (0.4ms)[0m  ROLLBACK
+  [1m[36mActiveRecord::SchemaMigration Load (0.4ms)[0m  [1mSELECT "schema_migrations".* FROM "schema_migrations"[0m
+  [1m[35m (0.3ms)[0m  BEGIN
+  [1m[36mUser Exists (0.8ms)[0m  [1mSELECT  1 AS one FROM "users" WHERE "users"."email" = 'kcchaha@gmail.com' LIMIT 1[0m
+  [1m[35mSQL (0.4ms)[0m  INSERT INTO "users" ("first_name", "last_name", "email", "password_digest", "created_at", "updated_at") VALUES ($1, $2, $3, $4, $5, $6) RETURNING "id"  [["first_name", "Chenchen"], ["last_name", "Enfys"], ["email", "kcchaha@gmail.com"], ["password_digest", "$2a$04$Qr8bfmC8aXj7JnWBi6UHjubf0KxsdkW2brIg6d3XZF/BZYRLdtmAm"], ["created_at", "2019-06-18 21:59:34.671136"], ["updated_at", "2019-06-18 21:59:34.671136"]]
+  [1m[36m (0.9ms)[0m  [1mCOMMIT[0m
+  [1m[35m (1.4ms)[0m  ALTER TABLE "widgets" DISABLE TRIGGER ALL;ALTER TABLE "categories" DISABLE TRIGGER ALL;ALTER TABLE "schema_migrations" DISABLE TRIGGER ALL;ALTER TABLE "reviews" DISABLE TRIGGER ALL;ALTER TABLE "users" DISABLE TRIGGER ALL;ALTER TABLE "orders" DISABLE TRIGGER ALL;ALTER TABLE "line_items" DISABLE TRIGGER ALL;ALTER TABLE "products" DISABLE TRIGGER ALL
+  [1m[36m (1.3ms)[0m  [1m          SELECT schemaname || '.' || tablename
+          FROM pg_tables
+          WHERE
+            tablename !~ '_prt_' AND
+             tablename <> 'schema_migrations'  AND
+            schemaname = ANY (current_schemas(false))
+[0m
+  [1m[35m (0.9ms)[0m  select table_name from information_schema.views where table_schema = 'jungle_test'
+  [1m[36m (23.8ms)[0m  [1mTRUNCATE TABLE "public"."widgets", "public"."categories", "public"."reviews", "public"."users", "public"."orders", "public"."line_items", "public"."products" RESTART IDENTITY CASCADE;[0m
+  [1m[35m (1.4ms)[0m  ALTER TABLE "widgets" ENABLE TRIGGER ALL;ALTER TABLE "categories" ENABLE TRIGGER ALL;ALTER TABLE "schema_migrations" ENABLE TRIGGER ALL;ALTER TABLE "reviews" ENABLE TRIGGER ALL;ALTER TABLE "users" ENABLE TRIGGER ALL;ALTER TABLE "orders" ENABLE TRIGGER ALL;ALTER TABLE "line_items" ENABLE TRIGGER ALL;ALTER TABLE "products" ENABLE TRIGGER ALL
+  [1m[36m (0.3ms)[0m  [1mBEGIN[0m
+  [1m[35m (0.2ms)[0m  COMMIT
+  [1m[36m (0.1ms)[0m  [1mBEGIN[0m
+Started GET "/" for 127.0.0.1 at 2019-06-18 21:59:34 +0000
+Processing by ProductsController#index as HTML
+  [1m[35mProduct Load (0.9ms)[0m  SELECT "products".* FROM "products"  ORDER BY "products"."created_at" DESC
+  Rendered collection (0.0ms)
+  Rendered products/index.html.erb within layouts/application (12.0ms)
+  [1m[36mCategory Load (0.7ms)[0m  [1mSELECT "categories".* FROM "categories"[0m
+  Rendered layouts/_top_nav.html.erb (22.1ms)
+Completed 200 OK in 700ms (Views: 650.5ms | ActiveRecord: 2.8ms)
+Started GET "/login" for 127.0.0.1 at 2019-06-18 21:59:35 +0000
+Processing by SessionsController#new as HTML
+  Rendered sessions/new.html.erb within layouts/application (0.7ms)
+  [1m[35mCategory Load (0.5ms)[0m  SELECT "categories".* FROM "categories"
+  Rendered layouts/_top_nav.html.erb (1.9ms)
+Completed 200 OK in 25ms (Views: 23.7ms | ActiveRecord: 0.5ms)
+  [1m[36m (0.6ms)[0m  [1mROLLBACK[0m
+  [1m[36mActiveRecord::SchemaMigration Load (0.6ms)[0m  [1mSELECT "schema_migrations".* FROM "schema_migrations"[0m
+  [1m[35m (1.7ms)[0m  ALTER TABLE "widgets" DISABLE TRIGGER ALL;ALTER TABLE "categories" DISABLE TRIGGER ALL;ALTER TABLE "schema_migrations" DISABLE TRIGGER ALL;ALTER TABLE "reviews" DISABLE TRIGGER ALL;ALTER TABLE "users" DISABLE TRIGGER ALL;ALTER TABLE "orders" DISABLE TRIGGER ALL;ALTER TABLE "line_items" DISABLE TRIGGER ALL;ALTER TABLE "products" DISABLE TRIGGER ALL
+  [1m[36m (1.2ms)[0m  [1m          SELECT schemaname || '.' || tablename
+          FROM pg_tables
+          WHERE
+            tablename !~ '_prt_' AND
+             tablename <> 'schema_migrations'  AND
+            schemaname = ANY (current_schemas(false))
+[0m
+  [1m[35m (1.1ms)[0m  select table_name from information_schema.views where table_schema = 'jungle_test'
+  [1m[36m (26.0ms)[0m  [1mTRUNCATE TABLE "public"."widgets", "public"."categories", "public"."reviews", "public"."users", "public"."orders", "public"."line_items", "public"."products" RESTART IDENTITY CASCADE;[0m
+  [1m[35m (2.2ms)[0m  ALTER TABLE "widgets" ENABLE TRIGGER ALL;ALTER TABLE "categories" ENABLE TRIGGER ALL;ALTER TABLE "schema_migrations" ENABLE TRIGGER ALL;ALTER TABLE "reviews" ENABLE TRIGGER ALL;ALTER TABLE "users" ENABLE TRIGGER ALL;ALTER TABLE "orders" ENABLE TRIGGER ALL;ALTER TABLE "line_items" ENABLE TRIGGER ALL;ALTER TABLE "products" ENABLE TRIGGER ALL
+  [1m[36m (0.2ms)[0m  [1mBEGIN[0m
+  [1m[35m (0.2ms)[0m  COMMIT
+  [1m[36m (0.1ms)[0m  [1mBEGIN[0m
+  [1m[35m (0.2ms)[0m  SAVEPOINT active_record_1
+  [1m[36mUser Exists (0.6ms)[0m  [1mSELECT  1 AS one FROM "users" WHERE "users"."email" = 'kcchaha@gmail.com' LIMIT 1[0m
+  [1m[35mSQL (0.4ms)[0m  INSERT INTO "users" ("first_name", "last_name", "email", "password_digest", "created_at", "updated_at") VALUES ($1, $2, $3, $4, $5, $6) RETURNING "id"  [["first_name", "Chenchen"], ["last_name", "Enfys"], ["email", "kcchaha@gmail.com"], ["password_digest", "$2a$04$O4cbNqOPoJla3JhTkH2e0.XV4P22NADz1Ym9OUvCnOvIGvV98nkmG"], ["created_at", "2019-06-18 22:00:09.115205"], ["updated_at", "2019-06-18 22:00:09.115205"]]
+  [1m[36m (0.2ms)[0m  [1mRELEASE SAVEPOINT active_record_1[0m
+Started GET "/" for 127.0.0.1 at 2019-06-18 22:00:09 +0000
+Processing by ProductsController#index as HTML
+  [1m[35mProduct Load (0.9ms)[0m  SELECT "products".* FROM "products"  ORDER BY "products"."created_at" DESC
+  Rendered collection (0.0ms)
+  Rendered products/index.html.erb within layouts/application (12.6ms)
+  [1m[36mCategory Load (0.6ms)[0m  [1mSELECT "categories".* FROM "categories"[0m
+  Rendered layouts/_top_nav.html.erb (23.7ms)
+Completed 200 OK in 825ms (Views: 769.4ms | ActiveRecord: 2.8ms)
+Started GET "/login" for 127.0.0.1 at 2019-06-18 22:00:09 +0000
+Processing by SessionsController#new as HTML
+  Rendered sessions/new.html.erb within layouts/application (0.7ms)
+  [1m[35mCategory Load (0.5ms)[0m  SELECT "categories".* FROM "categories"
+  Rendered layouts/_top_nav.html.erb (2.1ms)
+Completed 200 OK in 25ms (Views: 23.8ms | ActiveRecord: 0.5ms)
+Started POST "/login" for 127.0.0.1 at 2019-06-18 22:00:12 +0000
+Processing by SessionsController#create as HTML
+  Parameters: {"utf8"=>"✓", "email"=>"kcchaha@gmail.com", "password"=>"[FILTERED]", "commit"=>"Submit"}
+  [1m[36mUser Load (0.4ms)[0m  [1mSELECT  "users".* FROM "users" WHERE "users"."email" = $1 LIMIT 1[0m  [["email", "kcchaha@gmail.com"]]
+Redirected to http://www.example.com/
+Completed 302 Found in 20ms (ActiveRecord: 0.4ms)
+Started GET "/" for 127.0.0.1 at 2019-06-18 22:00:12 +0000
+Processing by ProductsController#index as HTML
+  [1m[35mProduct Load (0.4ms)[0m  SELECT "products".* FROM "products"  ORDER BY "products"."created_at" DESC
+  Rendered collection (0.0ms)
+  Rendered products/index.html.erb within layouts/application (1.3ms)
+  [1m[36mCategory Load (0.3ms)[0m  [1mSELECT "categories".* FROM "categories"[0m
+  [1m[35mUser Load (0.3ms)[0m  SELECT  "users".* FROM "users" WHERE "users"."id" = $1 LIMIT 1  [["id", 1]]
+  Rendered layouts/_top_nav.html.erb (2.8ms)
+Completed 200 OK in 7ms (Views: 5.1ms | ActiveRecord: 1.0ms)
+  [1m[36m (0.3ms)[0m  [1mROLLBACK[0m
+  [1m[36mActiveRecord::SchemaMigration Load (0.5ms)[0m  [1mSELECT "schema_migrations".* FROM "schema_migrations"[0m
+  [1m[35m (1.4ms)[0m  ALTER TABLE "widgets" DISABLE TRIGGER ALL;ALTER TABLE "categories" DISABLE TRIGGER ALL;ALTER TABLE "schema_migrations" DISABLE TRIGGER ALL;ALTER TABLE "reviews" DISABLE TRIGGER ALL;ALTER TABLE "users" DISABLE TRIGGER ALL;ALTER TABLE "orders" DISABLE TRIGGER ALL;ALTER TABLE "line_items" DISABLE TRIGGER ALL;ALTER TABLE "products" DISABLE TRIGGER ALL
+  [1m[36m (1.3ms)[0m  [1m          SELECT schemaname || '.' || tablename
+          FROM pg_tables
+          WHERE
+            tablename !~ '_prt_' AND
+             tablename <> 'schema_migrations'  AND
+            schemaname = ANY (current_schemas(false))
+[0m
+  [1m[35m (1.2ms)[0m  select table_name from information_schema.views where table_schema = 'jungle_test'
+  [1m[36m (24.8ms)[0m  [1mTRUNCATE TABLE "public"."widgets", "public"."categories", "public"."reviews", "public"."users", "public"."orders", "public"."line_items", "public"."products" RESTART IDENTITY CASCADE;[0m
+  [1m[35m (1.1ms)[0m  ALTER TABLE "widgets" ENABLE TRIGGER ALL;ALTER TABLE "categories" ENABLE TRIGGER ALL;ALTER TABLE "schema_migrations" ENABLE TRIGGER ALL;ALTER TABLE "reviews" ENABLE TRIGGER ALL;ALTER TABLE "users" ENABLE TRIGGER ALL;ALTER TABLE "orders" ENABLE TRIGGER ALL;ALTER TABLE "line_items" ENABLE TRIGGER ALL;ALTER TABLE "products" ENABLE TRIGGER ALL
+  [1m[36m (0.2ms)[0m  [1mBEGIN[0m
+  [1m[35m (0.1ms)[0m  COMMIT
+  [1m[36m (0.1ms)[0m  [1mBEGIN[0m
+  [1m[35m (0.2ms)[0m  SAVEPOINT active_record_1
+  [1m[36mUser Exists (0.7ms)[0m  [1mSELECT  1 AS one FROM "users" WHERE "users"."email" = 'kcchaha@gmail.com' LIMIT 1[0m
+  [1m[35mSQL (0.5ms)[0m  INSERT INTO "users" ("first_name", "last_name", "email", "password_digest", "created_at", "updated_at") VALUES ($1, $2, $3, $4, $5, $6) RETURNING "id"  [["first_name", "Chenchen"], ["last_name", "Enfys"], ["email", "kcchaha@gmail.com"], ["password_digest", "$2a$04$nZVnFpnxChGfMaYTZlsGDuRTIOLDyuf4hAIyOIg7owXqfeqWtpCLy"], ["created_at", "2019-06-18 22:01:05.360149"], ["updated_at", "2019-06-18 22:01:05.360149"]]
+  [1m[36m (0.4ms)[0m  [1mRELEASE SAVEPOINT active_record_1[0m
+Started GET "/" for 127.0.0.1 at 2019-06-18 22:01:05 +0000
+Processing by ProductsController#index as HTML
+  [1m[35mProduct Load (1.1ms)[0m  SELECT "products".* FROM "products"  ORDER BY "products"."created_at" DESC
+  Rendered collection (0.0ms)
+  Rendered products/index.html.erb within layouts/application (11.8ms)
+  [1m[36mCategory Load (0.6ms)[0m  [1mSELECT "categories".* FROM "categories"[0m
+  Rendered layouts/_top_nav.html.erb (21.2ms)
+Completed 200 OK in 702ms (Views: 648.5ms | ActiveRecord: 3.1ms)
+Started GET "/login" for 127.0.0.1 at 2019-06-18 22:01:06 +0000
+Processing by SessionsController#new as HTML
+  Rendered sessions/new.html.erb within layouts/application (0.8ms)
+  [1m[35mCategory Load (0.5ms)[0m  SELECT "categories".* FROM "categories"
+  Rendered layouts/_top_nav.html.erb (1.9ms)
+Completed 200 OK in 25ms (Views: 23.8ms | ActiveRecord: 0.5ms)
+  [1m[36m (0.5ms)[0m  [1mROLLBACK[0m
+  [1m[36mActiveRecord::SchemaMigration Load (0.4ms)[0m  [1mSELECT "schema_migrations".* FROM "schema_migrations"[0m
+  [1m[35m (1.7ms)[0m  ALTER TABLE "widgets" DISABLE TRIGGER ALL;ALTER TABLE "categories" DISABLE TRIGGER ALL;ALTER TABLE "schema_migrations" DISABLE TRIGGER ALL;ALTER TABLE "reviews" DISABLE TRIGGER ALL;ALTER TABLE "users" DISABLE TRIGGER ALL;ALTER TABLE "orders" DISABLE TRIGGER ALL;ALTER TABLE "line_items" DISABLE TRIGGER ALL;ALTER TABLE "products" DISABLE TRIGGER ALL
+  [1m[36m (1.2ms)[0m  [1m          SELECT schemaname || '.' || tablename
+          FROM pg_tables
+          WHERE
+            tablename !~ '_prt_' AND
+             tablename <> 'schema_migrations'  AND
+            schemaname = ANY (current_schemas(false))
+[0m
+  [1m[35m (1.2ms)[0m  select table_name from information_schema.views where table_schema = 'jungle_test'
+  [1m[36m (26.8ms)[0m  [1mTRUNCATE TABLE "public"."widgets", "public"."categories", "public"."reviews", "public"."users", "public"."orders", "public"."line_items", "public"."products" RESTART IDENTITY CASCADE;[0m
+  [1m[35m (1.2ms)[0m  ALTER TABLE "widgets" ENABLE TRIGGER ALL;ALTER TABLE "categories" ENABLE TRIGGER ALL;ALTER TABLE "schema_migrations" ENABLE TRIGGER ALL;ALTER TABLE "reviews" ENABLE TRIGGER ALL;ALTER TABLE "users" ENABLE TRIGGER ALL;ALTER TABLE "orders" ENABLE TRIGGER ALL;ALTER TABLE "line_items" ENABLE TRIGGER ALL;ALTER TABLE "products" ENABLE TRIGGER ALL
+  [1m[36m (0.3ms)[0m  [1mBEGIN[0m
+  [1m[35m (0.2ms)[0m  COMMIT
+  [1m[36m (0.1ms)[0m  [1mBEGIN[0m
+  [1m[35m (0.2ms)[0m  SAVEPOINT active_record_1
+  [1m[36mUser Exists (1.0ms)[0m  [1mSELECT  1 AS one FROM "users" WHERE "users"."email" = 'kcchaha@gmail.com' LIMIT 1[0m
+  [1m[35mSQL (0.6ms)[0m  INSERT INTO "users" ("first_name", "last_name", "email", "password_digest", "created_at", "updated_at") VALUES ($1, $2, $3, $4, $5, $6) RETURNING "id"  [["first_name", "Chenchen"], ["last_name", "Enfys"], ["email", "kcchaha@gmail.com"], ["password_digest", "$2a$04$SP2fRcaQPQR9pbWJG4FX2.8NDLtGyluupGk5wK82ziW7GH93ocpeK"], ["created_at", "2019-06-18 22:02:19.297330"], ["updated_at", "2019-06-18 22:02:19.297330"]]
+  [1m[36m (0.2ms)[0m  [1mRELEASE SAVEPOINT active_record_1[0m
+Started GET "/" for 127.0.0.1 at 2019-06-18 22:02:19 +0000
+Processing by ProductsController#index as HTML
+  [1m[35mProduct Load (1.1ms)[0m  SELECT "products".* FROM "products"  ORDER BY "products"."created_at" DESC
+  Rendered collection (0.0ms)
+  Rendered products/index.html.erb within layouts/application (12.7ms)
+  [1m[36mCategory Load (0.6ms)[0m  [1mSELECT "categories".* FROM "categories"[0m
+  Rendered layouts/_top_nav.html.erb (21.4ms)
+Completed 200 OK in 706ms (Views: 654.7ms | ActiveRecord: 3.1ms)
+Started GET "/login" for 127.0.0.1 at 2019-06-18 22:02:20 +0000
+Processing by SessionsController#new as HTML
+  Rendered sessions/new.html.erb within layouts/application (0.8ms)
+  [1m[35mCategory Load (0.4ms)[0m  SELECT "categories".* FROM "categories"
+  Rendered layouts/_top_nav.html.erb (2.1ms)
+Completed 200 OK in 25ms (Views: 23.9ms | ActiveRecord: 0.4ms)
+Started POST "/login" for 127.0.0.1 at 2019-06-18 22:02:22 +0000
+Processing by SessionsController#create as HTML
+  Parameters: {"utf8"=>"✓", "email"=>"kcchaha@gmail.com", "password"=>"[FILTERED]", "commit"=>"Submit"}
+  [1m[36mUser Load (0.4ms)[0m  [1mSELECT  "users".* FROM "users" WHERE "users"."email" = $1 LIMIT 1[0m  [["email", "kcchaha@gmail.com"]]
+Redirected to http://www.example.com/
+Completed 302 Found in 19ms (ActiveRecord: 0.4ms)
+Started GET "/" for 127.0.0.1 at 2019-06-18 22:02:22 +0000
+Processing by ProductsController#index as HTML
+  [1m[35mProduct Load (0.4ms)[0m  SELECT "products".* FROM "products"  ORDER BY "products"."created_at" DESC
+  Rendered collection (0.0ms)
+  Rendered products/index.html.erb within layouts/application (1.4ms)
+  [1m[36mCategory Load (0.3ms)[0m  [1mSELECT "categories".* FROM "categories"[0m
+  [1m[35mUser Load (0.3ms)[0m  SELECT  "users".* FROM "users" WHERE "users"."id" = $1 LIMIT 1  [["id", 1]]
+  Rendered layouts/_top_nav.html.erb (2.8ms)
+Completed 200 OK in 7ms (Views: 5.0ms | ActiveRecord: 1.0ms)
+  [1m[36m (0.3ms)[0m  [1mROLLBACK[0m
+  [1m[36mActiveRecord::SchemaMigration Load (0.4ms)[0m  [1mSELECT "schema_migrations".* FROM "schema_migrations"[0m
+  [1m[35m (1.7ms)[0m  ALTER TABLE "widgets" DISABLE TRIGGER ALL;ALTER TABLE "categories" DISABLE TRIGGER ALL;ALTER TABLE "schema_migrations" DISABLE TRIGGER ALL;ALTER TABLE "reviews" DISABLE TRIGGER ALL;ALTER TABLE "users" DISABLE TRIGGER ALL;ALTER TABLE "orders" DISABLE TRIGGER ALL;ALTER TABLE "line_items" DISABLE TRIGGER ALL;ALTER TABLE "products" DISABLE TRIGGER ALL
+  [1m[36m (1.3ms)[0m  [1m          SELECT schemaname || '.' || tablename
+          FROM pg_tables
+          WHERE
+            tablename !~ '_prt_' AND
+             tablename <> 'schema_migrations'  AND
+            schemaname = ANY (current_schemas(false))
+[0m
+  [1m[35m (1.2ms)[0m  select table_name from information_schema.views where table_schema = 'jungle_test'
+  [1m[36m (26.7ms)[0m  [1mTRUNCATE TABLE "public"."widgets", "public"."categories", "public"."reviews", "public"."users", "public"."orders", "public"."line_items", "public"."products" RESTART IDENTITY CASCADE;[0m
+  [1m[35m (1.1ms)[0m  ALTER TABLE "widgets" ENABLE TRIGGER ALL;ALTER TABLE "categories" ENABLE TRIGGER ALL;ALTER TABLE "schema_migrations" ENABLE TRIGGER ALL;ALTER TABLE "reviews" ENABLE TRIGGER ALL;ALTER TABLE "users" ENABLE TRIGGER ALL;ALTER TABLE "orders" ENABLE TRIGGER ALL;ALTER TABLE "line_items" ENABLE TRIGGER ALL;ALTER TABLE "products" ENABLE TRIGGER ALL
+  [1m[36m (0.2ms)[0m  [1mBEGIN[0m
+  [1m[35m (0.2ms)[0m  COMMIT
+  [1m[36m (0.1ms)[0m  [1mBEGIN[0m
+  [1m[35m (0.3ms)[0m  SAVEPOINT active_record_1
+  [1m[36mUser Exists (0.7ms)[0m  [1mSELECT  1 AS one FROM "users" WHERE "users"."email" = 'kcchaha@gmail.com' LIMIT 1[0m
+  [1m[35mSQL (0.6ms)[0m  INSERT INTO "users" ("first_name", "last_name", "email", "password_digest", "created_at", "updated_at") VALUES ($1, $2, $3, $4, $5, $6) RETURNING "id"  [["first_name", "Chenchen"], ["last_name", "Enfys"], ["email", "kcchaha@gmail.com"], ["password_digest", "$2a$04$WYjT.KuriuROt.jzX4YmjONMoQSRcWrv6iN85sUgbz5rtfxPi5wda"], ["created_at", "2019-06-18 22:02:47.163889"], ["updated_at", "2019-06-18 22:02:47.163889"]]
+  [1m[36m (0.3ms)[0m  [1mRELEASE SAVEPOINT active_record_1[0m
+Started GET "/" for 127.0.0.1 at 2019-06-18 22:02:47 +0000
+Processing by ProductsController#index as HTML
+  [1m[35mProduct Load (1.0ms)[0m  SELECT "products".* FROM "products"  ORDER BY "products"."created_at" DESC
+  Rendered collection (0.0ms)
+  Rendered products/index.html.erb within layouts/application (12.2ms)
+  [1m[36mCategory Load (0.6ms)[0m  [1mSELECT "categories".* FROM "categories"[0m
+  Rendered layouts/_top_nav.html.erb (24.9ms)
+Completed 200 OK in 723ms (Views: 666.6ms | ActiveRecord: 3.0ms)
+Started GET "/login" for 127.0.0.1 at 2019-06-18 22:02:47 +0000
+Processing by SessionsController#new as HTML
+  Rendered sessions/new.html.erb within layouts/application (0.7ms)
+  [1m[35mCategory Load (0.5ms)[0m  SELECT "categories".* FROM "categories"
+  Rendered layouts/_top_nav.html.erb (1.8ms)
+Completed 200 OK in 25ms (Views: 24.0ms | ActiveRecord: 0.5ms)
+Started POST "/login" for 127.0.0.1 at 2019-06-18 22:02:50 +0000
+Processing by SessionsController#create as HTML
+  Parameters: {"utf8"=>"✓", "email"=>"kcchaha@gmail.com", "password"=>"[FILTERED]", "commit"=>"Submit"}
+  [1m[36mUser Load (0.4ms)[0m  [1mSELECT  "users".* FROM "users" WHERE "users"."email" = $1 LIMIT 1[0m  [["email", "kcchaha@gmail.com"]]
+Redirected to http://www.example.com/
+Completed 302 Found in 20ms (ActiveRecord: 0.4ms)
+Started GET "/" for 127.0.0.1 at 2019-06-18 22:02:50 +0000
+Processing by ProductsController#index as HTML
+  [1m[35mProduct Load (0.4ms)[0m  SELECT "products".* FROM "products"  ORDER BY "products"."created_at" DESC
+  Rendered collection (0.0ms)
+  Rendered products/index.html.erb within layouts/application (1.4ms)
+  [1m[36mCategory Load (0.3ms)[0m  [1mSELECT "categories".* FROM "categories"[0m
+  [1m[35mUser Load (0.3ms)[0m  SELECT  "users".* FROM "users" WHERE "users"."id" = $1 LIMIT 1  [["id", 1]]
+  Rendered layouts/_top_nav.html.erb (2.8ms)
+Completed 200 OK in 7ms (Views: 5.4ms | ActiveRecord: 1.0ms)
+  [1m[36m (0.7ms)[0m  [1mROLLBACK[0m

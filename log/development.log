@@ -18564,3 +18564,94 @@ Processing by ProductsController#show as HTML
   [1m[35mCategory Load (0.7ms)[0m  SELECT "categories".* FROM "categories"
   Rendered layouts/_top_nav.html.erb (2.7ms)
 Completed 200 OK in 354ms (Views: 318.6ms | ActiveRecord: 22.9ms)
+
+
+Started GET "/login" for 10.0.2.2 at 2019-06-18 21:50:43 +0000
+  [1m[36mActiveRecord::SchemaMigration Load (0.5ms)[0m  [1mSELECT "schema_migrations".* FROM "schema_migrations"[0m
+Processing by SessionsController#new as HTML
+  Rendered sessions/new.html.erb within layouts/application (4.6ms)
+  [1m[35mCategory Load (0.9ms)[0m  SELECT "categories".* FROM "categories"
+  Rendered layouts/_top_nav.html.erb (43.1ms)
+Completed 200 OK in 1240ms (Views: 1222.6ms | ActiveRecord: 3.4ms)
+
+
+Started GET "/login" for 10.0.2.2 at 2019-06-18 21:50:46 +0000
+Processing by SessionsController#new as HTML
+  Rendered sessions/new.html.erb within layouts/application (0.6ms)
+  [1m[36mCategory Load (0.5ms)[0m  [1mSELECT "categories".* FROM "categories"[0m
+  Rendered layouts/_top_nav.html.erb (2.8ms)
+Completed 200 OK in 260ms (Views: 258.9ms | ActiveRecord: 0.5ms)
+
+
+Started POST "/login" for 10.0.2.2 at 2019-06-18 21:50:51 +0000
+Processing by SessionsController#create as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"lc5pyl5QTf1FJRmt6Qyu7EGwlvTZ1tVBPtf4ImTYfc0nh1PznCGK2fcLI0ehSS+gpPgUhDLMsig3lNEfUEAzgg==", "email"=>"kcchaha@gmail.com", "password"=>"[FILTERED]", "commit"=>"Submit"}
+  [1m[35mUser Load (0.6ms)[0m  SELECT  "users".* FROM "users" WHERE "users"."email" = $1 LIMIT 1  [["email", "kcchaha@gmail.com"]]
+Redirected to http://localhost:3000/
+Completed 302 Found in 131ms (ActiveRecord: 2.6ms)
+
+
+Started GET "/" for 10.0.2.2 at 2019-06-18 21:50:51 +0000
+Processing by ProductsController#index as HTML
+  [1m[36mProduct Load (1.0ms)[0m  [1mSELECT "products".* FROM "products"  ORDER BY "products"."created_at" DESC[0m
+  Rendered products/_product.html.erb (384.3ms)
+  Rendered products/index.html.erb within layouts/application (411.0ms)
+  [1m[35mCategory Load (0.4ms)[0m  SELECT "categories".* FROM "categories"
+  [1m[36mUser Load (0.3ms)[0m  [1mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 LIMIT 1[0m  [["id", 1]]
+  Rendered layouts/_top_nav.html.erb (5.0ms)
+Completed 200 OK in 683ms (Views: 629.1ms | ActiveRecord: 2.8ms)
+
+
+Started GET "/logout" for 10.0.2.2 at 2019-06-18 21:57:04 +0000
+Processing by SessionsController#destroy as HTML
+Redirected to http://localhost:3000/login
+Completed 302 Found in 1ms (ActiveRecord: 0.0ms)
+
+
+Started GET "/login" for 10.0.2.2 at 2019-06-18 21:57:04 +0000
+Processing by SessionsController#new as HTML
+  Rendered sessions/new.html.erb within layouts/application (0.4ms)
+  [1m[35mCategory Load (0.4ms)[0m  SELECT "categories".* FROM "categories"
+  Rendered layouts/_top_nav.html.erb (24.1ms)
+Completed 200 OK in 232ms (Views: 228.8ms | ActiveRecord: 2.4ms)
+
+
+Started POST "/login" for 10.0.2.2 at 2019-06-18 21:57:40 +0000
+Processing by SessionsController#create as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"3eGh2yR7mknj7ilIlaIP1wF0e81V9SABpDufgOIW6J9vqJvi5gpdbVHAE6Ld546b5Dz5vb7vR2iteLa91o6m0A==", "email"=>"kcchaha@gmail.com", "password"=>"[FILTERED]", "commit"=>"Submit"}
+  [1m[36mUser Load (0.3ms)[0m  [1mSELECT  "users".* FROM "users" WHERE "users"."email" = $1 LIMIT 1[0m  [["email", "kcchaha@gmail.com"]]
+Redirected to http://localhost:3000/
+Completed 302 Found in 97ms (ActiveRecord: 1.7ms)
+
+
+Started GET "/" for 10.0.2.2 at 2019-06-18 21:57:40 +0000
+Processing by ProductsController#index as HTML
+  [1m[35mProduct Load (0.5ms)[0m  SELECT "products".* FROM "products"  ORDER BY "products"."created_at" DESC
+  Rendered products/_product.html.erb (14.2ms)
+  Rendered products/index.html.erb within layouts/application (34.5ms)
+  [1m[36mCategory Load (0.4ms)[0m  [1mSELECT "categories".* FROM "categories"[0m
+  [1m[35mUser Load (0.4ms)[0m  SELECT  "users".* FROM "users" WHERE "users"."id" = $1 LIMIT 1  [["id", 1]]
+  Rendered layouts/_top_nav.html.erb (4.5ms)
+Completed 200 OK in 264ms (Views: 237.3ms | ActiveRecord: 2.5ms)
+
+
+Started GET "/logout" for 10.0.2.2 at 2019-06-18 22:00:39 +0000
+Processing by SessionsController#destroy as HTML
+Redirected to http://localhost:3000/login
+Completed 302 Found in 1ms (ActiveRecord: 0.0ms)
+
+
+Started GET "/login" for 10.0.2.2 at 2019-06-18 22:00:39 +0000
+Processing by SessionsController#new as HTML
+  Rendered sessions/new.html.erb within layouts/application (0.4ms)
+  [1m[36mCategory Load (0.4ms)[0m  [1mSELECT "categories".* FROM "categories"[0m
+  Rendered layouts/_top_nav.html.erb (2.8ms)
+Completed 200 OK in 183ms (Views: 182.2ms | ActiveRecord: 0.4ms)
+
+
+Started GET "/login" for 10.0.2.2 at 2019-06-18 22:00:41 +0000
+Processing by SessionsController#new as HTML
+  Rendered sessions/new.html.erb within layouts/application (0.3ms)
+  [1m[35mCategory Load (0.7ms)[0m  SELECT "categories".* FROM "categories"
+  Rendered layouts/_top_nav.html.erb (2.7ms)
+Completed 200 OK in 192ms (Views: 189.4ms | ActiveRecord: 0.7ms)
