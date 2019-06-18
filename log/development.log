@@ -18447,3 +18447,120 @@ WHERE c.contype = 'f'
   AND t3.nspname = ANY (current_schemas(false))
 ORDER BY c.conname
 [0m
+
+
+Started GET "/" for 10.0.2.2 at 2019-06-18 18:35:36 +0000
+  [1m[36mActiveRecord::SchemaMigration Load (0.5ms)[0m  [1mSELECT "schema_migrations".* FROM "schema_migrations"[0m
+Processing by ProductsController#index as HTML
+  [1m[35mProduct Load (1.2ms)[0m  SELECT "products".* FROM "products"  ORDER BY "products"."created_at" DESC
+  Rendered products/_product.html.erb (393.1ms)
+  Rendered products/index.html.erb within layouts/application (427.4ms)
+  [1m[36mCategory Load (0.6ms)[0m  [1mSELECT "categories".* FROM "categories"[0m
+  [1m[35mUser Load (0.4ms)[0m  SELECT  "users".* FROM "users" WHERE "users"."id" = $1 LIMIT 1  [["id", 1]]
+  Rendered layouts/_top_nav.html.erb (74.4ms)
+Completed 200 OK in 1659ms (Views: 1589.5ms | ActiveRecord: 6.8ms)
+
+
+Started GET "/products/8" for 10.0.2.2 at 2019-06-18 18:35:42 +0000
+Processing by ProductsController#show as HTML
+  Parameters: {"id"=>"8"}
+  [1m[36mProduct Load (0.3ms)[0m  [1mSELECT  "products".* FROM "products" WHERE "products"."id" = $1 LIMIT 1[0m  [["id", 8]]
+  [1m[35m (0.4ms)[0m  SELECT AVG("reviews"."rating") FROM "reviews" WHERE "reviews"."product_id" = $1  [["product_id", 8]]
+  [1m[36mCategory Load (0.2ms)[0m  [1mSELECT  "categories".* FROM "categories" WHERE "categories"."id" = $1 LIMIT 1[0m  [["id", 2]]
+  [1m[35mUser Load (0.3ms)[0m  SELECT  "users".* FROM "users" WHERE "users"."id" = $1 LIMIT 1  [["id", 1]]
+  Rendered products/_form.html.erb (42.0ms)
+  [1m[36mReview Load (0.2ms)[0m  [1mSELECT "reviews".* FROM "reviews" WHERE "reviews"."product_id" = $1  ORDER BY "reviews"."id" DESC[0m  [["product_id", 8]]
+  Rendered products/show.html.erb within layouts/application (77.2ms)
+  [1m[35mCategory Load (0.3ms)[0m  SELECT "categories".* FROM "categories"
+  Rendered layouts/_top_nav.html.erb (2.4ms)
+Completed 200 OK in 339ms (Views: 265.6ms | ActiveRecord: 3.1ms)
+
+
+Started GET "/products/12" for 10.0.2.2 at 2019-06-18 18:35:47 +0000
+Processing by ProductsController#show as HTML
+  Parameters: {"id"=>"12"}
+  [1m[36mProduct Load (1.3ms)[0m  [1mSELECT  "products".* FROM "products" WHERE "products"."id" = $1 LIMIT 1[0m  [["id", 12]]
+  [1m[35m (0.3ms)[0m  SELECT AVG("reviews"."rating") FROM "reviews" WHERE "reviews"."product_id" = $1  [["product_id", 12]]
+  [1m[36mCategory Load (0.3ms)[0m  [1mSELECT  "categories".* FROM "categories" WHERE "categories"."id" = $1 LIMIT 1[0m  [["id", 3]]
+  [1m[35mUser Load (0.3ms)[0m  SELECT  "users".* FROM "users" WHERE "users"."id" = $1 LIMIT 1  [["id", 1]]
+  Rendered products/_form.html.erb (2.0ms)
+  [1m[36mReview Load (0.4ms)[0m  [1mSELECT "reviews".* FROM "reviews" WHERE "reviews"."product_id" = $1  ORDER BY "reviews"."id" DESC[0m  [["product_id", 12]]
+  Rendered products/show.html.erb within layouts/application (25.6ms)
+  [1m[35mCategory Load (0.4ms)[0m  SELECT "categories".* FROM "categories"
+  Rendered layouts/_top_nav.html.erb (3.1ms)
+Completed 200 OK in 216ms (Views: 207.1ms | ActiveRecord: 3.1ms)
+
+
+Started GET "/products/1" for 10.0.2.2 at 2019-06-18 18:59:10 +0000
+Processing by ProductsController#show as HTML
+  Parameters: {"id"=>"1"}
+  [1m[36mProduct Load (0.4ms)[0m  [1mSELECT  "products".* FROM "products" WHERE "products"."id" = $1 LIMIT 1[0m  [["id", 1]]
+  [1m[35m (0.4ms)[0m  SELECT AVG("reviews"."rating") FROM "reviews" WHERE "reviews"."product_id" = $1  [["product_id", 1]]
+  [1m[36mCategory Load (0.4ms)[0m  [1mSELECT  "categories".* FROM "categories" WHERE "categories"."id" = $1 LIMIT 1[0m  [["id", 1]]
+  [1m[35mUser Load (0.4ms)[0m  SELECT  "users".* FROM "users" WHERE "users"."id" = $1 LIMIT 1  [["id", 1]]
+  Rendered products/_form.html.erb (2.1ms)
+  [1m[36mReview Load (0.4ms)[0m  [1mSELECT "reviews".* FROM "reviews" WHERE "reviews"."product_id" = $1  ORDER BY "reviews"."id" DESC[0m  [["product_id", 1]]
+  Rendered products/show.html.erb within layouts/application (59.6ms)
+  [1m[35mCategory Load (0.5ms)[0m  SELECT "categories".* FROM "categories"
+  Rendered layouts/_top_nav.html.erb (2.9ms)
+Completed 200 OK in 328ms (Views: 263.3ms | ActiveRecord: 9.0ms)
+
+
+Started GET "/products/1" for 10.0.2.2 at 2019-06-18 19:06:28 +0000
+Processing by ProductsController#show as HTML
+  Parameters: {"id"=>"1"}
+  [1m[36mProduct Load (1.3ms)[0m  [1mSELECT  "products".* FROM "products" WHERE "products"."id" = $1 LIMIT 1[0m  [["id", 1]]
+  [1m[35m (0.8ms)[0m  SELECT AVG("reviews"."rating") FROM "reviews" WHERE "reviews"."product_id" = $1  [["product_id", 1]]
+  [1m[36mCategory Load (11.8ms)[0m  [1mSELECT  "categories".* FROM "categories" WHERE "categories"."id" = $1 LIMIT 1[0m  [["id", 1]]
+  [1m[35mUser Load (17.0ms)[0m  SELECT  "users".* FROM "users" WHERE "users"."id" = $1 LIMIT 1  [["id", 1]]
+  Rendered products/_form.html.erb (1.6ms)
+  [1m[36mReview Load (0.7ms)[0m  [1mSELECT "reviews".* FROM "reviews" WHERE "reviews"."product_id" = $1  ORDER BY "reviews"."id" DESC[0m  [["product_id", 1]]
+  Rendered products/show.html.erb within layouts/application (81.5ms)
+  [1m[35mCategory Load (0.3ms)[0m  SELECT "categories".* FROM "categories"
+  Rendered layouts/_top_nav.html.erb (2.4ms)
+Completed 200 OK in 372ms (Views: 329.3ms | ActiveRecord: 31.9ms)
+
+
+Started GET "/products/1" for 10.0.2.2 at 2019-06-18 19:11:09 +0000
+Processing by ProductsController#show as HTML
+  Parameters: {"id"=>"1"}
+  [1m[36mProduct Load (21.9ms)[0m  [1mSELECT  "products".* FROM "products" WHERE "products"."id" = $1 LIMIT 1[0m  [["id", 1]]
+  [1m[35m (0.9ms)[0m  SELECT AVG("reviews"."rating") FROM "reviews" WHERE "reviews"."product_id" = $1  [["product_id", 1]]
+  [1m[36mCategory Load (1.5ms)[0m  [1mSELECT  "categories".* FROM "categories" WHERE "categories"."id" = $1 LIMIT 1[0m  [["id", 1]]
+  [1m[35mUser Load (0.3ms)[0m  SELECT  "users".* FROM "users" WHERE "users"."id" = $1 LIMIT 1  [["id", 1]]
+  Rendered products/_form.html.erb (1.4ms)
+  [1m[36mReview Load (0.3ms)[0m  [1mSELECT "reviews".* FROM "reviews" WHERE "reviews"."product_id" = $1  ORDER BY "reviews"."id" DESC[0m  [["product_id", 1]]
+  Rendered products/show.html.erb within layouts/application (26.1ms)
+  [1m[35mCategory Load (0.4ms)[0m  SELECT "categories".* FROM "categories"
+  Rendered layouts/_top_nav.html.erb (2.9ms)
+Completed 200 OK in 310ms (Views: 274.3ms | ActiveRecord: 25.4ms)
+
+
+Started GET "/products/1" for 10.0.2.2 at 2019-06-18 19:26:41 +0000
+Processing by ProductsController#show as HTML
+  Parameters: {"id"=>"1"}
+  [1m[36mProduct Load (5.2ms)[0m  [1mSELECT  "products".* FROM "products" WHERE "products"."id" = $1 LIMIT 1[0m  [["id", 1]]
+  [1m[35m (0.8ms)[0m  SELECT AVG("reviews"."rating") FROM "reviews" WHERE "reviews"."product_id" = $1  [["product_id", 1]]
+  [1m[36mCategory Load (0.7ms)[0m  [1mSELECT  "categories".* FROM "categories" WHERE "categories"."id" = $1 LIMIT 1[0m  [["id", 1]]
+  [1m[35mUser Load (0.4ms)[0m  SELECT  "users".* FROM "users" WHERE "users"."id" = $1 LIMIT 1  [["id", 1]]
+  Rendered products/_form.html.erb (1.7ms)
+  [1m[36mReview Load (0.5ms)[0m  [1mSELECT "reviews".* FROM "reviews" WHERE "reviews"."product_id" = $1  ORDER BY "reviews"."id" DESC[0m  [["product_id", 1]]
+  Rendered products/show.html.erb within layouts/application (36.5ms)
+  [1m[35mCategory Load (0.5ms)[0m  SELECT "categories".* FROM "categories"
+  Rendered layouts/_top_nav.html.erb (2.6ms)
+Completed 200 OK in 392ms (Views: 378.3ms | ActiveRecord: 8.1ms)
+
+
+Started GET "/products/1" for 10.0.2.2 at 2019-06-18 19:50:06 +0000
+Processing by ProductsController#show as HTML
+  Parameters: {"id"=>"1"}
+  [1m[36mProduct Load (5.7ms)[0m  [1mSELECT  "products".* FROM "products" WHERE "products"."id" = $1 LIMIT 1[0m  [["id", 1]]
+  [1m[35m (15.5ms)[0m  SELECT AVG("reviews"."rating") FROM "reviews" WHERE "reviews"."product_id" = $1  [["product_id", 1]]
+  [1m[36mCategory Load (0.3ms)[0m  [1mSELECT  "categories".* FROM "categories" WHERE "categories"."id" = $1 LIMIT 1[0m  [["id", 1]]
+  [1m[35mUser Load (0.3ms)[0m  SELECT  "users".* FROM "users" WHERE "users"."id" = $1 LIMIT 1  [["id", 1]]
+  Rendered products/_form.html.erb (1.4ms)
+  [1m[36mReview Load (0.3ms)[0m  [1mSELECT "reviews".* FROM "reviews" WHERE "reviews"."product_id" = $1  ORDER BY "reviews"."id" DESC[0m  [["product_id", 1]]
+  Rendered products/show.html.erb within layouts/application (17.6ms)
+  [1m[35mCategory Load (0.7ms)[0m  SELECT "categories".* FROM "categories"
+  Rendered layouts/_top_nav.html.erb (2.7ms)
+Completed 200 OK in 354ms (Views: 318.6ms | ActiveRecord: 22.9ms)
